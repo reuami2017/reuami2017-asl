@@ -1,3 +1,3 @@
-import xml.etree.ElementTree as xmlTree
+import xml.etree.ElementTree as ET
 
-e = xmlTree.parse('\XML_ASL_Files\(D)DINOSAUR_716.xml').getroot()
+e = ET.parse('\XML_ASL_Files\(D)DINOSAUR_716.xml').getroot()

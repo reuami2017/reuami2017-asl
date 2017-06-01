@@ -1,0 +1,6938 @@
+#AC_3315.xml
+      20
+#ALL_2_90.xml
+      43
+#ALL_89.xml
+      34
+#ASL_3038.xml
+      37
+#BACK_2_3042.xml
+      34
+#BACK_3041.xml
+      37
+#BBQ_3318.xml
+      23
+#BUS_3060.xml
+      35
+#CC_3327.xml
+      23
+#CLUB_3467.xml
+      19
+#CO_3061.xml
+      28
+#CP_3062.xml
+      34
+#DO++WHAT_3388.xml
+      21
+#DOG+_3087.xml
+      36
+#EARLY_3091.xml
+      47
+#ED_3093.xml
+      32
+#FF_2_3124.xml
+      39
+#FF_3123.xml
+      46
+#FIX_1543.xml
+      36
+#HA-HA+_3370.xml
+      19
+#HR_3139.xml
+      18
+#IF+_2200.xml
+      16
+#JOB_2_3153.xml
+      18
+#JOB_3152.xml
+      26
+#LAB_3453.xml
+      17
+#MW_3173.xml
+      19
+#NO_3193.xml
+      16
+#OD_3372.xml
+      16
+#OFF_3198.xml
+      15
+#OK_3196.xml
+      18
+#OR_3197.xml
+      14
+#PE_3137.xml
+      16
+#PIZZA_1773.xml
+      28
+#PO_3224.xml
+      15
+#REF_3238.xml
+      16
+#RR_3245.xml
+      23
+#SS_3260.xml
+      20
+#TTY_3387.xml
+      20
+#TV+_3277.xml
+      35
+#WHAT_2505.xml
+      35
+#WILL_1075.xml
+      58
+#WOW_3303.xml
+      28
+#YES_2454.xml
+      29
+(1)CARROT_415.xml
+      55
+(1)CHEAT+_459.xml
+      55
+(1)CORNER_589.xml
+      42
+(1)E-MAIL_806.xml
+      38
+(1)FAR_1204.xml
+      50
+(1)FINGERPRINTS+_960.xml
+      77
+(1)GO-STEADY+_49.xml
+     113
+(1)HUMBLE_1274.xml
+      48
+(1)MINOR_1503.xml
+      60
+(1)SNOB_2617.xml
+      58
+(1)TEMPERATURE^PITCH_2484.xml
+      47
+(1)THROW_2257.xml
+      37
+(1)TORNADO+_2980.xml
+      59
+(1)TRACE-HEART_1214.xml
+      41
+(1)TRAVEL_2978.xml
+      50
+(1)WHO+_2408.xml
+      40
+(10)HOSPITAL_1260.xml
+      66
+(1h)#ED_3094.xml
+      32
+(1h)(5)GO_151.xml
+      49
+(1h)(L)LOW_2808.xml
+      21
+(1h)(L-X)INTERESTING+ZERO_2_3195.xml
+      27
+(1h)ABORTION_17.xml
+      57
+(1h)ADMIT_60.xml
+      53
+(1h)ANGRY_2875.xml
+      16
+(1h)AREA_2508.xml
+      65
+(1h)BAKING-SPRINKLES_2119.xml
+      31
+(1h)CARELESS+_411.xml
+      58
+(1h)CHILDREN+_29.xml
+      57
+(1h)CHOKE-1p_485.xml
+      44
+(1h)COME_541.xml
+      33
+(1h)COW_670.xml
+      55
+(1h)DEFLATE_2777.xml
+      15
+(1h)DIMPLE_710.xml
+      44
+(1h)DO-DO+_755.xml
+      55
+(1h)DOORBELL+_770.xml
+      53
+(1h)DRIP_787.xml
+      60
+(1h)DROP_790.xml
+      55
+(1h)EASTER_842.xml
+      42
+(1h)EAT-UP_2863.xml
+      21
+(1h)FALL_893.xml
+      45
+(1h)FEED_929.xml
+      54
+(1h)FINISH_966.xml
+      47
+(1h)FISH_975.xml
+      48
+(1h)FORCE_1017.xml
+      45
+(1h)FRACTION_2631.xml
+      43
+(1h)FRECKLES_1035.xml
+      50
+(1h)GIFT_1095.xml
+      40
+(1h)GOOD^THANK-YOU+(1h)MORNING_3131.xml
+      27
+(1h)GOOD^THANK-YOU+MORNING_3130.xml
+      27
+(1h)GOOD^THANK-YOU+NIGHT_3133.xml
+      32
+(1h)GOOD^THANK-YOU_2383.xml
+      35
+(1h)GO_150.xml
+      49
+(1h)HAIRCUT++AGENT_3046.xml
+      64
+(1h)HAMMER+AGENT_413.xml
+      61
+(1h)HAMMER+_1168.xml
+      47
+(1h)HAPPY+(1h)MOST_3415.xml
+      27
+(1h)HAPPY++NEW+YEAR_3460.xml
+      62
+(1h)HAPPY+_854.xml
+      50
+(1h)HONOR_1255.xml
+      40
+(1h)HOW-MANY^MANY_1522.xml
+      44
+(1h)LAST-YEAR_2734.xml
+      31
+(1h)LAUGH++_1420.xml
+      45
+(1h)LCL(path-turn-around)_2114.xml
+      26
+(1h)LINE_1458.xml
+      48
+(1h)MISUNDERSTAND_1583.xml
+      40
+(1h)NEXT-TO_512.xml
+      49
+(1h)NONE^NOTHING_1674.xml
+      19
+(1h)OPTION_481.xml
+      59
+(1h)ORBIT_2111.xml
+      35
+(1h)PONDER+_2953.xml
+      52
+(1h)PREGNANT_1815.xml
+      24
+(1h)PROCEED_515.xml
+      43
+(1h)RESPECT_1257.xml
+      50
+(1h)RESPONSIBILITY+_1902.xml
+      25
+(1h)SCREAM_2920.xml
+      42
+(1h)STAY_2145.xml
+      20
+(1h)STICKY++_2143.xml
+      20
+(1h)SUGGEST_1875.xml
+      27
+(1h)SUPERIOR_2427.xml
+      38
+(1h)TATTLE++_2117.xml
+      24
+(1h)TEND_934.xml
+      50
+(1h)THIS-PLACE_2987.xml
+      47
+(1h)TIRED_1188.xml
+      30
+(1h)VANILLA+_2331.xml
+      44
+(1h)WATER-PUMP+_1839.xml
+      30
+(1h)WHALE_2387.xml
+      55
+(1h)WHEELCHAIR++_2391.xml
+      58
+(1h)WITCH_2417.xml
+      36
+(25)GLORY_1107.xml
+      61
+(25)WANT+NEG_3294.xml
+      22
+(25)WHY+_2410.xml
+      39
+(25)ns-CALIFORNIA++_2792.xml
+      24
+(2h)#BACK_2_3043.xml
+      38
+(2h)#PE_3138.xml
+      21
+(2h)BED+CUSHION++_3176.xml
+      39
+(2h)BED_241.xml
+      44
+(2h)CANE++_397.xml
+     101
+(2h)CAPITAL-LETTER_2686.xml
+      30
+(2h)CAT+_418.xml
+      40
+(2h)CAT_2++_419.xml
+      48
+(2h)CHRISTMAS_488.xml
+      48
+(2h)DELETE_835.xml
+      44
+(2h)DEVIL^MISCHIEVOUS+_674.xml
+      50
+(2h)DONKEY++_678.xml
+      47
+(2h)DRIBBLE++SHOOT-BASKET_3056.xml
+      59
+(2h)EMERGENCY_839.xml
+      48
+(2h)FEEL+_932.xml
+      54
+(2h)FURNITURE_1071.xml
+      51
+(2h)GIVE_1097.xml
+      52
+(2h)HANG-UP-PHONE_2238.xml
+      34
+(2h)HILLS_2646.xml
+      66
+(2h)HILL_2644.xml
+      58
+(2h)HORSE+++_672.xml
+      45
+(2h)HORSE+ICL S(holding moving pole)++_3179.xml
+       0
+(2h)HORSE+RIDE-ON+_3147.xml
+      42
+(2h)KINDERGARTEN_2548.xml
+      51
+(2h)LOOK-DOWN_2701.xml
+      37
+(2h)LOOK-FORWARD_2703.xml
+      49
+(2h)LOOK-UP_2700.xml
+      34
+(2h)MISCHIEVOUS+_675.xml
+      49
+(2h)RAINBOW_1863.xml
+      22
+(2h)SAME+_1956.xml
+      30
+(2h)SAME_2_1959.xml
+      34
+(2h)SCL F(small circle)_3145.xml
+       0
+(2h)SHAME_2033.xml
+      24
+(2h)SHIRT_2812.xml
+      22
+(2h)THANK-YOU+SUGGEST_3278.xml
+      24
+(2h)THING_2946.xml
+      53
+(2h)THINK+SHOCK_3255.xml
+      31
+(2h)THUMBS-UP^GOOD_1118.xml
+      48
+(2h)alt.ANGRY+_2876.xml
+      35
+(2h)alt.COME_542.xml
+      64
+(2h)alt.CREATE^PRETEND_1341.xml
+      69
+(2h)alt.CRY_622.xml
+      68
+(2h)alt.DRIP+_788.xml
+      74
+(2h)alt.EAT+_817.xml
+      65
+(2h)alt.EGO_823.xml
+      76
+(2h)alt.ENGINEERING+AGENT_3101.xml
+      64
+(2h)alt.FIRE+PLACE_3112.xml
+      81
+(2h)alt.FIRE+_970.xml
+      73
+(2h)alt.HAIRCUT++_1510.xml
+      59
+(2h)alt.HAIRCUT+AGENT_3044.xml
+      68
+(2h)alt.LONG-AGO+_1241.xml
+      69
+(2h)alt.PULL_1835.xml
+      36
+(2h)alt.USE-SIGN-LANGUAGE+_2036.xml
+      36
+(2h)ns-GOLDEN-ARCHES_2605.xml
+      68
+(3)ACCIDENT_44.xml
+      43
+(3)HELICOPTER_1081.xml
+      50
+(3)INJECT_1325.xml
+      45
+(3)LISTEN++_1468.xml
+      44
+(3)WALK_1007.xml
+      47
+(4)STRIPES_2169.xml
+      30
+(5)ACCIDENT_43.xml
+      45
+(5)CRASH_45.xml
+      57
+(5)CRAZY+_2872.xml
+      31
+(5)FACE+SAME_3170.xml
+      37
+(5)FACE+_888.xml
+      47
+(5)FEET_1004.xml
+      68
+(5)FOOT_1003.xml
+      71
+(5)INSPIRE_1329.xml
+      52
+(5)MAN_1516.xml
+      51
+(5)THROW_2258.xml
+      37
+(5)WEATHER_1860.xml
+      22
+(5)WOMAN_1519.xml
+      54
+(5-C-L)BRAKE_334.xml
+      45
+(8)LEAD_985.xml
+      44
+(8)SKUNK_2057.xml
+      26
+(A)APPOINTMENT_121.xml
+      53
+(A)BEACH_228.xml
+      63
+(A)BLANKET_276.xml
+      56
+(A)BLUSH-BRUSH_359.xml
+      83
+(A)CABBAGE_2967.xml
+      45
+(A)CONFRONT_567.xml
+      57
+(A)PLACE_2513.xml
+      50
+(A)SELF-1p+_1233.xml
+      47
+(A)SELF-1p-pl_1235.xml
+      50
+(A)TOOTHPASTE_2284.xml
+      49
+(A)ns-AFRICA+ns-AMERICA+AGENT_3036.xml
+     124
+(A)ns-AFRICA_66.xml
+      64
+(A)ns-ASIA_145.xml
+     106
+(B)BLINDS_281.xml
+      77
+(B)HOSPITAL_2_1261.xml
+      59
+(B)SPECIALTY_1499.xml
+      62
+(B-L)NAPKIN+_1647.xml
+      25
+(B-L)PRAY+_1811.xml
+      35
+(B-L)WASH-FACE+_2469.xml
+      64
+(B-L)WASH-HANDS+_2471.xml
+      77
+(C)BELONG_249.xml
+      40
+(C)VOMIT_2353.xml
+      40
+(D)ART^DESIGN_140.xml
+      40
+(D)DAY_659.xml
+      53
+(D)DEPRESS_940.xml
+      97
+(D)DEVELOP_702.xml
+      57
+(D)DINOSAUR_716.xml
+      53
+(D)DOCTOR+_757.xml
+      49
+(E)E-MAIL_808.xml
+      41
+(E)ELECTRIC_829.xml
+      60
+(F)BADGE_185.xml
+      51
+(F)EXACT_870.xml
+      56
+(F)FUTURE_1073.xml
+      45
+(F)NECKLACE_2854.xml
+      21
+(F)SUNRISE_2196.xml
+      20
+(F)SUNSET_2198.xml
+      19
+(F^9)WHISTLE_2317.xml
+      34
+(G)GLUE++_1112.xml
+      61
+(G)GOLD_2790.xml
+      20
+(G)GOVERNMENT_401.xml
+      39
+(G)GYM_1150.xml
+      51
+(G)SKIN_2052.xml
+      22
+(G)THANKSGIVING_2943.xml
+      44
+(G)TRASH^BAG_206.xml
+      54
+(H)EVERY-THURSDAY_2266.xml
+      48
+(H)HOSPITAL_2_1262.xml
+      55
+(H)HUMBLE_1273.xml
+      49
+(Horns)CURSE_494.xml
+      50
+(Horns)SERVICE_2008.xml
+      35
+(Horns)SHOOT-ARROW_134.xml
+      50
+(I)IRON-METAL_2894.xml
+      27
+(K)KICK_1380.xml
+      40
+(K)KILL_1383.xml
+      69
+(K)KITCHEN_2768.xml
+      22
+(L)CRY+_623.xml
+      46
+(L)LEATHER+_1425.xml
+      47
+(L)LIVE+BOX^ROOM_3166.xml
+      33
+(L)LIVE_1443.xml
+      38
+(L)REVIEW_1910.xml
+      23
+(L)RIFLE_1146.xml
+      57
+(L-X)CORN_4_586.xml
+      67
+(L-X)INTERESTING_1333.xml
+      45
+(L-X)THICK_2250.xml
+      43
+(M)MATERIAL_1532.xml
+      64
+(M)MEMBER_1553.xml
+      47
+(M)MODEL+_2903.xml
+      24
+(M)MONEY+_1597.xml
+      51
+(M)SHOW_694.xml
+      54
+(M)ns-MEXICO_2884.xml
+      25
+(O)DIPLOMA_718.xml
+      45
+(O)KNOW-NOTHING_2666.xml
+      51
+(O)ORBIT+_2112.xml
+      44
+(O)SPEECH^ORAL+_2750.xml
+      23
+(P)PARANOID_1296.xml
+      49
+(P)PARTICIPATE_2770.xml
+      24
+(P)PARTY+_1780.xml
+      24
+(P)PAY++FINISH_3331.xml
+      30
+(P)PAY_1737.xml
+      38
+(P)PENIS+_1741.xml
+      44
+(P)PERFECT_872.xml
+      64
+(P)PROFESSION_1504.xml
+      52
+(R)BEST-FRIEND_1052.xml
+      44
+(R)DONUT_774.xml
+      53
+(R)FLOWER_1939.xml
+      21
+(R)RABBI_2_1854.xml
+      26
+(R)RAM_1866.xml
+      35
+(R)REFER_1883.xml
+      26
+(R)RELATIVE_1054.xml
+      46
+(R)RESEARCH++_1896.xml
+      27
+(R)RESPONSIBILITY+_1903.xml
+      28
+(R)RETIRE_2713.xml
+      40
+(R)SCREWDRIVER+_1986.xml
+      23
+(R)SHOW+AGENT_3244.xml
+      46
+(R)SHOW_695.xml
+      56
+(R)SUGGEST_1876.xml
+      27
+(R)SUPPORT+_1886.xml
+      31
+(S)ABORTION_18.xml
+      62
+(S)APPLE_117.xml
+      43
+(S)BASEBALL_201.xml
+      57
+(S)BOMB_2_304.xml
+      57
+(S)BOMB_303.xml
+      49
+(S)BORN_308.xml
+      44
+(S)BROOM_353.xml
+      61
+(S)DRESSER+_780.xml
+      62
+(S)KETCHUP+_2887.xml
+      23
+(S)MOSQUITO+_2153.xml
+      58
+(S)OLD+#FF_3371.xml
+      24
+(S)OLD++AVERAGE_3234.xml
+      39
+(S)OLD+FIVE_2_3368.xml
+      13
+(S)OLD+FOUR_2_3366.xml
+      17
+(S)OLD+LESS-THAN_3185.xml
+      36
+(S)OLD+ONE_2_3361.xml
+      18
+(S)OLD+THREE_2_3365.xml
+      16
+(S)OLD+TWO_2_3363.xml
+      16
+(S)OLD_78.xml
+      51
+(S)PURSE+_1844.xml
+      27
+(T)TWINS_2962.xml
+      46
+(U)BOWTIE_325.xml
+      49
+(U)KNIFE+_1402.xml
+      50
+(U)SECRETARY_1993.xml
+      26
+(U)TWINS_2963.xml
+      49
+(U-L)BUILDING+_365.xml
+      60
+(U-L)HUNTING_1148.xml
+      50
+(V)CRAWL_2822.xml
+      30
+(V)DROWN_792.xml
+      49
+(V)HAVE_1186.xml
+      39
+(V)NAB_406.xml
+      46
+(V)THINK+MEAN_3150.xml
+      31
+(V)VODKA+_2349.xml
+      45
+(Vulcan)FAX_927.xml
+      50
+(Vulcan)FILE_950.xml
+      47
+(W)WAR++_2363.xml
+      58
+(X)FOOL^DOLL+(D)DAY_3412.xml
+      27
+(X)FOOL^DOLL_2783.xml
+      21
+(X-over-thumb)CELEBRATE_431.xml
+      59
+(X-over-thumb)CHECK++_462.xml
+      71
+(X-over-thumb)MOP_355.xml
+      70
+(Y)BATHING-SUIT_215.xml
+      57
+(Y)BULL_371.xml
+      55
+(Y)COUNTRY+_600.xml
+      55
+(Y)DRINK_784.xml
+      85
+(Y)LANTERN_1415.xml
+      66
+(Y)SHAVE_2019.xml
+      29
+(Y)YAWN_2449.xml
+      45
+(bent-1)TIPTOE+_2271.xml
+      81
+(bent-B-L)FOREHEAD_1020.xml
+      62
+(bent-B-L)NOW+_1688.xml
+      27
+(bent-B-L)WAIST_2358.xml
+      45
+(cheek)BLIND_279.xml
+      43
+(cocked-8)FOOL_2784.xml
+      18
+(cocked-8)SHOOT-ARROW_133.xml
+      67
+(crvd-3)BOWLING_323.xml
+      62
+(crvd-3)CHAMP_445.xml
+      66
+(crvd-3)CHANNEL_453.xml
+      42
+(crvd-5)BASKETBALL_209.xml
+      52
+(crvd-B)BACKPACK_180.xml
+      45
+(crvd-B)STORY+_2164.xml
+      38
+(crvd-L)GYM++_1151.xml
+      49
+(crvd-L)RABBI+_1852.xml
+      28
+(crvd-V)BRIDGE_346.xml
+      71
+(crvd-V)CHAMP_446.xml
+      48
+(crvd-sprd-B)AMBULANCE_2681.xml
+      49
+(elbow)CHEAT_460.xml
+      49
+(flat-O)BLUSH-BRUSH_360.xml
+      79
+(flat-O)PAY^SPEND++_930.xml
+      59
+(nd-1)BAWL-OUT_222.xml
+      51
+(nd-1)DISCIPLINE_736.xml
+      53
+(nd-1)ELEVATOR+_833.xml
+      44
+(nd-1)FIRST-IN-LIST_3116.xml
+      33
+(nd-1)FORCE_1016.xml
+      44
+(nd-1)MOVIE+_1630.xml
+      22
+(nd-B)FIRED_972.xml
+      40
+(nd-B)ISLAND^INTEREST+_2773.xml
+      38
+(nd-B)MOUNTAIN_1620.xml
+      30
+(nd-B)SPECIALTY_1500.xml
+      47
+(nd-B-L)FILE_949.xml
+      46
+(nd-B-L)LIGHT-MATCH_1530.xml
+      44
+(nd-B-L)MINUTE_1579.xml
+      46
+(nd-E)EQUIPMENT_860.xml
+      68
+(nd-S)APPOINTMENT_122.xml
+      45
+(nd-S)HARP+_1180.xml
+      90
+(nd-S)INSTITUTE_1898.xml
+      24
+(nd-S)INSTITUTE_2_1899.xml
+      27
+(nd-U)RESTLESS++_1441.xml
+      49
+(nd-flat-O)ABOUT_2398.xml
+      51
+(parallel)RUN_1944.xml
+      24
+(rd)FRESHMAN_2+_1045.xml
+      63
+(rd)HELP+_2696.xml
+      44
+(rd)JUNIOR_3++_1374.xml
+      57
+(rd)KITE_1395.xml
+      79
+(rd)PLASTIC+_983.xml
+      67
+(rd)SOPHOMORE_2++_2093.xml
+      25
+1p-HELP i_2695.xml
+       0
+1p-MEET i_1551.xml
+       0
+1p-RELATIONSHIP_253.xml
+      47
+A-LEVEL-ABOVE_23.xml
+      45
+A-LOT_97.xml
+      54
+ABANDON_13.xml
+      42
+ABDOMEN+_2670.xml
+      61
+ABORTION_15.xml
+     100
+ABORTION_2_16.xml
+      54
+ABOUT_2397.xml
+      50
+ABOVE_19.xml
+      57
+ABOVE_2_20.xml
+      48
+ABOVE_3_21.xml
+      98
+ABSENT_1584.xml
+      53
+ABSTRACT+_2672.xml
+      49
+ABUSE+_236.xml
+      61
+ACCEPT_41.xml
+      36
+ACCIDENT_42.xml
+      45
+ACCOMPANY_46.xml
+      43
+ACQUIRE_2485.xml
+      56
+ACT+AGENT_3425.xml
+      33
+ACT+_53.xml
+      86
+ACTION++_752.xml
+      91
+ADAPT_450.xml
+      42
+ADDICTED_2675.xml
+      33
+ADDRESS_1444.xml
+      55
+ADDRESS_2_1445.xml
+      48
+ADD_55.xml
+      47
+ADMIT_59.xml
+      48
+ADULT-TALL_26.xml
+      59
+ADULT-pl_25.xml
+      72
+ADULTERY_2677.xml
+      39
+ADULT_24.xml
+      47
+ADVENTUROUS^SNEAKY_2595.xml
+      55
+ADVERTISE+_2494.xml
+      59
+ADVERTISE_2_2495.xml
+      61
+ADVISE^INFLUENCE+AGENT_3034.xml
+      60
+ADVISE^INFLUENCE_2_62.xml
+      56
+ADVISE^INFLUENCE_61.xml
+      51
+AFRAID_64.xml
+      41
+AFTERNOON+_67.xml
+      55
+AFTERNOON_2_68.xml
+      57
+AGAINST_1704.xml
+      20
+AGAIN_70.xml
+      49
+AGE-FIVE_3369.xml
+      16
+AGE-FOUR_3367.xml
+      15
+AGE-ONE_3362.xml
+      17
+AGE-TWO_3364.xml
+      14
+AGENT_1750.xml
+      45
+AGGRESSIVE+_54.xml
+      72
+AGREE i_80.xml
+       0
+AGREE_79.xml
+      45
+AHEAD_2419.xml
+      41
+AIR-PUMP++_1837.xml
+      34
+AIRPLANE++AGENT_3384.xml
+      35
+AIRPLANE_83.xml
+      59
+AIR_82.xml
+      68
+ALARM+_85.xml
+      55
+ALCOHOL+_86.xml
+      48
+ALGEBRA+_1536.xml
+      41
+ALGEBRA_2+_1537.xml
+      55
+ALL-AFTERNOON_69.xml
+      60
+ALL-DAY_91.xml
+      51
+ALL-NIGHT-AFTER-MIDNIGHT_1572.xml
+      59
+ALL-NIGHT_1573.xml
+      67
+ALL-NIGHT_2_1574.xml
+      65
+ALL-RIGHT+_93.xml
+      54
+ALL-TOGETHER_48.xml
+      67
+ALLERGY_2678.xml
+      47
+ALLIGATOR_94.xml
+      49
+ALLOW_95.xml
+      49
+ALL_88.xml
+      57
+ALMOST+_2788.xml
+      19
+ALONE+_1.xml
+     111
+ALSO_1961.xml
+      32
+ALWAYS+FOREVER_2_3408.xml
+      36
+ALWAYS_7.xml
+      48
+AMAZED_169.xml
+      60
+AMBULANCE_2680.xml
+      61
+AMONG_2_100.xml
+      54
+AMONG_99.xml
+      55
+ANALYZE-LIST+_104.xml
+      69
+ANALYZE_102.xml
+      55
+ANALYZE_2_103.xml
+      64
+AND_109.xml
+      46
+ANGEL_1000.xml
+      52
+ANGLE_2579.xml
+      30
+ANIMAL+_1190.xml
+      45
+ANNOUNCE_2938.xml
+      45
+ANNOUNCE_2_2939.xml
+      40
+ANSWER+AGENT_3241.xml
+      27
+ANSWER_111.xml
+      44
+ANY+ONE_3394.xml
+      20
+ANY+THING_3406.xml
+      29
+ANY+WHERE_3103.xml
+      52
+ANYWAY^NOT-MATTER_1350.xml
+      52
+ANY_114.xml
+      38
+APPLAUSE+_498.xml
+      56
+APPLE_116.xml
+      45
+APPLY_118.xml
+      39
+APPOINTMENT_120.xml
+      50
+APPOINT_119.xml
+      51
+APPROVE^VETO_129.xml
+      40
+APPROVE_127.xml
+      50
+ARGUE+_1847.xml
+      28
+ARM+SHORT-SLEEVE_1924.xml
+      37
+ARM_1921.xml
+      25
+AROUND_2510.xml
+      75
+ARRIVE_137.xml
+      50
+ARTICLE_141.xml
+      39
+ART^DESIGN+AGENT_3037.xml
+      76
+ART^DESIGN_138.xml
+      48
+ART^DESIGN_2+_139.xml
+      38
+ASK_2991.xml
+      40
+ASK_2_2992.xml
+      33
+ASSAULT_235.xml
+      45
+ASSIST_2514.xml
+      57
+ASSOCIATION_907.xml
+      45
+ASTONISHED_168.xml
+      58
+ASTRAY_2596.xml
+      57
+ATTEMPT_2303.xml
+      41
+ATTENTION-WAVE_2373.xml
+      46
+ATTITUDE_153.xml
+      50
+ATTITUDE_2_154.xml
+      46
+AUCTION_2682.xml
+      48
+AUDIENCE_156.xml
+      60
+AUDIOLOGY+AGENT_3040.xml
+      70
+AUDIOLOGY_157.xml
+      47
+AUNT_158.xml
+      51
+AUNT_2_159.xml
+      47
+AUTHORITY_846.xml
+      52
+AUTUMN_2476.xml
+      49
+AVAILABLE+_1644.xml
+      20
+AVERAGE^RANGE_2899.xml
+      34
+AVERAGE_2898.xml
+      21
+AVOID^FALL-BEHIND_2421.xml
+      38
+AWKWARD_172.xml
+      57
+A_11.xml
+      48
+BABY_174.xml
+      73
+BACHELOR_5.xml
+      55
+BACKGROUND_178.xml
+      51
+BACKPACK_179.xml
+      47
+BACKSTAB_130.xml
+      44
+BACK_3007.xml
+      48
+BACON_181.xml
+      39
+BACON_2_182.xml
+      47
+BAD+DREAM_3192.xml
+      37
+BADGE_183.xml
+      65
+BADGE_2_184.xml
+      58
+BAD_2384.xml
+      43
+BAG_204.xml
+      51
+BAKE^OVEN_1456.xml
+      44
+BAKING-SPRINKLES_2118.xml
+      24
+BALANCE+_1009.xml
+      62
+BALD+ALL-GONE_189.xml
+      53
+BALD_188.xml
+      64
+BALLOON_191.xml
+      49
+BALL_190.xml
+      39
+BANANA_193.xml
+      47
+BANDAID_194.xml
+      44
+BAPTIST_196.xml
+      52
+BARK_198.xml
+      63
+BARK_2_199.xml
+      59
+BAR_197.xml
+      60
+BASEBALL_200.xml
+      49
+BASEBALL_2_202.xml
+      46
+BASEMENT+_36.xml
+      69
+BASKETBALL_208.xml
+      48
+BASKET_203.xml
+      48
+BATH+BATHROBE_2838.xml
+      40
+BATH+COAT_2839.xml
+      38
+BATH+DCL crvd-B(big round tub)_3306.xml
+       0
+BATH+DRESS^CLOTHES_2837.xml
+      38
+BATH+fs-TUB_3305.xml
+      35
+BATHING-SUIT_214.xml
+      62
+BATHROBE_2836.xml
+      27
+BATH_213.xml
+      53
+BAT_210.xml
+      62
+BAT_2_211.xml
+      59
+BAT_3+_212.xml
+      68
+BAWL-OUT_221.xml
+      52
+BEACH_227.xml
+      66
+BEADED-NECKLACE_2855.xml
+      23
+BEANS_469.xml
+      84
+BEARD_1039.xml
+      45
+BEAR_231.xml
+      55
+BEAT_2_570.xml
+      43
+BEAT_3_2585.xml
+      21
+BEAT_569.xml
+      40
+BEAUTIFUL+DRESS^CLOTHES_3211.xml
+      29
+BEAUTIFUL_1818.xml
+      24
+BEAUTIFUL_2_1819.xml
+      26
+BEAVER_2600.xml
+      44
+BECAUSE_237.xml
+      44
+BECOME+QUIET_3214.xml
+      28
+BECOME-FAT_920.xml
+      51
+BECOME_238.xml
+      47
+BECOME_2_239.xml
+      59
+BED+BOX^ROOM_3047.xml
+      60
+BED+CUSHION+++_3175.xml
+      35
+BED_240.xml
+      51
+BEER_357.xml
+      52
+BEE_2151.xml
+      17
+BEFORE_2+SCHOOL_3226.xml
+      34
+BEFORE_2_513.xml
+      44
+BEG+AGENT_3048.xml
+      51
+BEG_2+AGENT_3049.xml
+      60
+BEG_242.xml
+      53
+BEG_2_243.xml
+      60
+BEHAVIOR_753.xml
+      65
+BEHIND_2420.xml
+      59
+BELL_247.xml
+      98
+BELONG_248.xml
+      46
+BELOW_2+_39.xml
+      64
+BELOW_38.xml
+      67
+BELT_2829.xml
+      19
+BENEFIT_255.xml
+      64
+BERRY_2542.xml
+      43
+BEST-FRIEND_1051.xml
+      50
+BEST_257.xml
+      55
+BETTER_256.xml
+      40
+BETWEEN^SHARE+AGENT_3381.xml
+      32
+BETWEEN^SHARE_2897.xml
+      26
+BET_448.xml
+      36
+BICYCLE_258.xml
+      67
+BIG-HEADED_263.xml
+      53
+BIG_259.xml
+      49
+BIG_2_260.xml
+      55
+BIG_3_261.xml
+      51
+BIG_4_262.xml
+      60
+BIKE-PUMP_2913.xml
+      31
+BILLIARDS_1792.xml
+      32
+BILLION_2_75.xml
+      43
+BILLION_74.xml
+      68
+BILL^OWE-1p++_1738.xml
+      50
+BIND^TIE-UP_684.xml
+      50
+BIOLOGY+_1977.xml
+      31
+BIRD++PECK+_3373.xml
+      29
+BIRD_266.xml
+      46
+BIRTHDAY_269.xml
+      58
+BIRTH_309.xml
+      47
+BISON^BUFFALO_679.xml
+      41
+BITE-NAILS_2588.xml
+      86
+BITE_270.xml
+      43
+BITE_2_271.xml
+      42
+BITTER_734.xml
+      48
+BLACK+BERRY_3307.xml
+      37
+BLACK+fs-BERRY_3308.xml
+      29
+BLACK-OUT_2185.xml
+      20
+BLACK_272.xml
+      44
+BLAME-1p_51.xml
+      60
+BLAME_50.xml
+      50
+BLANK-OUT_1022.xml
+      48
+BLANKET_273.xml
+      63
+BLANKET_2_274.xml
+      62
+BLANKET_3_275.xml
+      58
+BLESS_277.xml
+      48
+BLINDFOLD_1102.xml
+      52
+BLINDS_280.xml
+      48
+BLIND_278.xml
+      69
+BLINK^WINK_282.xml
+      49
+BLOCK_2545.xml
+      44
+BLOND_283.xml
+      46
+BLOOD_285.xml
+      48
+BLOSSOM_286.xml
+      42
+BLOUSE_2833.xml
+      24
+BLOW-NOSE_287.xml
+      74
+BLOW-NOSE_2_288.xml
+      44
+BLOW-UP_291.xml
+      63
+BLUE+BERRY_3436.xml
+      36
+BLUE+fs-BERRY_3437.xml
+      25
+BLUE_292.xml
+      46
+BLUSH-BRUSH_358.xml
+      78
+BLUSH_837.xml
+      45
+BOARD_2619.xml
+      53
+BOAT_293.xml
+      56
+BOAT_2_294.xml
+      53
+BODY_297.xml
+      50
+BOIL_299.xml
+      61
+BOMB_302.xml
+      52
+BONE_2044.xml
+      24
+BOOK-PAGE+_1716.xml
+      57
+BOOK-pl_2526.xml
+      56
+BOOK_2525.xml
+      30
+BOOT+_2024.xml
+      22
+BORE_306.xml
+      45
+BORN_307.xml
+      47
+BORROW_310.xml
+      64
+BOSS+LOWERCASE^TINY_3313.xml
+      26
+BOSS_313.xml
+      50
+BOTHER-1p++_1338.xml
+      56
+BOTHER_1337.xml
+      55
+BOTH_316.xml
+      38
+BOTTLE-pl_318.xml
+      56
+BOTTLE_317.xml
+      46
+BOWEL-MOVEMENT_2486.xml
+      47
+BOWL-pl_2524.xml
+      75
+BOWLING-STRIKE_2166.xml
+      19
+BOWLING-STRIKE_2_2167.xml
+      24
+BOWLING_2_322.xml
+      59
+BOWLING_321.xml
+      61
+BOWL_2523.xml
+      36
+BOWTIE_324.xml
+      60
+BOXING+_946.xml
+      66
+BOXING_2+_947.xml
+      65
+BOX^ROOM-pl_2458.xml
+      44
+BOX^ROOM_2457.xml
+      35
+BOX_2_2459.xml
+      43
+BOY+ALSO_2845.xml
+      27
+BOY+BABY_2090.xml
+      31
+BOY+CORRECT_2843.xml
+      24
+BOY+DCL(round flat)_3174.xml
+       0
+BOY+FRIEND_3057.xml
+      56
+BOY_2+ALSO_2846.xml
+      27
+BOY_2+CORRECT+LAW_3430.xml
+      37
+BOY_2+CORRECT_2844.xml
+      28
+BOY_3+MARRY_2998.xml
+      57
+BOY_326.xml
+      51
+BPCL B(tapping foot)_1010.xml
+       0
+BRA+UNDERPANTS_216.xml
+      64
+BRACELET_2_330.xml
+      54
+BRACELET_329.xml
+      66
+BRAG_332.xml
+      67
+BRAKE_333.xml
+      41
+BRAVE^RECOVER_2488.xml
+      39
+BRAWL_335.xml
+      49
+BRA_2_328.xml
+      51
+BRA_327.xml
+      46
+BREAD+DCL(rounded rectangle)_3167.xml
+       0
+BREAD_337.xml
+      56
+BREAK-DOWN-BUILDING_341.xml
+      68
+BREAK-DOWN_340.xml
+      45
+BREAK_339.xml
+      42
+BREASTS_343.xml
+      53
+BREATHE_344.xml
+      65
+BRIDGE_345.xml
+      55
+BRING-1p_348.xml
+      51
+BRING_347.xml
+      62
+BROKE_350.xml
+      38
+BROOM_2_352.xml
+      63
+BROOM_351.xml
+      62
+BROTHER+IN+LAW_3431.xml
+      36
+BROTHER-pl+_2842.xml
+      35
+BROTHER_2841.xml
+      21
+BROWN_356.xml
+      62
+BRUSH-TEETH+_2281.xml
+      47
+BUCKET_2840.xml
+      23
+BUG_361.xml
+      46
+BUILDING_364.xml
+      56
+BUILD_363.xml
+      58
+BULL_370.xml
+      61
+BURY_372.xml
+      47
+BUSINESS_2++_374.xml
+      46
+BUSINESS_3+_375.xml
+      53
+BUSINESS_373.xml
+      54
+BUSY+_376.xml
+      55
+BUSY_2++_377.xml
+      50
+BUSY_3++++_378.xml
+      50
+BUTTER+_380.xml
+      48
+BUTTERFLY+_382.xml
+      43
+BUTTER_2_381.xml
+      45
+BUTTON++_383.xml
+      52
+BUT_379.xml
+      41
+BUY++AGENT_3068.xml
+      65
+BUY_1598.xml
+      45
+B_173.xml
+      45
+CABBAGE+_2966.xml
+      51
+CABINET+_385.xml
+      50
+CAESAREAN-SECTION_2622.xml
+      55
+CAESAREAN-SECTION_2_2621.xml
+      40
+CAFETERIA_1907.xml
+      23
+CAKE_387.xml
+      49
+CALCULATOR+_964.xml
+      80
+CALCULUS+_1539.xml
+      59
+CALENDAR_2623.xml
+      55
+CALENDAR_2_2624.xml
+      46
+CALL-BY-PHONE_2236.xml
+      37
+CALL-ON-RELAY^VRS_2234.xml
+      36
+CALM-DOWN_2625.xml
+      35
+CAMERA+_389.xml
+      50
+CAMERA-FLASH_2487.xml
+      38
+CAMP_2957.xml
+      38
+CANCEL^CRITICIZE_590.xml
+      45
+CANDLE_393.xml
+      49
+CANDY++DCL(cane)_3434.xml
+      35
+CANDY+fs-CANE_3433.xml
+      34
+CANDY_712.xml
+      64
+CANE+_396.xml
+      62
+CANNOT_399.xml
+      36
+CAN_391.xml
+      39
+CAPITAL-LETTER_2685.xml
+      41
+CAPTIONS+_2536.xml
+      50
+CAR+DCL 1(speedometer)_3263.xml
+       0
+CAR+DCL(long flat surface)_3396.xml
+       0
+CAR+DCL(long flat surface)_3397.xml
+       0
+CAR+ENGINE+_3098.xml
+      76
+CAR+TRUNK_3099.xml
+      67
+CAR+_407.xml
+      48
+CAR-HORN+_1252.xml
+      52
+CAR-HORN_2+_1253.xml
+      54
+CARDIGAN_2206.xml
+      26
+CARDIGAN_2_2207.xml
+      20
+CARE++AGENT_3136.xml
+      30
+CARE+_223.xml
+      51
+CARELESS+_410.xml
+      65
+CARE_2+_224.xml
+      67
+CARPENTER+_412.xml
+      55
+CARROT_2+_416.xml
+      49
+CARROT_414.xml
+      47
+CARRY-SUITCASE++_1484.xml
+      66
+CARRY_349.xml
+      63
+CASHIER+AGENT_3442.xml
+      40
+CASHIER_963.xml
+      59
+CAT+UP_2889.xml
+      17
+CAT+_417.xml
+      68
+CAT+fs-UP_2888.xml
+      17
+CATCH-BALL_2_421.xml
+      43
+CATCH-BALL_3_422.xml
+      62
+CATCH-BALL_420.xml
+      41
+CATCH_2_424.xml
+      50
+CATCH_423.xml
+      42
+CATERPILLAR+_426.xml
+      44
+CATERPILLAR_2++_427.xml
+      46
+CATHOLIC_428.xml
+      47
+CAUSE_429.xml
+      44
+CEILING_2729.xml
+      35
+CELEBRATE+(2h)IX-honorific upward_432.xml
+       0
+CELEBRATE_430.xml
+      51
+CENT+EIGHT_3095.xml
+      30
+CENT+FIVE_3191.xml
+      16
+CENT+ONE_3217.xml
+      16
+CENT+TEN_3083.xml
+      45
+CENT+TWENTY-FIVE_3233.xml
+      24
+CENTER+ns-AMERICA_436.xml
+      79
+CENTER_433.xml
+      53
+CEREAL++_2096.xml
+      30
+CEREAL_2++_2097.xml
+      28
+CERTIFY_437.xml
+      59
+CHAIN^OLYMPICS_254.xml
+      50
+CHALK_438.xml
+      50
+CHALLENGE_439.xml
+      46
+CHAMP_444.xml
+      48
+CHANCE_447.xml
+      44
+CHANGE_449.xml
+      41
+CHANNEL+_452.xml
+      48
+CHAPTER_142.xml
+      35
+CHARACTERISTIC_2818.xml
+      27
+CHARACTER_2817.xml
+      29
+CHASE_2425.xml
+      69
+CHAT+_577.xml
+      68
+CHEAP_456.xml
+      37
+CHEAT_2+_458.xml
+      54
+CHEAT_457.xml
+      53
+CHECKERS_464.xml
+     110
+CHECKING-ACCOUNT_467.xml
+      80
+CHECK_461.xml
+      45
+CHECK_LIST++_463.xml
+      71
+CHEESE+_470.xml
+      94
+CHEMISTRY+_1978.xml
+      27
+CHERISH_2761.xml
+      20
+CHERRY_2543.xml
+      39
+CHEST_2+_472.xml
+      58
+CHEST_471.xml
+     136
+CHEW+_2462.xml
+      59
+CHILD+_27.xml
+      62
+CHILDREN+_28.xml
+      49
+CHIN_2_733.xml
+      62
+CHIN_732.xml
+      60
+CHOCOLATE+_479.xml
+      48
+CHOKE-1p_484.xml
+      63
+CHOKE_483.xml
+      56
+CHOOSE_995.xml
+      43
+CHRISTMAS_2_487.xml
+      48
+CHRISTMAS_486.xml
+      55
+CHRIST_1391.xml
+      42
+CHURCH+_489.xml
+      46
+CIGARETTE+_492.xml
+      51
+CIGAR_495.xml
+      59
+CIRCLE_496.xml
+      52
+CIRCUMCISE_497.xml
+      52
+CITY^COMMUNITY_2+++_548.xml
+      67
+CITY^COMMUNITY_3+_549.xml
+      58
+CITY^COMMUNITY_547.xml
+      55
+CLASS+BOX^ROOM_3390.xml
+      31
+CLASS-pl_903.xml
+      60
+CLASS_2_902.xml
+      42
+CLASS_901.xml
+      42
+CLEAR_1450.xml
+      39
+CLEVER_500.xml
+      38
+CLIMB+_2823.xml
+      29
+CLIMBING-ROCKS++_1412.xml
+      47
+CLIP-NAILS_503.xml
+      51
+CLOSE-DOOR_2472.xml
+      44
+CLOSE-DOOR_2_2473.xml
+      34
+CLOSE-WINDOW_2850.xml
+      18
+CLOSE_505.xml
+      55
+CLOUD_2527.xml
+      42
+CLOUD_2_2528.xml
+      52
+CLOWN_2849.xml
+      23
+COACH_314.xml
+      49
+COAT_522.xml
+      39
+COCAINE_2689.xml
+      44
+COCAINE_2_2690.xml
+      52
+COCKTAIL_785.xml
+      47
+COCONUT_523.xml
+      52
+COFFEE_1507.xml
+      54
+COINS^CHANGE_2_525.xml
+      53
+COINS^CHANGE_524.xml
+      55
+COLD+DOOR_3382.xml
+      44
+COLD_528.xml
+      50
+COLLAPSE_660.xml
+      51
+COLLAR_2851.xml
+      21
+COLLECT_529.xml
+      55
+COLLECTwg_530.xml
+      73
+COLLEGE-pl_2532.xml
+      82
+COLLEGE_2531.xml
+      39
+COLOR_532.xml
+      56
+COMB+_537.xml
+      52
+COME-ON_539.xml
+      49
+COME_540.xml
+      41
+COMFORTABLE_2_367.xml
+      70
+COMFORTABLE_366.xml
+      68
+COMMITTEE_1554.xml
+      47
+COMMON-SENSE_2550.xml
+      32
+COMMUNICATE+MISCOMMUNICATE_545.xml
+      56
+COMMUNICATE+_543.xml
+      56
+COMMUNIST_546.xml
+      50
+COMMUTE+_550.xml
+      61
+COMPARE+_1998.xml
+      28
+COMPETITION+_440.xml
+      49
+COMPLAIN^OBJECT_596.xml
+      41
+COMPLICATED_2626.xml
+      49
+COMPUTER+_551.xml
+      65
+COMPUTER_2+_552.xml
+      68
+COMPUTER_3+_553.xml
+      72
+COMPUTER_4_554.xml
+      54
+CONCEPT_555.xml
+      39
+CONCERN+_935.xml
+      53
+CONCLUSION_563.xml
+      45
+CONDUCT-MUSIC+_564.xml
+      74
+CONDUCTOR_565.xml
+      50
+CONFIDENTIAL_2820.xml
+      20
+CONFIDENT_2819.xml
+      19
+CONFLICT^INTERSECTION_587.xml
+      48
+CONFRONT_566.xml
+      42
+CONFUSE_1590.xml
+      70
+CONGRATULATIONS_568.xml
+      54
+CONSTITUTION_2132.xml
+      26
+CONTACT+_572.xml
+      45
+CONTACT-LENSES_573.xml
+      47
+CONTINUE_571.xml
+      46
+CONVINCE_2_576.xml
+      71
+CONVINCE_575.xml
+      47
+COOKIE_579.xml
+      47
+COOKING_2765.xml
+      26
+COOK^KITCHEN+AGENT_3064.xml
+      90
+COOK^KITCHEN+BOX^ROOM_3157.xml
+      41
+COOK^KITCHEN_2766.xml
+      20
+COOL_1783.xml
+      25
+COOPERATE^UNITE_251.xml
+      61
+COP+RESEARCH++_3310.xml
+      39
+COP+_1789.xml
+      27
+COPY-DOWN_2861.xml
+      22
+COPY_2_581.xml
+      33
+COPY_580.xml
+      42
+COP_2_1790.xml
+      24
+CORNER_588.xml
+      40
+CORN_2_583.xml
+      50
+CORN_3_584.xml
+      54
+CORN_4_585.xml
+      89
+CORN_582.xml
+      51
+CORRECT_1926.xml
+      18
+CORRESPOND++_592.xml
+      46
+COUCH_2864.xml
+      21
+COUGH_2+_595.xml
+      53
+COUGH_594.xml
+      53
+COUNT+_597.xml
+      58
+COUNTRY+_599.xml
+      60
+COUNT_2_598.xml
+      51
+COURSE_1466.xml
+      42
+COURT+AGENT_3154.xml
+      33
+COURT+BOX^ROOM_3072.xml
+      81
+COURT+HOUSE_3071.xml
+     103
+COURT_665.xml
+      55
+COUSIN_2+_604.xml
+      60
+COUSIN_603.xml
+      41
+COVER_607.xml
+      44
+COW_669.xml
+      52
+CRACKER^PASSOVER_608.xml
+      53
+CRACK_609.xml
+      47
+CRAWL_2821.xml
+      32
+CRAZY+_2871.xml
+      23
+CREAM_531.xml
+      53
+CREATE^PRETEND_1340.xml
+      47
+CREDIT-CARD_610.xml
+      52
+CRIPPLE+_611.xml
+      71
+CROSS-MY-HEART_1825.xml
+      32
+CROSS_612.xml
+      56
+CROWDED_613.xml
+      55
+CROWN+DCL 4(coronet)_617.xml
+       0
+CROWN_615.xml
+      39
+CRUEL_1181.xml
+      53
+CRUSH_618.xml
+      49
+CRY++_621.xml
+      50
+CUBED_3337.xml
+      17
+CULTURE_625.xml
+      44
+CUPBOARD+_386.xml
+      53
+CUP_2825.xml
+      29
+CURIOUS_631.xml
+      47
+CURLY_2_634.xml
+      62
+CURLY_633.xml
+      65
+CURRICULUM_2_636.xml
+      52
+CURRICULUM_3_637.xml
+      47
+CURRICULUM_635.xml
+      49
+CURSE_493.xml
+      62
+CURTAIN_2_639.xml
+      51
+CURTAIN_638.xml
+      42
+CURVE_640.xml
+      80
+CUSHION+_641.xml
+      66
+CUSTOMER_2627.xml
+      36
+CUT-FABRIC++_886.xml
+      43
+CUT-WITH-SCISSORS_1979.xml
+      25
+CUTE++DCL(cane)_3435.xml
+      39
+CUTE_394.xml
+      38
+CUT_642.xml
+      46
+CYCLE_2_644.xml
+      61
+CYCLE_643.xml
+      60
+C_384.xml
+      42
+DANCE_648.xml
+      45
+DANGER_442.xml
+      58
+DARE_443.xml
+      40
+DARK_651.xml
+      50
+DARTS_653.xml
+      41
+DASH-LINES_654.xml
+      74
+DATE^DESSERT+_655.xml
+      56
+DAUGHTER_656.xml
+      47
+DAY_658.xml
+      46
+DCL 1(speedometer)_3448.xml
+       0
+DCL T +VOLUNTEER^SHIRT_3273.xml
+       0
+DCL crvd-5 tall wide cylindrical object +HANDLE_3059.xml
+       0
+DCL crvd-5(tall wide cylindrical object)_3297.xml
+       0
+DCL crvd-5(tall wide cylindrical object)_3298.xml
+       0
+DCL crvd-B(couch shaped object_2867.xml
+       0
+DCL crvd-U(couch shaped object)_2865.xml
+       0
+DCL crvd-V(couch shaped object)_2866.xml
+       0
+DCL(can)+ICL(open can)_3302.xml
+       0
+DCL(flat stack)_3264.xml
+       0
+DCL(long stringed hanging object)_3319.xml
+       0
+DCL(pile)_3218.xml
+      24
+DCL(rough surface)_3321.xml
+       0
+DCL(steam rising)_2138.xml
+       0
+DCL(thick strip)_3323.xml
+       0
+DCL(thin cylindrical object)_3223.xml
+       0
+DEAF-APPLAUSE_115.xml
+      47
+DEAF_661.xml
+      50
+DEAL-CARDS_1781.xml
+      28
+DECIDE_664.xml
+      47
+DECONSTRUCT_342.xml
+      74
+DECORATE_666.xml
+      45
+DECREASE_1315.xml
+      43
+DEEP_2_777.xml
+      45
+DEEP_776.xml
+      39
+DEER+_667.xml
+      57
+DEFEND+_682.xml
+      60
+DEFEND_2_683.xml
+      61
+DEFLATE_2776.xml
+      23
+DEFLATE_2_2778.xml
+      17
+DELETE_834.xml
+      42
+DELICIOUS_2_924.xml
+      43
+DELICIOUS_923.xml
+      40
+DEMOCRAT_689.xml
+      42
+DENTIST+_2874.xml
+      19
+DENY_1685.xml
+      18
+DEPARTMENT_909.xml
+      48
+DEPEND_697.xml
+      59
+DEPOSIT_698.xml
+      50
+DEPRESS_939.xml
+      47
+DESTROY_699.xml
+      53
+DETECTIVE+_1791.xml
+      33
+DETERIORATE_2430.xml
+      54
+DEVELOP_701.xml
+      38
+DEVIL^MISCHIEVOUS+_673.xml
+      57
+DEVOUR_2862.xml
+      19
+DIAL-ROTARY_703.xml
+      64
+DIALOG++_704.xml
+      60
+DIAMOND++_1930.xml
+      25
+DICTIONARY++_1717.xml
+      59
+DIE_706.xml
+      47
+DIMPLE_709.xml
+      51
+DIM_2_708.xml
+      69
+DIM_707.xml
+      44
+DINNER++BOX^ROOM_3391.xml
+      35
+DINNER_713.xml
+      52
+DINOSAUR+_715.xml
+      64
+DIPLOMA_717.xml
+      45
+DIRECT+AGENT_3085.xml
+      66
+DIRECT+_719.xml
+      56
+DIRTY_722.xml
+      73
+DISAGREE_725.xml
+      54
+DISAPPEAR_727.xml
+      46
+DISAPPOINT_730.xml
+      37
+DISCIPLINE_735.xml
+      60
+DISCONNECT_250.xml
+      44
+DISCRIMINATE_591.xml
+      64
+DISCUSS+_662.xml
+      56
+DISCUSS-INTENSELY+_663.xml
+      51
+DISGUST+_737.xml
+      58
+DISH-pl_2633.xml
+      53
+DISH_2632.xml
+      35
+DISMISS_739.xml
+      42
+DISTRIBUTE_741.xml
+      41
+DIVE-OFF-BOARD_2_745.xml
+      55
+DIVE-OFF-BOARD_744.xml
+      41
+DIVE_2_743.xml
+      56
+DIVE_742.xml
+      43
+DIVIDE_746.xml
+      45
+DIVORCE_749.xml
+      48
+DIZZY+_750.xml
+      76
+DO+_751.xml
+      66
+DO-DO+HAPPEN_3466.xml
+      20
+DO-DO+_754.xml
+      54
+DOCTOR_756.xml
+      65
+DOLLAR_2_761.xml
+      45
+DOLLAR_760.xml
+      49
+DON'T_765.xml
+      47
+DONKEY++_677.xml
+      54
+DONUT_773.xml
+      45
+DOOR+SQUARE_3428.xml
+      48
+DOOR-pl_2635.xml
+      50
+DOORBELL+_769.xml
+      58
+DOOR_2634.xml
+      51
+DORM_1247.xml
+      49
+DOUBT+_772.xml
+      50
+DOWN-TO-EARTH_1560.xml
+      45
+DOWNSTAIRS_2125.xml
+      29
+DOWN_775.xml
+      43
+DRAGON+_2105.xml
+      28
+DREAM_778.xml
+      49
+DRESSER+_779.xml
+      69
+DRESS^CLOTHES_520.xml
+      44
+DRIBBLE++_320.xml
+      53
+DRILL_2_782.xml
+      77
+DRILL_781.xml
+      64
+DRINK_783.xml
+      44
+DRIP++_786.xml
+      68
+DRIVE-AROUND+_409.xml
+      79
+DRIVE_408.xml
+      70
+DRIZZLE_1858.xml
+      29
+DROOL_2551.xml
+      44
+DROOL_2_2552.xml
+      34
+DROP_789.xml
+      49
+DROWN_791.xml
+      49
+DRUGS_1326.xml
+      47
+DRUMS+_795.xml
+      64
+DRUNK_797.xml
+      77
+DRY+(1h)AREA_3078.xml
+      76
+DRY+(nd-C)SPIN_3088.xml
+      65
+DRY+AREA_2_3077.xml
+      89
+DRY+AREA_3076.xml
+      63
+DRY+WASHING-MACHINE_3089.xml
+      69
+DRY-CEREAL+_799.xml
+      52
+DRY_798.xml
+      45
+DUCK_267.xml
+      46
+DURING^WHILE_801.xml
+      64
+DUSTING+_2465.xml
+      77
+DUTY+_1365.xml
+      58
+DYE+_803.xml
+      58
+D_645.xml
+      40
+E-MAIL_2_807.xml
+      50
+E-MAIL_805.xml
+      42
+EACH+ONE-pl-arc_3393.xml
+      39
+EACH+ONE_3392.xml
+      24
+EACH+WHERE_3102.xml
+      63
+EACH_809.xml
+      52
+EAGLE_268.xml
+      62
+EAR+EAR-HURT_3090.xml
+      54
+EAR-HURT+_1285.xml
+      52
+EARMUFF_812.xml
+      55
+EARRING_813.xml
+      54
+EARTH+RUMBLE_3092.xml
+      72
+EARTH+SPHERE_1104.xml
+      86
+EARTH_814.xml
+      56
+EAR_2^BIRTHDAY_2_811.xml
+      52
+EASTER_2_841.xml
+      58
+EASTER_840.xml
+      50
+EAST_815.xml
+      42
+EASY+_2787.xml
+      25
+EAT+BOX^ROOM_3084.xml
+      67
+EAT+BUY++_3135.xml
+      31
+EAT+MORNING_3058.xml
+      49
+EAT+NIGHT_714.xml
+      49
+EAT+NOON_3172.xml
+      26
+EAT+SELL+_3134.xml
+      33
+EAT+_816.xml
+      53
+EAT-WITH-FORK_1025.xml
+      50
+EAT_2+_818.xml
+      64
+ECONOMIC+_819.xml
+      56
+EDGE^CLIFF_559.xml
+      46
+EDGE_2_560.xml
+      51
+EDGE_3++_561.xml
+      51
+EFFORT_2304.xml
+      37
+EGG-pl_2637.xml
+      45
+EGG_2636.xml
+      37
+EGO_822.xml
+      54
+EIGHT+HOUR_2831.xml
+      25
+EIGHT-HOURS_2830.xml
+      24
+EIGHT-MONTHS_2561.xml
+      47
+EIGHT-WEEKS_2562.xml
+      55
+EIGHTEEN_3027.xml
+      48
+EIGHTH-PLACE_3417.xml
+      17
+EIGHTH_3416.xml
+      16
+EIGHTY-EIGHT_2_3339.xml
+      20
+EIGHTY-EIGHT_3338.xml
+      20
+EIGHTY-NINE_3340.xml
+      16
+EIGHT_3021.xml
+      29
+EITHER+_602.xml
+      44
+ELASTIC+_830.xml
+      59
+ELBOW+_826.xml
+      66
+ELBOW-PATCH_827.xml
+      52
+ELECTRIC+AGENT_3096.xml
+      54
+ELECTRIC+_828.xml
+      42
+ELEMENTARY_40.xml
+      47
+ELEPHANT_831.xml
+      55
+ELEVATOR_832.xml
+      48
+ELEVEN+_3012.xml
+      34
+EMBARRASS+_836.xml
+      71
+EMERGENCY+_838.xml
+      46
+EMOTION++_843.xml
+      79
+EMOTIONLESS_1058.xml
+      59
+EMOTION_2+_844.xml
+      73
+EMPHASIZE_1307.xml
+      49
+EMPTY^EARLY_1641.xml
+      20
+EMPTY^EARLY_2_1642.xml
+      22
+EMPTY^EARLY_3_1643.xml
+      23
+EMPTY^NAKED_1640.xml
+      20
+ENCOURAGE+_578.xml
+      60
+ENCYCLOPEDIA+_1718.xml
+      83
+ENCYCLOPEDIA_2_1719.xml
+      53
+END_562.xml
+      42
+ENERGY_845.xml
+      48
+ENGAGEMENT_1931.xml
+      23
+ENGAGEMENT_2_1932.xml
+      29
+ENGINE+_2847.xml
+      28
+ENGINEERING+AGENT_3100.xml
+      60
+ENJOY_851.xml
+      74
+ENOUGH+_855.xml
+      54
+ENTER_58.xml
+      48
+ENVIRONMENT_627.xml
+      53
+EPISCOPAL_207.xml
+      80
+EQUAL+_858.xml
+      54
+EQUIPMENT_859.xml
+      68
+ERASE-BOARD+_2466.xml
+      64
+ERASE_2467.xml
+      51
+ERECT_2009.xml
+      23
+ESCAPE_729.xml
+      43
+ETCETERA_861.xml
+      60
+EVALUATE+_879.xml
+      56
+EVENING_864.xml
+      52
+EVERY+(2h)THING_3407.xml
+      33
+EVERY-FRIDAY_1049.xml
+      46
+EVERY-MONDAY_1595.xml
+      43
+EVERY-MONTH^RENT+_2737.xml
+      50
+EVERY-SATURDAY_1966.xml
+      21
+EVERY-SUNDAY_2720.xml
+      40
+EVERY-THURSDAY_2264.xml
+      42
+EVERY-THURSDAY_2_2265.xml
+      65
+EVERY-TUESDAY_2306.xml
+      34
+EVERY-TWO-YEARS_2742.xml
+      62
+EVERY-WEDNESDAY_2378.xml
+      24
+EVERY-WEEK++_2380.xml
+      70
+EVERY-YEAR_2741.xml
+      61
+EVERYDAY_865.xml
+      44
+EXACT_2_869.xml
+      54
+EXACT_868.xml
+      49
+EXAGGERATE+_2496.xml
+      58
+EXCEED_22.xml
+      48
+EXCHANGE_2292.xml
+      60
+EXCITED+_936.xml
+      61
+EXCUSE_738.xml
+      72
+EXPAND_875.xml
+      48
+EXPENSIVE_1599.xml
+      49
+EXPENSIVE_2_1600.xml
+      54
+EXPERIENCE+_876.xml
+      53
+EXPERIMENT+_878.xml
+      57
+EXPERT_649.xml
+      38
+EXPLAIN+_720.xml
+      46
+EXPLOIT+_1987.xml
+      29
+EXPOSE_2+_2148.xml
+      30
+EXPOSE_2147.xml
+      24
+EXPRESS_880.xml
+      63
+EYE-MASK_1528.xml
+      45
+EYEBROW-FROWN_1060.xml
+      71
+EYEBROW_882.xml
+      48
+EYELASHES_883.xml
+      37
+EYES_884.xml
+      61
+E_804.xml
+      35
+FACE+NICE^CLEAN_3458.xml
+      27
+FACE+SAME_3169.xml
+      31
+FACE+STRONG_3168.xml
+      28
+FACE_887.xml
+      53
+FACIAL-EXPRESSION_889.xml
+      44
+FACULTY_1557.xml
+      59
+FAIL_993.xml
+      53
+FALL-IN-LOVE_891.xml
+      45
+FALL-INTO-PLACE_2477.xml
+      50
+FALL_2_894.xml
+      62
+FALL_3_895.xml
+      59
+FALL_892.xml
+      47
+FALSEHOOD_897.xml
+      42
+FALSE_896.xml
+      41
+FAMILY_900.xml
+      43
+FAMOUS_2937.xml
+      50
+FANCY+BOX^ROOM_3165.xml
+      40
+FANCY+_956.xml
+      59
+FANTASY+_1299.xml
+      72
+FARM+AGENT_3105.xml
+      51
+FARM_2+AGENT_3106.xml
+      65
+FARM_2_912.xml
+      62
+FARM_911.xml
+      44
+FAR_2428.xml
+      47
+FAR_2_2429.xml
+      59
+FASCINATE_2184.xml
+      31
+FASTING_917.xml
+      44
+FAST_2_914.xml
+      47
+FAST_3_916.xml
+      39
+FAST_913.xml
+      46
+FATHER+IN+LAW_3440.xml
+      46
+FATHER+LAW_3439.xml
+      41
+FATHER+_1613.xml
+      47
+FATHERwg+LAW_3441.xml
+      33
+FATHERwg_1614.xml
+      36
+FAT_2_919.xml
+      50
+FAT_918.xml
+      51
+FAULT_1904.xml
+      16
+FAVORITE^PREFER_921.xml
+      51
+FAX_926.xml
+      42
+FEATHER_2628.xml
+      44
+FED-UP^FULL_2751.xml
+      18
+FEDERAL_402.xml
+      36
+FEED+_928.xml
+      68
+FEEDBACK_2554.xml
+      57
+FEEDBACK_2_2555.xml
+      66
+FEEL+DEFLATE_3411.xml
+      28
+FEEL+GRIEF_3452.xml
+      26
+FEEL+NONE^NOTHING_3389.xml
+      34
+FEEL+_931.xml
+      51
+FEMALE-COUSIN_606.xml
+      48
+FEMALE-FIGURE_2757.xml
+      25
+FENCE_942.xml
+      42
+FERRIS-WHEEL^FAIR+_2159.xml
+      40
+FEW^CLOSE_2012.xml
+      17
+FEW_2010.xml
+      25
+FEW_2_2011.xml
+      20
+FIANCE_1933.xml
+      26
+FIFTEEN_3008.xml
+      39
+FIFTH-PLACE_3110.xml
+      39
+FIFTH_2_3108.xml
+      37
+FIFTH_3107.xml
+      30
+FIFTY-FIVE_3341.xml
+      29
+FIGHT_2_945.xml
+      47
+FIGHT_944.xml
+      47
+FIGURE-OUT+_1533.xml
+      66
+FILE_948.xml
+      48
+FILL-OUT_1465.xml
+      41
+FILTHY_723.xml
+      53
+FINALLY_2935.xml
+      40
+FINALLY_2_2936.xml
+      34
+FINANCIAL+_820.xml
+      56
+FIND^FIND-OUT_952.xml
+      48
+FINE_954.xml
+      52
+FINGERPRINTS_959.xml
+      53
+FINGERSPELL_961.xml
+      53
+FINGERS_958.xml
+      57
+FINGER_957.xml
+      53
+FINISH_965.xml
+      52
+FIRED_971.xml
+      44
+FIREMAN_973.xml
+      51
+FIRE^BURN+PLACE_3111.xml
+      61
+FIRE^BURN_969.xml
+      54
+FIRE_968.xml
+      46
+FIRST-IN-LIST_3115.xml
+      33
+FIRST-PLACE_3117.xml
+      30
+FIRST_2_3114.xml
+      33
+FIRST_3113.xml
+      26
+FISHING+_2860.xml
+      24
+FISH_974.xml
+      74
+FIST_976.xml
+      50
+FIVE-DOLLARS_3109.xml
+      37
+FIVE-HOURS_2858.xml
+      23
+FIVE-MONTHS_2563.xml
+      40
+FIVE-WEEKS_2564.xml
+      36
+FIVE_2+HOUR_2859.xml
+      25
+FIVE_2_3025.xml
+      27
+FIVE_3024.xml
+      22
+FIX++_1541.xml
+      46
+FLAG+_2753.xml
+      30
+FLAG_2+_2754.xml
+      27
+FLASHLIGHT+_979.xml
+      60
+FLASHLIGHT_2++_980.xml
+      55
+FLAT-TIRE_2779.xml
+      17
+FLAT-TIRE_2_2780.xml
+      17
+FLAT-TIRE_3_2781.xml
+      19
+FLAT^FLOOR_2726.xml
+      38
+FLAT^LEVEL_2727.xml
+      52
+FLEXIBLE+_981.xml
+      52
+FLIP-FLOP_2956.xml
+      52
+FLIP-OVER_987.xml
+      52
+FLIRT_2976.xml
+      49
+FLOAT+_991.xml
+      49
+FLOW+_992.xml
+      63
+FLOWER_1938.xml
+      23
+FLUNK_994.xml
+      50
+FLUTE_2_997.xml
+      58
+FLUTE_996.xml
+      60
+FLY-BY-PLANE_84.xml
+      47
+FLY-BY-WINGS_999.xml
+      52
+FLY-KITE_998.xml
+      85
+FOCUS^NARROW_2797.xml
+      20
+FOLD_2442.xml
+      60
+FOLLOW_2422.xml
+      36
+FOLLOW_2_2423.xml
+      51
+FOOT-pl_1002.xml
+      59
+FOOTBALL+_1488.xml
+      44
+FOOTSTEP_1005.xml
+      70
+FOOT_1001.xml
+      60
+FOR-FOR+_1013.xml
+      46
+FORCE_1015.xml
+      43
+FOREHEAD_1019.xml
+      40
+FOREIGN+_601.xml
+      50
+FOREVER_2277.xml
+      44
+FOREVER_2_2278.xml
+      39
+FOREVER_3_2279.xml
+      52
+FORGET_1021.xml
+      74
+FORK+_1023.xml
+      55
+FORK-IN-ROAD_2598.xml
+      43
+FORK-IN-ROAD_2_2599.xml
+      42
+FORK-IN-ROAD_3_2803.xml
+      24
+FORK_2+_1024.xml
+      44
+FORMERLY+_2325.xml
+      51
+FORM_1803.xml
+      30
+FORTY-FOUR_3342.xml
+      19
+FORTY_3122.xml
+      34
+FOR_1012.xml
+      43
+FOUNDATION_1028.xml
+      54
+FOUNDATION_2_1029.xml
+      54
+FOUNTAIN_1030.xml
+      53
+FOUR-HOURS_2877.xml
+      17
+FOUR-MONTHS_2565.xml
+      36
+FOUR-WEEKS_2566.xml
+      33
+FOURTEEN+_3009.xml
+      36
+FOURTH-PLACE_3403.xml
+      15
+FOURTH_2_3424.xml
+      16
+FOURTH_3423.xml
+      15
+FOUR_2+HOUR_2878.xml
+      22
+FOUR_3015.xml
+      22
+FOX_1031.xml
+      44
+FRACTION_2630.xml
+      35
+FRAME_1800.xml
+      37
+FRAME_2_1801.xml
+      33
+FRAME_3_1802.xml
+      34
+FRECKLES_1034.xml
+      57
+FREEZE_1042.xml
+      47
+FREE_1040.xml
+      45
+FRESHMAN+_1043.xml
+      51
+FRESHMAN_2++_1044.xml
+      57
+FRESHMAN_3+_1046.xml
+      56
+FRESHMAN_4_1047.xml
+      55
+FRIDAY+_1048.xml
+      52
+FRIENDLY_1782.xml
+      23
+FRIEND_1050.xml
+      45
+FROG_1055.xml
+      53
+FROM-NOW-ON_507.xml
+      44
+FROM_1056.xml
+      34
+FRONT+_1057.xml
+      47
+FRUIT_1061.xml
+      51
+FRUSTRATE+_1062.xml
+      72
+FRUSTRATED^THWARTED_1063.xml
+      47
+FULL_857.xml
+      47
+FUNCTION+_1066.xml
+      50
+FUNCTION_2+_1067.xml
+      54
+FUNCTION_3+_1068.xml
+      43
+FUNERAL+_1069.xml
+      56
+FUNNY_1065.xml
+      48
+FUN_1064.xml
+      50
+FURNITURE_1070.xml
+      59
+FUTURE_1072.xml
+      41
+F_885.xml
+      36
+GAMBLE_1077.xml
+      52
+GAME+_441.xml
+      47
+GANG++SCL C(group go together)_3444.xml
+       0
+GANG+_1078.xml
+      53
+GARAGE^SUBMARINE_1079.xml
+      48
+GAS^GAS-UP_2879.xml
+      17
+GATE_517.xml
+      64
+GAY_1082.xml
+      44
+GENERAL_2802.xml
+      26
+GENERATION+_105.xml
+      72
+GENERATIONS-AGO+_106.xml
+      68
+GEOMETRY+_1535.xml
+      48
+GET-BIGGER_2209.xml
+      24
+GET-CLOSE_508.xml
+      44
+GET-IN_1087.xml
+      43
+GET-ON_1088.xml
+      41
+GET-OUT_1900.xml
+      20
+GET-RID-OF_2255.xml
+      33
+GET-TICKET_2880.xml
+      18
+GET-UP_2128.xml
+      20
+GET_1871.xml
+      17
+GHOST_1089.xml
+      48
+GHOST_2_1090.xml
+      69
+GIFT_1094.xml
+      46
+GIGGLE_1091.xml
+      61
+GIRAFFE-pl_2640.xml
+      49
+GIRAFFE_2639.xml
+      45
+GIRL+ALSO_2538.xml
+      51
+GIRL+BABY_657.xml
+      71
+GIRL+CORRECT+LAW_3257.xml
+      43
+GIRL+CORRECT_2539.xml
+      34
+GIRL+FRIEND_3127.xml
+      66
+GIRL+MARRY_2982.xml
+      70
+GIRL+_1092.xml
+      53
+GIRL-SCOUT_1983.xml
+      25
+GIVE-UP_1093.xml
+      51
+GIVE_1096.xml
+      41
+GIVE_2_1098.xml
+      48
+GLASSES+_1099.xml
+      49
+GLASSES_2+_1100.xml
+      47
+GLOBE_1103.xml
+      45
+GLORY_1105.xml
+      63
+GLORY_2_1106.xml
+      65
+GLOVES_1108.xml
+      57
+GLOVES_2_1109.xml
+      66
+GLUE_1111.xml
+      49
+GO-AWAY_170.xml
+      52
+GO-AWAY_2_171.xml
+      65
+GO-BY-BOAT_295.xml
+      42
+GO-BY-BOAT_2_296.xml
+      38
+GO-OUT_1710.xml
+      18
+GO-TO-IT_2883.xml
+      16
+GOAL_1113.xml
+      52
+GOAT_1114.xml
+      62
+GOD_1115.xml
+      54
+GOLD^ns-CALIFORNIA+YELLOW_2793.xml
+      18
+GOLD^ns-CALIFORNIA_2789.xml
+      17
+GOLF_1116.xml
+      52
+GONE_1117.xml
+      48
+GOOD+ENOUGH_3468.xml
+      18
+GOOD+LUCKY_3128.xml
+      29
+GOOD+MORNING_3129.xml
+      29
+GOOD+NIGHT_3132.xml
+      26
+GOOSEBUMPS_1942.xml
+      30
+GORILLA+_2556.xml
+      64
+GOSSIP+_1119.xml
+      56
+GOVERNMENT+AGENT_3446.xml
+      32
+GOVERNMENT_400.xml
+      43
+GO_149.xml
+      43
+GRAB-CHANCE_1120.xml
+      57
+GRAB_2221.xml
+      35
+GRAB_2_2222.xml
+      32
+GRAD+_1123.xml
+      55
+GRADUAL-DECLINE++_2794.xml
+      30
+GRADUAL-DECLINE-A-LOT++_2795.xml
+      34
+GRADUAL-DECLINE_3_2796.xml
+      36
+GRADUAL-IMPROVE-A-LOT_1311.xml
+      78
+GRADUAL-IMPROVE_1310.xml
+      76
+GRADUATE_1122.xml
+      58
+GRAMMAR_1124.xml
+      55
+GRANDFATHER_1126.xml
+      55
+GRANDMOTHER_1125.xml
+      48
+GRAPES++_1127.xml
+      50
+GRAPES_2+++_1128.xml
+      47
+GRASS+_1129.xml
+      59
+GRAY++_1131.xml
+      82
+GREAT+_2717.xml
+      53
+GREEDY_2662.xml
+      42
+GREEN_1135.xml
+      50
+GRIEF_619.xml
+      48
+GRIP_1137.xml
+      50
+GROUCHY_1491.xml
+      43
+GROUND+AREA_3235.xml
+      33
+GROUND_630.xml
+      53
+GROUP^TOGETHER_906.xml
+      45
+GROUP_905.xml
+      38
+GROW++COLLECT_3455.xml
+      46
+GROW-UP_30.xml
+      59
+GROW_1139.xml
+      79
+GUILTY_2891.xml
+      23
+GUITAR++_135.xml
+      59
+GUM+_473.xml
+      54
+GUN_1142.xml
+      40
+GYM+_1149.xml
+      64
+GYMNASTICS_2663.xml
+      67
+G_1076.xml
+      28
+HABIT_1153.xml
+      40
+HABIT_2_1154.xml
+      39
+HABIT_3_1155.xml
+      41
+HAIRBRUSH+_538.xml
+      56
+HAIRCUT+AGENT_3045.xml
+      58
+HAIRCUT+_1509.xml
+      56
+HAIRCUT^TRIM_1512.xml
+      40
+HAIRCUT^TRIM_2_1513.xml
+      58
+HAIRCUT_2+_1511.xml
+      47
+HAIR_1159.xml
+      52
+HAIR_2+BLOND_284.xml
+      56
+HALF-HALF_3142.xml
+      25
+HALF_2_3141.xml
+      18
+HALF_3140.xml
+      19
+HALLOWEEN_1164.xml
+      41
+HALLOWEEN_2_1165.xml
+      38
+HALLUCINATE+_1297.xml
+      75
+HALL_1162.xml
+      37
+HAMBURGER-pl_2642.xml
+      84
+HAMBURGER_2641.xml
+      55
+HAMMER_1167.xml
+      54
+HANDSOME^ns-HAWAII_2+_1194.xml
+      61
+HANDS_1169.xml
+      68
+HANG-UP-PHONE_2237.xml
+      54
+HANGER_1170.xml
+      48
+HANGER_2++_1171.xml
+      50
+HANUKKAH_2785.xml
+      22
+HANUKKAH_2_2786.xml
+      20
+HAPPEN_1172.xml
+      35
+HAPPY+_853.xml
+      51
+HARD-OF-HEARING_1173.xml
+      43
+HARD_1174.xml
+      33
+HARMONICA+_2587.xml
+      96
+HARP+_1179.xml
+      76
+HAT+_1182.xml
+      45
+HATE_1183.xml
+      43
+HAVE_1185.xml
+      45
+HEAD-COLD_289.xml
+      52
+HEAD-COLD_2_290.xml
+      58
+HEADACHE+_1284.xml
+      45
+HEADLINE_1206.xml
+      40
+HEAD_1205.xml
+      49
+HEAR+NOISE+_3194.xml
+      32
+HEAR+RUMBLE_3282.xml
+      30
+HEAR+SHUT_3074.xml
+      57
+HEARING+_1210.xml
+      40
+HEARING-AID+_1207.xml
+      48
+HEART+ATTACK_3398.xml
+      19
+HEART+BEAT_4+_2902.xml
+      34
+HEART+HEART-BEAT++_2901.xml
+      32
+HEART+_1211.xml
+      47
+HEART-BEAT++_2900.xml
+      26
+HEAR^LISTEN+RUMBLE_3284.xml
+      28
+HEAR^LISTEN_1467.xml
+      54
+HEAVEN_1215.xml
+      40
+HEAVEN_2_1216.xml
+      51
+HEAVEN_3_1217.xml
+      47
+HEAVY_1447.xml
+      69
+HEIGHT+_1218.xml
+      51
+HEIGHT_2+_1219.xml
+      47
+HELICOPTER_1080.xml
+      56
+HELLO_1136.xml
+      38
+HELL_1220.xml
+      48
+HELMET_616.xml
+      64
+HELP+_2694.xml
+      48
+HERE+_2504.xml
+      54
+HEREDITY+_107.xml
+      60
+HIDE_3002.xml
+      34
+HIGH-HEELS+_2745.xml
+      69
+HIGH-ON-DRUGS_1298.xml
+      46
+HIGHWAY+_1230.xml
+      43
+HIGHWAY_2_1231.xml
+      52
+HIGH_1229.xml
+      43
+HILLS_2645.xml
+      76
+HILL_2643.xml
+      56
+HISTORY+_1242.xml
+      48
+HIT-1p_233.xml
+      38
+HITCHHIKE+_2589.xml
+      57
+HIT_232.xml
+      36
+HIT_2_234.xml
+      37
+HOCKEY+_2048.xml
+      46
+HOLD_1138.xml
+      68
+HOLY_1244.xml
+      65
+HOME+WORK_1249.xml
+      61
+HOMEWORK_1248.xml
+      39
+HOME_1246.xml
+      41
+HONEST_2301.xml
+      45
+HONEYMOON_2591.xml
+      59
+HONEY^DEAR_1250.xml
+      49
+HONOR_1254.xml
+      49
+HOPE+_1258.xml
+      47
+HORSE++_671.xml
+      79
+HORSE+ICL S(holding moving pole)+_3178.xml
+       0
+HORSE+RIDE-ON+_3146.xml
+      40
+HOSPITAL_1259.xml
+      54
+HOT-SPICY++_2107.xml
+      26
+HOTEL-pl_2648.xml
+      65
+HOTEL_2647.xml
+      48
+HOT_1264.xml
+      48
+HOUR_1266.xml
+      76
+HOUR_2_1267.xml
+      53
+HOUR_3_1268.xml
+      57
+HOUSE+(P)PAY_3329.xml
+      27
+HOUSE-pl_2650.xml
+      73
+HOUSE_2649.xml
+      49
+HOW+_1270.xml
+      47
+HOW-MANY^MANY_1521.xml
+      62
+HUG_2_686.xml
+      63
+HUG_685.xml
+      64
+HUMBLE_1272.xml
+      46
+HUNDRED_3148.xml
+      19
+HUNGRY^WISH_1277.xml
+      40
+HUNTING_1147.xml
+      52
+HURRICANE_1278.xml
+      52
+HURRY+_1279.xml
+      42
+HURT_1280.xml
+      51
+HURT_2+_1281.xml
+      68
+HURT_3_1282.xml
+      59
+HUSBAND_2997.xml
+      50
+HYPOCRITE_1286.xml
+      40
+H_1152.xml
+      28
+I-LOVE-YOU_1288.xml
+      37
+ICE-CREAM+_1289.xml
+      49
+ICE-SKATE+_2046.xml
+      39
+ICL C(pouring over)_1809.xml
+       0
+ICL F(peeling paint)_1727.xml
+       0
+ICL S(handling something long and narrow)+_3125.xml
+       0
+ICL X(handling something long and narrow)_3126.xml
+       0
+ICL(peeling an orange)+_3215.xml
+       0
+ICL(peeling skin)+_3216.xml
+       0
+ICL(peeling with knife)+_3385.xml
+       0
+ICL(shaking out)+_3386.xml
+       0
+ICL(squeezing small object)_3288.xml
+       0
+IDEA_1290.xml
+      40
+IDENTIFICATION_1292.xml
+      46
+IDENTIFY_1291.xml
+      41
+IF++_2199.xml
+      20
+IGNITION-OFF_2309.xml
+      33
+IGNITION-ON_2308.xml
+      41
+IGNORE_1293.xml
+      39
+ILLEGAL_1014.xml
+      55
+IMAGINE+_1294.xml
+      70
+IMAGINE_2^PARANOID+_1295.xml
+      62
+IMMATURE+_1300.xml
+      44
+IMPORTANT_1301.xml
+      56
+IMPOSSIBLE+_1303.xml
+      62
+IMPRESS-1p_1305.xml
+      45
+IMPRESS-MEMORY_1306.xml
+      73
+IMPRESS_1304.xml
+      51
+IMPROVE-A-LOT_1309.xml
+      51
+IMPROVE_1308.xml
+      51
+IN-FIVE-YEARS_2733.xml
+      29
+IN-FOUR-YEARS_2732.xml
+      31
+IN-THREE-YEARS_2731.xml
+      34
+INCLUDE^INVOLVE_2769.xml
+      19
+INCOMPETENT_2_3006.xml
+      34
+INCOMPETENT_3005.xml
+      39
+INCREASE_1314.xml
+      36
+INDEPENDENT_1041.xml
+      51
+INDIVIDUAL-pl_1318.xml
+      54
+INDIVIDUAL_1317.xml
+      42
+INDUSTRY+_1320.xml
+      69
+INFLATE_2775.xml
+      16
+INFORM-1p_1322.xml
+      55
+INFORM-ALL_1323.xml
+      57
+INFORM_1321.xml
+      42
+INJECT_1324.xml
+      43
+INNOCENT_1327.xml
+      39
+INSPIRE_1328.xml
+      44
+INSTEAD_2293.xml
+      42
+INSTITUTE+_1897.xml
+      26
+INSULT_1330.xml
+      46
+INSURANCE^INFECTION_1331.xml
+      51
+INTERCOURSE_1476.xml
+      55
+INTERESTING_1332.xml
+      54
+INTERNATIONAL_2435.xml
+      42
+INTERNET_574.xml
+      58
+INTERPRET+AGENT_3151.xml
+      36
+INTERPRET+_1334.xml
+      51
+INTERRUPT-1p_1336.xml
+      39
+INTERRUPT_1335.xml
+      42
+INTERVIEW+_705.xml
+      52
+INTRODUCE_2739.xml
+      40
+INVEST+_2157.xml
+      40
+INVITE^HIRE_2738.xml
+      33
+IN_1312.xml
+      47
+IRON-CLOTHES++_2892.xml
+      38
+IRON-CLOTHES_2+++_2893.xml
+      25
+ISLAND^INTEREST_2772.xml
+      35
+ISLAND^INTEREST_2_2774.xml
+      37
+ISOLATED+_1344.xml
+      58
+ISOLATED_2+_1345.xml
+      58
+IX i_1198.xml
+       0
+IX-1p-pl-2+ i_1197.xml
+       0
+IX-1p-pl-arc_1196.xml
+      46
+IX-1p_1195.xml
+      57
+IX-2p-pl-arc_1203.xml
+      47
+IX-2p_1202.xml
+      64
+IX-honorific i_1201.xml
+       0
+IX-pl-3 i^j^k++_1200.xml
+       0
+IX-pl-arc_1199.xml
+      45
+I_1287.xml
+      23
+JACK-O-LANTERN++_2895.xml
+      24
+JACK-O-LANTERN_2++_2896.xml
+      26
+JAW_1356.xml
+      48
+JEALOUS_1357.xml
+      50
+JELLY+_1358.xml
+      56
+JELLYFISH_2816.xml
+      25
+JEWELRY_1362.xml
+      52
+JEWISH+_1348.xml
+      48
+JOIN_2771.xml
+      22
+JUDGE_1754.xml
+      51
+JUGGLE+_2826.xml
+      37
+JUMP-FORWARD_1369.xml
+      51
+JUMPROPE+_1370.xml
+      62
+JUMP_1368.xml
+      54
+JUNIOR+_1371.xml
+      48
+JUNIOR_2++_1372.xml
+      49
+JUNIOR_3+_1373.xml
+      66
+J_1353.xml
+      33
+KANGAROO+_1375.xml
+      63
+KARATE_1376.xml
+      49
+KEEP-IN-MIND_175.xml
+      69
+KEEP_225.xml
+      44
+KETCHUP+_2886.xml
+      22
+KEY_1377.xml
+      58
+KICK-OFF_2586.xml
+      39
+KICK_1379.xml
+      38
+KIDNEY_2592.xml
+      44
+KID_1381.xml
+      41
+KILL_1382.xml
+      41
+KINDERGARTEN_2547.xml
+      48
+KIND_1384.xml
+      55
+KING+AREA_3156.xml
+      41
+KING_1385.xml
+      41
+KISS_1393.xml
+      52
+KITE_1394.xml
+      69
+KNEELING_1396.xml
+      48
+KNEEL_1399.xml
+      38
+KNIFE+_1400.xml
+      51
+KNIFE_2+_1401.xml
+      52
+KNOCK+_1403.xml
+      49
+KNOCK_2++_1404.xml
+      52
+KNOW+(1h)NEG_1406.xml
+      40
+KNOW+THAT_1408.xml
+      46
+KNOW+_1405.xml
+      44
+KNOW-NOTHING++_2665.xml
+      79
+KNOW-THAT_1407.xml
+      49
+K_1378.xml
+      37
+LABEL_2667.xml
+      39
+LACROSSE_2++_2669.xml
+      48
+LACROSSE_2668.xml
+      58
+LADDER+_1411.xml
+      68
+LAID-UP_1413.xml
+      41
+LANGUAGE-pl_2652.xml
+      71
+LANGUAGE_2651.xml
+      53
+LANTERN_1414.xml
+      52
+LAP+_1416.xml
+      52
+LAPTOP_1417.xml
+      62
+LAST-WEEK_2382.xml
+      42
+LAST-YEAR_2_2735.xml
+      29
+LAST_1418.xml
+      36
+LATCH_123.xml
+      46
+LATER_2890.xml
+      16
+LATER_2_1074.xml
+      54
+LATE_3000.xml
+      33
+LAUGH+_1419.xml
+      40
+LAW+AGENT_3160.xml
+      31
+LAW-pl_2654.xml
+      71
+LAW_2653.xml
+      52
+LAZY_1421.xml
+      42
+LCL B-L receive from heaven +BOOK_3383.xml
+       0
+LCL(path-turn-around)_2113.xml
+      28
+LEAD+AGENT_3378.xml
+      24
+LEAD_984.xml
+      48
+LEAF+_1422.xml
+      49
+LEAK+++_1946.xml
+      31
+LEARN+AGENT_3271.xml
+      23
+LEARN_1423.xml
+      37
+LEATHER+_1424.xml
+      50
+LEAVE-THERE_1429.xml
+      42
+LEAVE_1426.xml
+      46
+LECTURE+_1428.xml
+      49
+LEFT-ARM_1920.xml
+      24
+LEFT_1430.xml
+      38
+LEGAL-RIGHT_1925.xml
+      33
+LEGISLATURE_1555.xml
+      48
+LEG_1431.xml
+      44
+LEMON+_1432.xml
+      54
+LEND_311.xml
+      37
+LESBIAN+_1083.xml
+      55
+LESBIAN_2+_1084.xml
+      49
+LESS-THAN_33.xml
+      70
+LESS_1433.xml
+      38
+LETTER^MAIL_2746.xml
+      42
+LETTER^MAIL_2_2747.xml
+      50
+LIBRARY+AGENT_3161.xml
+      38
+LIBRARY+_1434.xml
+      52
+LICENSE_1435.xml
+      35
+LICK+_1436.xml
+      43
+LID+_1437.xml
+      43
+LIE-DOWN_1439.xml
+      42
+LIE_2_899.xml
+      42
+LIE_898.xml
+      40
+LIFT_1446.xml
+      42
+LIGHT+HOUSE_1452.xml
+      54
+LIGHT+LIGHT-ON_3162.xml
+      35
+LIGHT+LIGHT-OUT_3163.xml
+      26
+LIGHT+_1449.xml
+      48
+LIGHT-FLASH_1448.xml
+      45
+LIGHT-MATCH_1529.xml
+      46
+LIGHT-WEIGHT+_938.xml
+      52
+LIGHTHOUSE_1451.xml
+      59
+LIGHTNING_1453.xml
+      41
+LIKE+(1h)NEG_3164.xml
+      25
+LIKE_1454.xml
+      32
+LIMIT_1455.xml
+      32
+LINE-UP_2881.xml
+      15
+LINED-PAPER+_1461.xml
+      51
+LINE_1457.xml
+      50
+LINGUISTICS_2593.xml
+      35
+LION_681.xml
+      46
+LIPREAD_1462.xml
+      57
+LIPSTICK+_2805.xml
+      32
+LIP^MOUTH+_2804.xml
+      29
+LIST+DO-DO_3379.xml
+      37
+LIST-ORDER-IX+_2581.xml
+      28
+LIST-ORDER-MIDDLE_2582.xml
+      22
+LIST-ORDER-PINKY+_2584.xml
+      21
+LIST-ORDER-RING+_2583.xml
+      23
+LIST-ORDER-THUMB+_2580.xml
+      48
+LIST_1463.xml
+      49
+LITTLE-BIT_12.xml
+      51
+LITTLE_264.xml
+      50
+LIVE_1442.xml
+      42
+LOBSTER+_1980.xml
+      23
+LOCAL_2511.xml
+     102
+LOCK_124.xml
+      60
+LOCK_2_125.xml
+      51
+LOLLIPOP+_2933.xml
+      55
+LONELY+_2.xml
+      70
+LONG-AGO_1240.xml
+      68
+LONG-SLEEVE_1922.xml
+      28
+LONG_1473.xml
+      73
+LOOK-1p_2699.xml
+      40
+LOOK-AROUND-SHOP++_2705.xml
+      59
+LOOK-AROUND_2704.xml
+      67
+LOOK-BACK_2702.xml
+      44
+LOOK-BY-EYE_2709.xml
+      49
+LOOK-recip_2708.xml
+      41
+LOOK_2698.xml
+      55
+LOOK_2_2706.xml
+      45
+LOOK_3_2707.xml
+      46
+LOOSE+_986.xml
+      65
+LORD-GOD_1390.xml
+      49
+LORD_1389.xml
+      47
+LOSE-COMPETITION_1475.xml
+      43
+LOSE-WEIGHT_265.xml
+      52
+LOSE_1477.xml
+      48
+LOSE_2_1478.xml
+      39
+LOTION++_2674.xml
+      58
+LOUDSPEAKER+_1481.xml
+      54
+LOUDSPEAKER_2+_1482.xml
+      47
+LOUSY_362.xml
+      40
+LOWERCASE^TINY_2687.xml
+      36
+LOW_2807.xml
+      24
+LUCKY_925.xml
+      36
+LUNCH+_1485.xml
+      59
+LUNGS+_1191.xml
+      64
+LUTHERAN++AGENT_3311.xml
+      27
+LUTHERAN+_2988.xml
+      53
+L_1410.xml
+      37
+MACHINE+_1487.xml
+      42
+MAD_1489.xml
+      44
+MAD_2_1490.xml
+      35
+MAGAZINE+_1493.xml
+      62
+MAGIC_1494.xml
+      50
+MAGNET_1495.xml
+      48
+MAGNET_2+_1496.xml
+      48
+MAGNET_3_1497.xml
+      44
+MAJOR_1501.xml
+      56
+MAKE-BUBBLES+_1833.xml
+      42
+MAKE_1506.xml
+      67
+MALE-COUSIN_605.xml
+      46
+MAN-pl_1515.xml
+      54
+MANAGE^CONTROL+AGENT_3082.xml
+      68
+MANAGE^CONTROL+_721.xml
+      51
+MANY_1520.xml
+      44
+MAN_1514.xml
+      50
+MAN_2_1517.xml
+      42
+MARCHING+_1523.xml
+      54
+MARIJUANA+_1524.xml
+      50
+MARIONETTE+_2912.xml
+      27
+MARRY_1525.xml
+      48
+MASK_2475.xml
+      52
+MATCH_2813.xml
+      19
+MATERIAL_1531.xml
+      68
+MATH+_1534.xml
+      67
+MAXIMUM_31.xml
+      44
+MAYBE+_1544.xml
+      37
+MEASLES_1037.xml
+      64
+MEAT+_1546.xml
+      50
+MEDICAL-PATIENT_1263.xml
+      59
+MEDICINE_793.xml
+      51
+MEDITATE_1548.xml
+      47
+MEETING+_1549.xml
+      46
+MEET_1550.xml
+      43
+MELON^PUMPKIN+_1840.xml
+      31
+MELT^SOLVE_628.xml
+      50
+MEMBER_1552.xml
+      44
+MEMORIZE_1558.xml
+      47
+MENSTRUATE+_1559.xml
+      48
+MENTAL-SCAR_1971.xml
+      18
+MENTALLY-RETARDED_2482.xml
+      45
+MERGE^MAINSTREAM_2763.xml
+      25
+MESSED-UP_2530.xml
+      35
+METAL+_1564.xml
+      51
+METHOD_2691.xml
+      38
+MICROPHONE_1567.xml
+      44
+MICROWAVE+_1568.xml
+      47
+MICROWAVE_2+_1569.xml
+      44
+MIDDLE+WEST_3445.xml
+      30
+MIDDLE_434.xml
+      46
+MIDNIGHT+_1570.xml
+      41
+MIDNIGHT_2+_1571.xml
+      44
+MILITARY+_2084.xml
+      22
+MILK-COW+_1577.xml
+      84
+MILK_1576.xml
+      40
+MILLION+AGENT_3182.xml
+      33
+MILLION_2+AGENT_3183.xml
+      48
+MILLION_73.xml
+      63
+MIND+BLOW-UP_3054.xml
+      60
+MIND+OFF-COURSE_3119.xml
+      46
+MIND+_2954.xml
+      43
+MINOR_1502.xml
+      48
+MINUTE_1578.xml
+      47
+MIRROR_1580.xml
+      39
+MISCOMMUNICATE_544.xml
+      45
+MISS^ASSUME_1141.xml
+      42
+MISTAKE_1585.xml
+      44
+MISTAKE_2+_1586.xml
+      45
+MISUNDERSTAND_1582.xml
+      44
+MIX-UP_1589.xml
+      59
+MOLD_1592.xml
+      48
+MOLD_2++_1593.xml
+      67
+MONDAY+_1594.xml
+      48
+MONEY++TRADE+_3286.xml
+      52
+MONEY+_1596.xml
+      93
+MONKEY+_1601.xml
+      48
+MOOCH_312.xml
+      42
+MOON_1603.xml
+      43
+MOOSE_668.xml
+      37
+MOP_354.xml
+      59
+MORE+_1604.xml
+      47
+MORE-THAN_32.xml
+      46
+MORNING_1608.xml
+      43
+MOSQUE+_491.xml
+      52
+MOSQUITO_2152.xml
+      21
+MOST_1610.xml
+      33
+MOTHER+FATHER_3213.xml
+      25
+MOTHER+LAW_3186.xml
+      38
+MOTHER+_1611.xml
+      53
+MOTHERwg+LAW_3187.xml
+      40
+MOTHERwg_1612.xml
+      40
+MOTIVATE++AGENT_3181.xml
+      39
+MOTIVATE++_810.xml
+      57
+MOTORCYCLE+_1616.xml
+      46
+MOTOR_1615.xml
+      45
+MOUNTAIN_1619.xml
+      21
+MOUSE^FICTION+_1622.xml
+      20
+MOVE-AROUND_1625.xml
+      29
+MOVE-AWAY_1626.xml
+      20
+MOVE_1624.xml
+      18
+MOVIE+SQUARE_3253.xml
+      46
+MOVIE+_1628.xml
+      26
+MOVIE_2++_1629.xml
+      23
+MOW+_1618.xml
+      28
+MUMPS_1038.xml
+      56
+MUSEUM_1631.xml
+      33
+MUSIC++AGENT_3256.xml
+      39
+MUSIC++GROUP^TOGETHER_3208.xml
+      39
+MUSIC++_1632.xml
+      29
+MUSIC-RECORD+_1878.xml
+      35
+MUSLIM_2905.xml
+      23
+MUSTACHE_1636.xml
+      35
+MUSTACHE_2_1637.xml
+      28
+MUST_1634.xml
+      17
+MYSTERY_2594.xml
+      30
+M_1486.xml
+      37
+NAB_405.xml
+      45
+NAKED_1639.xml
+      20
+NAME i_1562.xml
+       0
+NAME_1561.xml
+      54
+NAPKIN+_1646.xml
+      30
+NARROW-STREET_2800.xml
+      21
+NATIVE+_2189.xml
+      30
+NAVY_1650.xml
+      27
+NEAR_504.xml
+      42
+NEAT_2868.xml
+      19
+NECK+_1651.xml
+      22
+NECKLACE_2853.xml
+      20
+NECKTIE_1652.xml
+      20
+NECKTIE_2_1653.xml
+      25
+NEGATIVE_1654.xml
+      23
+NEPHEW+_1655.xml
+      33
+NERVE^VEIN_1657.xml
+      43
+NERVOUS_1658.xml
+      23
+NERVY_2869.xml
+      17
+NET_943.xml
+      48
+NEUTRAL+_220.xml
+      49
+NEVER_1661.xml
+      21
+NEW+TESTAMENT_3190.xml
+      46
+NEW_1662.xml
+      28
+NEXT+AGENT_3189.xml
+      26
+NEXT-TO_2_510.xml
+      50
+NEXT-TO_3_511.xml
+      61
+NEXT-TO_509.xml
+      49
+NEXT-WEEK_2_2381.xml
+      39
+NEXT-YEAR_2730.xml
+      53
+NEXT_506.xml
+      44
+NIBBLE++_1669.xml
+      25
+NICE^CLEAN_499.xml
+      58
+NIECE+_1656.xml
+      37
+NIGHT_1671.xml
+      18
+NINE+HOUR_3336.xml
+      25
+NINE-MONTHS_2567.xml
+      38
+NINE-WEEKS_2568.xml
+      34
+NINETEEN+_3018.xml
+      43
+NINETEEN_2_3019.xml
+      29
+NINETY-EIGHT_3343.xml
+      16
+NINETY-NINE_3344.xml
+      18
+NINETY-SEVEN_3345.xml
+      18
+NINE_3020.xml
+      33
+NINTH_3418.xml
+      21
+NIPPLES_1672.xml
+      24
+NO-PROBLEM+_1676.xml
+      23
+NOISE+RUMBLE_3283.xml
+      22
+NOISE+_1673.xml
+      24
+NONE_1677.xml
+      21
+NOON+_1680.xml
+      23
+NORTH_1681.xml
+      20
+NOSE+OPPOSITE_2679.xml
+      51
+NOSE_1683.xml
+      23
+NOT+SATISFIED_3438.xml
+      27
+NOT-CARE_2_767.xml
+      68
+NOT-CARE_766.xml
+      42
+NOT-MIND_768.xml
+      54
+NOT-MY-PROBLEM_2501.xml
+      46
+NOT-YET+_3001.xml
+      43
+NOTHING-AT-ALL_1678.xml
+      23
+NOTHING_1675.xml
+      23
+NOTICE_1686.xml
+      25
+NOT_1684.xml
+      16
+NOW+(D)DAY_3285.xml
+      27
+NOW_1687.xml
+      24
+NUMBER_1605.xml
+      57
+NUN_2904.xml
+      25
+NURSE_758.xml
+      59
+NUT+_1689.xml
+      25
+N_1638.xml
+      21
+OBESE+_2474.xml
+      41
+OBSCURE_652.xml
+      53
+OCEAN_229.xml
+      48
+OCTOPUS+_2815.xml
+      31
+OF-COURSE_1648.xml
+      23
+OFFICE_2460.xml
+      40
+OFF_1692.xml
+      24
+OFTEN_71.xml
+      62
+OH-I-SEE+_1693.xml
+      23
+OIL+_1130.xml
+      62
+OLD+LESS-THAN_3184.xml
+      32
+OLD+TESTAMENT_2_3199.xml
+      48
+OLD_2_77.xml
+      51
+OLD_76.xml
+      41
+ONCE-IN-A-WHILE+_2087.xml
+      46
+ONCE-IN-A-WHILE_2+_2088.xml
+      44
+ONCE_1695.xml
+      20
+ONE+HUNDRED_3013.xml
+      32
+ONE+MILLION_3459.xml
+      28
+ONE+MORE++_3202.xml
+      34
+ONE+THOUSAND_3206.xml
+      28
+ONE-FOURTH_2_3201.xml
+      18
+ONE-FOURTH_3200.xml
+      19
+ONE-MONTH_2736.xml
+      31
+ONE-MORE++_3203.xml
+      25
+ONE-NIGHT-STAND_2664.xml
+      39
+ONE-THIRD_2_3205.xml
+      17
+ONE-THIRD_3204.xml
+      23
+ONE-WEEK_2379.xml
+      35
+ONE_2_10.xml
+      39
+ONE_9.xml
+      45
+ONION_1696.xml
+      19
+ON_1694.xml
+      19
+OPEN-DOOR_1698.xml
+      19
+OPEN-WINDOW_1699.xml
+      22
+OPEN_1697.xml
+      18
+OPINION+_1703.xml
+      22
+OPPORTUNITY-pl_2659.xml
+      51
+OPPORTUNITY_2658.xml
+      38
+OPPOSITE+AGENT_3097.xml
+      51
+OPPOSITE_1705.xml
+      17
+OPTION_2_482.xml
+      67
+OPTION_480.xml
+      44
+ORANGE+_1707.xml
+      20
+ORBIT+_2110.xml
+      32
+ORDER_112.xml
+      57
+ORGAN-MUSIC+_1758.xml
+      39
+ORGANIZATION_910.xml
+      53
+ORTHODOX_1708.xml
+      23
+OTHER_110.xml
+      41
+OUT_1709.xml
+      19
+OVERFLOW_1711.xml
+      30
+OVERHEAD-PROJECTOR_1712.xml
+      26
+OVERHEAD-PROJECTOR_2_1713.xml
+      54
+OVERLOOK_1059.xml
+      45
+OVERWHELMED_2518.xml
+      42
+OVER^AFTER_52.xml
+      46
+OWL_1714.xml
+      43
+O_2692.xml
+      28
+PACK+_1715.xml
+      62
+PADDLE^CANOE_398.xml
+      63
+PAGER+_1720.xml
+      53
+PAINT+AGENT_3209.xml
+      32
+PAINT+_1724.xml
+      56
+PAINT_2+_1725.xml
+      65
+PANCAKE_2767.xml
+      22
+PANTS+_1729.xml
+      56
+PAPER++CLIP_3212.xml
+      45
+PAPER++SQUARE_3121.xml
+      96
+PAPER+_1730.xml
+      69
+PAPER-CHECK^CARD_468.xml
+      82
+PARACHUTE_2607.xml
+      82
+PARAGRAPH+_2479.xml
+      43
+PARAGRAPH-pl_2480.xml
+      51
+PARALLEL_802.xml
+      39
+PARENTHESES_2608.xml
+      32
+PARENTHESES_2_2609.xml
+      52
+PARK++DROP-COINS_3450.xml
+      44
+PARK_2906.xml
+      19
+PARLIAMENT_2907.xml
+      27
+PARTY+_1779.xml
+      32
+PASS-DOWN+_108.xml
+      56
+PASS-OUT_2848.xml
+      20
+PASS_2424.xml
+      41
+PAST+NIGHT_3159.xml
+      28
+PAST+YEAR_3451.xml
+      32
+PAST+_176.xml
+      58
+PAST_2_177.xml
+      47
+PAT-ON-BACK++_1732.xml
+      49
+PATIENT_1734.xml
+      46
+PATRONIZE^FREQUENT++_2999.xml
+      47
+PAY++FINISH_3330.xml
+      34
+PAY-ATTENTION+_152.xml
+      52
+PAY-IN-FULL_2557.xml
+      47
+PAY_1736.xml
+      44
+PCL 5(coming in)_3399.xml
+       0
+PCL 5-C-L(crowd)_614.xml
+       0
+PEA-BRAIN_404.xml
+      49
+PEACH+_877.xml
+      49
+PEAK-MOUNTAIN_2989.xml
+      50
+PEAR+_1739.xml
+      47
+PEAS_2724.xml
+      50
+PEEK-AROUND_2497.xml
+      60
+PENCIL_2446.xml
+      41
+PENGUIN+_1740.xml
+      51
+PEOPLE+AUDIENCE_3426.xml
+      35
+PEOPLE+_1749.xml
+      59
+PERCEIVE+_1469.xml
+      44
+PERCENT_1742.xml
+      46
+PERFECT_871.xml
+      40
+PERFUME+_1743.xml
+      39
+PERFUME_2_1744.xml
+      42
+PERFUME_3_1745.xml
+      54
+PERIOD-ON-PAGE_1747.xml
+      40
+PERIOD_1746.xml
+      44
+PERMIT_96.xml
+      44
+PERSONALITY_1751.xml
+      43
+PERSON_1748.xml
+      44
+PERSPECTIVE_1752.xml
+      43
+PERSPECTIVE_2_1753.xml
+      54
+PET^SPOILED+_2498.xml
+      69
+PHONE+PUSH-BUTTONS_3081.xml
+      96
+PHONE+_2235.xml
+      48
+PHYSICAL_298.xml
+      65
+PHYSICS+_1178.xml
+      45
+PIANO_1757.xml
+      33
+PICKLE+_1759.xml
+      26
+PICK^CHOOSE_953.xml
+      50
+PICNIC_1881.xml
+      38
+PICTURE_1763.xml
+      27
+PIE_1764.xml
+      38
+PIG_724.xml
+      49
+PILGRIM_2611.xml
+      39
+PILLOW+_1765.xml
+      29
+PIMPLES_711.xml
+      71
+PINEAPPLE+_1766.xml
+      26
+PING-PONG^TENNIS_2809.xml
+      31
+PING-PONG_2_2810.xml
+      31
+PINK_1880.xml
+      29
+PIN_186.xml
+      59
+PIN_2_187.xml
+      47
+PIPE+_1767.xml
+      22
+PIRATE+_1733.xml
+      43
+PISS-OFF_2612.xml
+      31
+PISS-OFF_2_2613.xml
+      34
+PITCH-A-BALL+_2908.xml
+      34
+PITCHER_1807.xml
+      24
+PITCHER_2+_1808.xml
+      37
+PITY+_1768.xml
+      26
+PIZZA_1769.xml
+      26
+PIZZA_2+_1770.xml
+      30
+PIZZA_3_1771.xml
+      19
+PIZZA_4_1772.xml
+      21
+PLACE_2512.xml
+      48
+PLANT-SEEDS_1776.xml
+      22
+PLAN^PREPARE_1775.xml
+      28
+PLAN_1774.xml
+      26
+PLASTIC_982.xml
+      56
+PLAY+AGENT_3221.xml
+      26
+PLAY+GROUND_3222.xml
+      31
+PLAY+_1777.xml
+      25
+PLAY-AROUND+_1778.xml
+      27
+PLEASE^(1h)ENJOY_852.xml
+      56
+PLENTY_856.xml
+      48
+PLUG+_1784.xml
+      34
+PLUS_1798.xml
+      19
+PNEUMONIA+_1192.xml
+      52
+POCKET+_1785.xml
+      29
+POEM_881.xml
+      52
+POETRY+_1633.xml
+      28
+POINT-TO_1786.xml
+      19
+POKE_1787.xml
+      25
+POLICY_2134.xml
+      38
+POLITE_955.xml
+      52
+POLITICS_403.xml
+      40
+PONDER+_2951.xml
+      50
+PONDER_2+_2952.xml
+      70
+POOR+_1793.xml
+      29
+POP-CORK_1794.xml
+      21
+POP-UP_728.xml
+      41
+POPCORN+_1795.xml
+      34
+POPE_2614.xml
+      37
+POSS i_1224.xml
+       0
+POSS+ i^j_1225.xml
+       0
+POSS-1p-pl_1223.xml
+      34
+POSS-1p_1222.xml
+      38
+POSS-2p-arc_1228.xml
+      44
+POSS-2p_1227.xml
+      42
+POSS-pl-arc_1226.xml
+      39
+POSTER-pl_2661.xml
+      81
+POSTER_2660.xml
+      56
+POSTPONE_1804.xml
+      25
+POTATO+_1805.xml
+      27
+POUND^WEIGH+_1563.xml
+      53
+POUR_1806.xml
+      27
+POWERFUL_847.xml
+      42
+POWER_848.xml
+      45
+PRACTICE+_1505.xml
+      58
+PRAY+_1810.xml
+      62
+PRE+SCHOOL_3227.xml
+      32
+PREACH++AGENT_3225.xml
+      37
+PREACH+_1813.xml
+      40
+PREDICT+AGENT_3230.xml
+      31
+PREDICT_1996.xml
+      26
+PREGNANT_1814.xml
+      33
+PRESBYTERIAN+_1398.xml
+      44
+PRESIDENT_1816.xml
+      20
+PRESS-BUTTONS_2975.xml
+      58
+PRESSURE_1817.xml
+      21
+PREVENT_687.xml
+      42
+PRICE_454.xml
+      48
+PRIEST_2852.xml
+      23
+PRINCESS_1388.xml
+      58
+PRINCE_1387.xml
+      57
+PRINCIPAL_1820.xml
+      27
+PRINT+AGENT_3228.xml
+      24
+PRINT_1821.xml
+      23
+PRIORITY_1822.xml
+      23
+PRISON++AGENT_3229.xml
+      34
+PRISON_2857.xml
+      19
+PRIZE-DRAWING_2558.xml
+      36
+PROBLEM+_1176.xml
+      43
+PROBLEM_2_1177.xml
+      56
+PROCEED_514.xml
+      47
+PROGRAM_1823.xml
+      26
+PROGRESS+_516.xml
+      69
+PROJECT_1824.xml
+      28
+PROMISCUOUS_2615.xml
+      40
+PROMISE_1826.xml
+      24
+PROPORTION_1827.xml
+      26
+PROTESTANT+_1397.xml
+      55
+PROTEST_740.xml
+      42
+PROUD_1828.xml
+      25
+PROVE_1829.xml
+      16
+PSYCHIATRY++AGENT_3231.xml
+      30
+PSYCHIATRY+_759.xml
+      48
+PSYCHOLOGY++AGENT_3232.xml
+      37
+PSYCHOLOGY+_1339.xml
+      55
+PUFF-SMOKE_1832.xml
+      17
+PULL_1834.xml
+      26
+PULSATE++_1660.xml
+      27
+PUMPS_2744.xml
+      70
+PUNCH_977.xml
+      49
+PUNISH_1841.xml
+      23
+PUPPET+_2688.xml
+      43
+PURPLE+_1842.xml
+      21
+PURSE+_1843.xml
+      24
+PUSH_2721.xml
+      36
+PUT-ON-GLOVES_1110.xml
+      50
+PUT-ON-HEARING-AID_1208.xml
+      36
+PUT-ON-RING_1934.xml
+      19
+PUT_1627.xml
+      20
+PUZZLE^PUSH-BUTTONS++_1845.xml
+      31
+P_1755.xml
+      21
+Q-TIP+_1209.xml
+      50
+QMwg_1271.xml
+      48
+QUADRUPLE_3332.xml
+      19
+QUEEN_1386.xml
+      49
+QUESTION_2993.xml
+      43
+QUIET_2_748.xml
+      56
+QUIET_747.xml
+      42
+QUINTUPLE_3333.xml
+      18
+QUIT_1848.xml
+      20
+QUOTE^TOPIC_1849.xml
+      18
+Q_1846.xml
+      13
+RABBIT+_1855.xml
+      23
+RABBI_1851.xml
+      24
+RABBI_2_1853.xml
+      28
+RACCOON+_1856.xml
+      28
+RADIO_2873.xml
+      20
+RAIN+_1857.xml
+      25
+RAINBOW_1862.xml
+      19
+RAKE+_1864.xml
+      34
+RAM_1865.xml
+      28
+RAT+_1623.xml
+      21
+RATTLE_219.xml
+      55
+READY_1868.xml
+      18
+READY_2++_1869.xml
+      23
+READ_1867.xml
+      22
+REALLY+NICE^CLEAN_3220.xml
+      27
+REALLY+POSS i+_3051.xml
+       0
+REALLY_2971.xml
+      37
+REASON+_1870.xml
+      24
+RECENT-PAST_1872.xml
+      25
+RECLINE^ROCKING-CHAIR_1873.xml
+      37
+RECORD^BREAK-RECORD_338.xml
+      52
+RECORD_1877.xml
+      26
+RECYCLE_2394.xml
+      75
+RED+BLACK+CHECKERS_465.xml
+     206
+RED+BLOOD_3053.xml
+      45
+RED+BLUSH_3427.xml
+      32
+RED+DCL(face)_3320.xml
+      26
+RED+SLICE_2063.xml
+      18
+RED+_1879.xml
+      25
+RED+fs-BERRY_3237.xml
+      22
+REDUCE_2782.xml
+      19
+REFER_1882.xml
+      21
+REFLECT_1581.xml
+      41
+REFUSE_1884.xml
+      21
+REGISTER+_2657.xml
+      51
+REGULAR+_126.xml
+      65
+REINS_1887.xml
+      30
+REJECT_1888.xml
+      19
+RELATIONSHIP-OFF_1889.xml
+      17
+RELATIONSHIP_252.xml
+      64
+RELATIVE_1053.xml
+      48
+RELAY-OPERATOR+_1702.xml
+      27
+RELIGION_1890.xml
+      18
+REMEMBER_1891.xml
+      19
+REMIND++_1892.xml
+      27
+REMIND-2p+_1893.xml
+      23
+REMOVE_1894.xml
+      21
+RENOVATION++AGENT_3063.xml
+     119
+REPAIR+_1606.xml
+      50
+REPAIR_2+_1607.xml
+      48
+REPLACE_2291.xml
+      54
+REPORT+AGENT_3240.xml
+      31
+REPORT_113.xml
+      40
+REPUBLICAN_690.xml
+      41
+REQUEST_1812.xml
+      30
+REQUIRE_688.xml
+      37
+RESEARCH+_1895.xml
+      30
+RESPECT_1256.xml
+      75
+RESPONSIBILITY+_1901.xml
+      27
+RESTAURANT_1906.xml
+      24
+RESTLESS_1440.xml
+      52
+REST_1905.xml
+      16
+RESULT_558.xml
+      44
+RETIRE_2712.xml
+      36
+REVENGE_1908.xml
+      21
+REVIEW_1909.xml
+      18
+RIBS_1911.xml
+      21
+RIB_1912.xml
+      24
+RICH_1913.xml
+      19
+RIDE-ON_1918.xml
+      24
+RIDE_1916.xml
+      20
+RIDE_2_1917.xml
+      19
+RIFLE_1145.xml
+      57
+RIGHT-ARM+_1919.xml
+      23
+RIGHT_1927.xml
+      14
+RIGHT_2_1928.xml
+      14
+RING+_1929.xml
+      21
+RIP_1935.xml
+      20
+RIVER_2725.xml
+      52
+ROAD-pl_2799.xml
+      31
+ROAD_2798.xml
+      22
+ROCKET_2226.xml
+      39
+ROCK_1936.xml
+      19
+ROLLER-BLADE_2049.xml
+      34
+ROLLER-SKATE+_2047.xml
+      34
+ROLLING+_2393.xml
+      61
+ROOMMATE+_2814.xml
+      31
+ROOSTER+_1937.xml
+      23
+ROPE_1460.xml
+      67
+ROUGH_1940.xml
+      15
+ROWING+_2546.xml
+      81
+ROYAL_1392.xml
+      50
+RUB+_2464.xml
+      47
+RUBBER+_1941.xml
+      27
+RUDE_2549.xml
+      41
+RUIN_2924.xml
+      38
+RULE-pl_2656.xml
+      88
+RULE_2655.xml
+      49
+RUN-MACHINE++_1945.xml
+      27
+RUN-OUT_92.xml
+      41
+RUNNY-NOSE++_2553.xml
+      45
+RUN_1943.xml
+      23
+R_1850.xml
+      18
+SAD_1621.xml
+      20
+SAFE+AGENT_3250.xml
+      27
+SAFE_1949.xml
+      20
+SAFE_2+AGENT_3251.xml
+      36
+SAFE_2_1950.xml
+      33
+SAILBOAT_1951.xml
+      20
+SALAD+_1952.xml
+      31
+SALT_1953.xml
+      32
+SAME+_1955.xml
+      29
+SAME-3p-pl-arc_1957.xml
+      27
+SAME-OLD+_1960.xml
+      40
+SAME-TIME_1954.xml
+      20
+SANDWICH_1761.xml
+      31
+SANDWICH_2_1762.xml
+      27
+SARCASM_87.xml
+      45
+SATISFIED_1963.xml
+      17
+SATURDAY+_1965.xml
+      22
+SAUCE+_1967.xml
+      27
+SAUSAGE^HOT-DOG_1265.xml
+      44
+SAVE+_1968.xml
+      24
+SAVE-MONEY++_1313.xml
+      57
+SAVE_2_1969.xml
+      24
+SAW+_2432.xml
+      62
+SAY+_1970.xml
+      23
+SCARE+_63.xml
+      71
+SCARF_1972.xml
+      28
+SCARF_2_1973.xml
+      34
+SCHEDULE_1974.xml
+      31
+SCHOOL+_1975.xml
+      27
+SCIENCE+AGENT_3252.xml
+      38
+SCIENCE_1976.xml
+      31
+SCL 3(vehicle)++DCL 1(speedometer)_3447.xml
+       0
+SCL F(small circle)_3144.xml
+       0
+SCL V(person falling forward)_3272.xml
+       0
+SCL V(person falling in place)_3258.xml
+       0
+SCL V(person rolling around)_3247.xml
+       0
+SCL V(person walking up ladder)_3158.xml
+       0
+SCL V(person walking up ladder)_3454.xml
+       0
+SCL V(person walking)_3292.xml
+       0
+SCOLD+_2921.xml
+      43
+SCOOTER++_1981.xml
+      26
+SCOUT+_1982.xml
+      23
+SCRAPE_1984.xml
+      13
+SCREAM_2919.xml
+      37
+SCREEN^FILTER++WINDOW+_3449.xml
+      56
+SCREEN^FILTER+_2856.xml
+      28
+SCREW-CAP_1438.xml
+      37
+SCREWDRIVER++_1985.xml
+      26
+SCUBA+_1988.xml
+      25
+SEARCH-FOR+_1474.xml
+      59
+SEAT-BELT_2693.xml
+      37
+SECOND-IN-LIST_2_3401.xml
+      17
+SECOND-OF-TIME_1989.xml
+      16
+SECOND-PLACE_3402.xml
+      16
+SECOND_2_3421.xml
+      18
+SECOND_3420.xml
+      14
+SECOND_3_3422.xml
+      16
+SECRET+HIDE_3143.xml
+      30
+SECRET+_1990.xml
+      25
+SECRETARY_1992.xml
+      23
+SECRET_2_1991.xml
+      22
+SEE-SAW+_1999.xml
+      28
+SEE-SEE_1995.xml
+      22
+SEEM_1997.xml
+      22
+SEE_1994.xml
+      22
+SELF+ i^j_1237.xml
+       0
+SELF+ i_1236.xml
+       0
+SELF-1p+_1232.xml
+      38
+SELF-1p-pl_1234.xml
+      49
+SELF-2p_1238.xml
+      55
+SELF_2-2p++++_1239.xml
+      69
+SELL_2000.xml
+      17
+SEMESTER_2213.xml
+      21
+SENATE_1556.xml
+      46
+SEND^MAIL_2002.xml
+      21
+SEND_2001.xml
+      20
+SENIOR+_2005.xml
+      22
+SENIOR-CITIZEN_2006.xml
+      27
+SENSITIVE_941.xml
+      42
+SENTENCE-pl_2535.xml
+      44
+SENTENCE_2534.xml
+      39
+SEPARATE_2521.xml
+      33
+SEPARATE_2_2522.xml
+      34
+SERIOUS_731.xml
+      38
+SERVICE+AGENT_3461.xml
+      39
+SERVICE_2007.xml
+      24
+SET-UP_2697.xml
+      53
+SEVEN+HOUR_2928.xml
+      41
+SEVEN-HOURS_2927.xml
+      39
+SEVEN-MONTHS_2569.xml
+      32
+SEVEN-WEEKS_2570.xml
+      35
+SEVENTEEN_2_3029.xml
+      29
+SEVENTEEN_3028.xml
+      38
+SEVENTH_3322.xml
+      19
+SEVENTY-EIGHT_3346.xml
+      17
+SEVENTY-NINE_3347.xml
+      15
+SEVENTY-SEVEN_2_3349.xml
+      17
+SEVENTY-SEVEN_3348.xml
+      19
+SEVENTY-SIX_2_3351.xml
+      16
+SEVENTY-SIX_3350.xml
+      18
+SEVEN_3022.xml
+      27
+SEW+_2013.xml
+      34
+SEX^GENDER_2015.xml
+      22
+SHAKE-BY-HANDS+_2929.xml
+      46
+SHAME_2032.xml
+      19
+SHAMPOO_2016.xml
+      25
+SHAPE^STATUE-pl_2756.xml
+      34
+SHAPE^STATUE_2755.xml
+      43
+SHARP_1645.xml
+      20
+SHAVE+_2018.xml
+      29
+SHEARS^SHAVE+_2020.xml
+      25
+SHEEP+_2021.xml
+      36
+SHEET-CAKE_388.xml
+      65
+SHELF^FLOOR_2728.xml
+      41
+SHH+CONFIDENTIAL_3374.xml
+      24
+SHINE_2022.xml
+      20
+SHIP_2922.xml
+      81
+SHOE+HALF-LIMB_3055.xml
+      56
+SHOE+_2023.xml
+      24
+SHOE-HEEL_2743.xml
+      52
+SHOOT-ARROW_131.xml
+      59
+SHOOT-ARROW_2_132.xml
+      60
+SHOOT_1143.xml
+      38
+SHOOT_2_1144.xml
+      49
+SHORE+_2835.xml
+      32
+SHORT-HEIGHT_2806.xml
+      24
+SHORT-SLEEVE_1923.xml
+      26
+SHORTS+_2025.xml
+      25
+SHORTS_2+_2026.xml
+      30
+SHORT_2638.xml
+      44
+SHOULD+_1635.xml
+      26
+SHOVEL^DIG_2027.xml
+      26
+SHOW+AGENT_3243.xml
+      27
+SHOW-1p_692.xml
+      42
+SHOW-2p_693.xml
+      68
+SHOWER+_2028.xml
+      23
+SHOW_691.xml
+      46
+SHUT-UP_2029.xml
+      19
+SHUT_519.xml
+      44
+SHY_2030.xml
+      25
+SHY_2_2031.xml
+      23
+SICK^SILLY_501.xml
+      35
+SICK_2034.xml
+      19
+SIDE_2035.xml
+      23
+SIGN+LANGUAGE_3462.xml
+      30
+SIGN+_3004.xml
+      61
+SIGNATURE_2037.xml
+      22
+SIGNATURE_2_2038.xml
+      21
+SILLY_2039.xml
+      21
+SILVER_2040.xml
+      29
+SIMMER_300.xml
+      49
+SIMPLE_2041.xml
+      20
+SINGLE_3.xml
+      68
+SISTER_2537.xml
+      39
+SIT++DCL crvd-B(couch shaped object)_3070.xml
+       0
+SIT+DCL crvd-B(couch shaped object)_3069.xml
+       0
+SITUATION_626.xml
+      41
+SIT_2043.xml
+      21
+SIX+HOUR_2915.xml
+      22
+SIX-DOLLARS_2832.xml
+      21
+SIX-HOURS_2914.xml
+      19
+SIX-MONTHS_2571.xml
+      34
+SIX-WEEKS_2572.xml
+      34
+SIXTEEN+_3030.xml
+      38
+SIXTEEN_2+_3031.xml
+      43
+SIXTEEN_3_3032.xml
+      29
+SIXTH_3419.xml
+      15
+SIXTY-EIGHT_3352.xml
+      15
+SIXTY-NINE_3353.xml
+      15
+SIXTY-SEVEN_3354.xml
+      15
+SIXTY-SIX_2_3356.xml
+      17
+SIXTY-SIX_3355.xml
+      16
+SIX_3023.xml
+      25
+SIZE+_1545.xml
+      65
+SKI+_2045.xml
+      24
+SKILL_2050.xml
+      31
+SKIN_2051.xml
+      26
+SKIRT_2055.xml
+      30
+SKUNK_2056.xml
+      25
+SKYSCRAPER_2716.xml
+      71
+SKY_2058.xml
+      28
+SLAVE+_2059.xml
+      89
+SLEEP+DRESS^CLOTHES_3210.xml
+      28
+SLEEP_2060.xml
+      24
+SLICE_2061.xml
+      22
+SLIDING-DOORS_2064.xml
+      35
+SLIM_2251.xml
+      38
+SLIM_2_2252.xml
+      44
+SLIPPERS_2066.xml
+      31
+SLIPPERY_2067.xml
+      25
+SLIPPER_2065.xml
+      39
+SLOW_2068.xml
+      27
+SMALL+_1470.xml
+      44
+SMELL+_2069.xml
+      28
+SMELLY++_2070.xml
+      24
+SMILE_2071.xml
+      21
+SMILE_2_2072.xml
+      16
+SMILE_3_2073.xml
+      22
+SMOKE_2+_2918.xml
+      50
+SMOKE_2917.xml
+      26
+SMOOTH-SURFACE_2191.xml
+      32
+SMOOTH_629.xml
+      36
+SNAKE+WAG++_3236.xml
+      36
+SNAKE_2074.xml
+      27
+SNEEZE_2075.xml
+      26
+SNOB++_2616.xml
+      52
+SNORKEL+_2076.xml
+      24
+SNOW+MOTORCYCLE_3259.xml
+      30
+SNOWBOARD++_2077.xml
+      23
+SNOWMOBILE_1617.xml
+      34
+SNOW_1859.xml
+      28
+SO-SO_890.xml
+      39
+SOAP++WASHING-MACHINE_3080.xml
+      72
+SOAP++_2078.xml
+      27
+SOCIAL-WORK_2079.xml
+      32
+SOCIAL^INTERACT+_146.xml
+      68
+SOCIETY_908.xml
+      51
+SOCKS_2080.xml
+      41
+SODA_2081.xml
+      29
+SOFT+_2082.xml
+      30
+SOMETHING^ONE_6.xml
+      58
+SOMETIMES+_2086.xml
+      39
+SOME_2085.xml
+      36
+SON_2089.xml
+      26
+SOON_650.xml
+      52
+SOPHISTICATED++_2618.xml
+      56
+SOPHOMORE++_2091.xml
+      26
+SOPHOMORE_2_2092.xml
+      23
+SORRY+_2094.xml
+      39
+SOUP++_2095.xml
+      32
+SOUTH+(A)ns-AFRICA_3261.xml
+      38
+SOUTH+ns-AFRICA_3262.xml
+      30
+SOUTH_2098.xml
+      17
+SOUTH_2_2099.xml
+      15
+SPAGHETTI+_2100.xml
+      30
+SPAGHETTI_2+_2101.xml
+      39
+SPANK_2103.xml
+      28
+SPEAKERS+_1479.xml
+      47
+SPEAKERS_2+_1480.xml
+      56
+SPECIALTY_1498.xml
+      53
+SPECIAL^EXCEPT_2104.xml
+      20
+SPEECH^ORAL+_2749.xml
+      21
+SPELL_962.xml
+      42
+SPEND-ALL_2507.xml
+      56
+SPEND_2506.xml
+      39
+SPICY+_2106.xml
+      29
+SPIDER_2108.xml
+      27
+SPILL_2499.xml
+      37
+SPIN+_2109.xml
+      32
+SPIT_2115.xml
+      19
+SPREAD_2828.xml
+      24
+SPRINKLER+_2500.xml
+      71
+SQUARE+DOOR_3429.xml
+      38
+SQUARED_2_3358.xml
+      14
+SQUARED_3357.xml
+      18
+SQUARE_1799.xml
+      32
+SQUIRREL++_2120.xml
+      24
+STAB_2122.xml
+      31
+STAGE_2123.xml
+      38
+STAMP-SEAL_128.xml
+      43
+STAMP_2748.xml
+      39
+STAND+_2126.xml
+      27
+STAND-UP+ASCEND_3246.xml
+      33
+STAND-UP_2127.xml
+      24
+STAR+_2129.xml
+      26
+START_2130.xml
+      22
+STATE_2131.xml
+      26
+STATISTICS+_1540.xml
+      58
+STEALTHY+_2136.xml
+      39
+STEAL_2135.xml
+      35
+STEAM+_2137.xml
+      43
+STEEP_2139.xml
+      39
+STEPLADDER++_2141.xml
+      39
+STEPS++_2140.xml
+      40
+STICKY+_2142.xml
+      28
+STILL_2144.xml
+      23
+STIMULATE_2146.xml
+      25
+STING-FACE_2150.xml
+      22
+STING_2149.xml
+      22
+STINK_2154.xml
+      21
+STIR++_2155.xml
+      36
+STIR_2+_2156.xml
+      39
+STITCH+_2014.xml
+      30
+STOMACH_2671.xml
+      51
+STOPLIGHT_2161.xml
+      31
+STOP_2160.xml
+      20
+STORM^CLOUDS_2529.xml
+      56
+STORM^WIND++_2412.xml
+     127
+STORY++AGENT_3180.xml
+      35
+STORY+_2162.xml
+      31
+STORY-TELL+_2827.xml
+      32
+STORY_2++_2163.xml
+      27
+STRAIGHT_2165.xml
+      23
+STRANGE_1690.xml
+      23
+STRANGLE_2930.xml
+      46
+STRAWBERRY_2544.xml
+      29
+STRAW_2+_2932.xml
+      59
+STRAW_2931.xml
+      43
+STRAY^DEVIATE_2597.xml
+      56
+STRICT_2515.xml
+      32
+STRING_1459.xml
+      58
+STRIP+_2321.xml
+      61
+STRIP-PAINT++_1726.xml
+      62
+STRIPES_2168.xml
+      30
+STRONG_2489.xml
+      37
+STRUCTURE_2+_2171.xml
+      38
+STRUCTURE_2170.xml
+      55
+STRUGGLE+_1706.xml
+      36
+STUBBORN_676.xml
+      39
+STUCK_632.xml
+      36
+STUDY_2+_2173.xml
+      34
+STUDY_2172.xml
+      24
+STUPID_2174.xml
+      24
+STUPID_2_2175.xml
+      18
+STUPID_3_2176.xml
+      18
+SUBSCRIBE+_2715.xml
+      56
+SUBTRACT_2177.xml
+      19
+SUBWAY+_2178.xml
+      26
+SUBWAY_2_2179.xml
+      19
+SUCCEED_2934.xml
+      38
+SUFFER_1735.xml
+      42
+SUGAR^SWEET+_395.xml
+      43
+SUGGEST_1874.xml
+      25
+SUITCASE++_1483.xml
+      54
+SULK+_1492.xml
+      52
+SUMMARIZE_2183.xml
+      18
+SUMMER+_2186.xml
+      21
+SUMMON_2187.xml
+      23
+SUNDAY+_2718.xml
+      53
+SUNDAY_2_2719.xml
+      67
+SUNRISE_2195.xml
+      21
+SUNSET_2197.xml
+      21
+SUNSHINE_2194.xml
+      22
+SUN_2192.xml
+      20
+SUN_2_2193.xml
+      31
+SUPERIOR_2426.xml
+      59
+SUPERVISE+AGENT_3312.xml
+      40
+SUPERVISE_226.xml
+      58
+SUPPORT++AGENT_3380.xml
+      31
+SUPPORT_1885.xml
+      18
+SURFACE+_2190.xml
+      26
+SURGERY_1700.xml
+      21
+SURGERY_2_1701.xml
+      25
+SURPRISE_166.xml
+      62
+SURPRISE_2_167.xml
+      65
+SURROUND_2509.xml
+      74
+SUSPECT+_2201.xml
+      25
+SUSPEND_1243.xml
+      49
+SWALLOW_2202.xml
+      30
+SWEAR_2461.xml
+      35
+SWEATER_2205.xml
+      24
+SWEAT_2204.xml
+      18
+SWEETHEART_1723.xml
+      52
+SWIM+_2210.xml
+      26
+SWING+_2958.xml
+      86
+SWINGING-SINGLE_4.xml
+      85
+SWITCH_2289.xml
+      39
+SYMBOL+_2133.xml
+      29
+SYSTEM_2212.xml
+      23
+S_2519.xml
+      27
+TABLE+_2215.xml
+      44
+TAIL+++++_2216.xml
+      42
+TAKE-A-HIKE_2590.xml
+      39
+TAKE-ADVANTAGE_794.xml
+      46
+TAKE-BREAK_951.xml
+      63
+TAKE-NOTES++_1464.xml
+      52
+TAKE-OFF_2224.xml
+      38
+TAKE-PICTURE_390.xml
+      51
+TAKE-PILL+_2223.xml
+      50
+TAKE-SUBWAY_2++_2181.xml
+      31
+TAKE-SUBWAY_2180.xml
+      20
+TAKE-TRAIN_2296.xml
+      35
+TAKE-UP_2220.xml
+      35
+TAKE_2219.xml
+      35
+TALK+_2959.xml
+      44
+TALK-OVER++_1547.xml
+      58
+TALK-TO-SELF+_1346.xml
+      55
+TALKwg_2960.xml
+      36
+TALL_2225.xml
+      45
+TANK-TOP+_2227.xml
+      57
+TAN_2481.xml
+      37
+TAP-DANCE+_1008.xml
+      70
+TAPE-RECORDING+_2228.xml
+      75
+TAPE_2229.xml
+      42
+TASTE++_922.xml
+      53
+TATTLE+_2116.xml
+      34
+TATTOO+_2230.xml
+      62
+TATTOO_2+_2231.xml
+      56
+TEA+_2355.xml
+      45
+TEACH+AGENT_3274.xml
+      25
+TEACH+_2233.xml
+      52
+TEAM_904.xml
+      43
+TEASE++_2923.xml
+      54
+TECHNOLOGY++AGENT_3275.xml
+      33
+TECHNOLOGY_2+++AGENT_3276.xml
+      34
+TEENAGER_2676.xml
+      45
+TEETH+_2759.xml
+      27
+TEETH_2+_2760.xml
+      29
+TELESCOPE_2239.xml
+      62
+TELL i_2940.xml
+       0
+TELL-1p_2941.xml
+      44
+TEMPERATURE+_2483.xml
+      47
+TEMPLE+_490.xml
+      47
+TEMPT+_2240.xml
+      63
+TEN+EIGHT_3026.xml
+      28
+TEND_933.xml
+      51
+TEN_3014.xml
+      28
+TEST+_2241.xml
+      54
+TEST_2_2242.xml
+      53
+TEXTING+_1721.xml
+      49
+TEXTING_2+_1722.xml
+      49
+THANKSGIVING_2942.xml
+      30
+THAN_34.xml
+      36
+THAT_2245.xml
+      32
+THEN_2723.xml
+      37
+THEORY+_2246.xml
+      49
+THEORY_2_2247.xml
+      35
+THEREFORE_2248.xml
+      49
+THERMOMETER_2249.xml
+      41
+THESE_2985.xml
+      53
+THIEF_2944.xml
+      51
+THING_2945.xml
+      51
+THINK+(2h)PASS-OUT_3104.xml
+      60
+THINK+AGREE_81.xml
+      57
+THINK+DECIDE_3075.xml
+      55
+THINK+FAITH_3375.xml
+      31
+THINK+FOCUS^NARROW_3188.xml
+      37
+THINK+GENERAL_3207.xml
+      25
+THINK+GRAB-CHANCE_3120.xml
+      55
+THINK+MARRY_3050.xml
+      57
+THINK+MEAN_3149.xml
+      28
+THINK+MESSED-UP_3086.xml
+      56
+THINK+MIX-UP_1591.xml
+      65
+THINK+OPPOSITE_726.xml
+      69
+THINK+SHOCK_3254.xml
+      28
+THINK+TALK-TO-SELF+_3456.xml
+      41
+THINK-ABOUT+_2948.xml
+      56
+THINK-OVER+_2950.xml
+      46
+THINK_2947.xml
+      41
+THIN_2053.xml
+      21
+THIN_2_2054.xml
+      19
+THIRD-IN-LIST_3400.xml
+      21
+THIRD-PLACE_2_3405.xml
+      16
+THIRD-PLACE_3404.xml
+      16
+THIRD_3463.xml
+      18
+THIRSTY_2203.xml
+      23
+THIRTEEN_3010.xml
+      32
+THIRTY-THREE_3359.xml
+      15
+THIRTY_2_3280.xml
+      16
+THIRTY_3279.xml
+      17
+THIS-PLACE_2986.xml
+      48
+THIS_2984.xml
+      29
+THOUSAND_72.xml
+      41
+THREE-FOURTHS_3281.xml
+      20
+THREE-HOUR_2573.xml
+      46
+THREE-MONTHS_2575.xml
+      33
+THREE-MORE_3335.xml
+      22
+THREE-WEEKS_2576.xml
+      34
+THREE_2+HOUR_2574.xml
+      53
+THREE_2_3017.xml
+      29
+THREE_3016.xml
+      27
+THRILL^WHAT'S-UP_937.xml
+      42
+THROAT+_2253.xml
+      55
+THROAT-HURT+_1283.xml
+      49
+THROUGH_2254.xml
+      49
+THROW-AWAY_14.xml
+      49
+THROW-BALL_2004.xml
+      20
+THROW-BASKETBALL_2259.xml
+      70
+THROW-SOFTBALL_2260.xml
+      50
+THROW_2256.xml
+      34
+THUMBTACK^BUTTON+_2262.xml
+      53
+THUMB_2261.xml
+      54
+THURSDAY_2263.xml
+      36
+TICKLE_2267.xml
+      50
+TIE_2268.xml
+      47
+TIGER+_680.xml
+      55
+TIME++(1h)WHAT_3324.xml
+      29
+TIME++_2444.xml
+      46
+TIME+DCL(circular object)_3065.xml
+       0
+TIME-PERIOD_2269.xml
+      70
+TIPTOE+_2270.xml
+      69
+TIRED_1187.xml
+      42
+TO-FOOL_425.xml
+      41
+TOAST_2272.xml
+      48
+TOAST_2_2273.xml
+      46
+TOBACCO+_2274.xml
+      41
+TOBACCO_2++_2275.xml
+      38
+TOGETHER^GO-STEADY+_47.xml
+      58
+TOILET_218.xml
+      51
+TOMATO_2062.xml
+      23
+TOMORROW_866.xml
+      46
+TONGUE_2276.xml
+      43
+TOOTHBRUSH++_2280.xml
+      52
+TOOTHPASTE_2+_2283.xml
+      50
+TOOTHPASTE_2282.xml
+      53
+TOOTH^GLASS_2758.xml
+      22
+TOP_2285.xml
+      34
+TORNADO++_2979.xml
+      67
+TORTURE+_2925.xml
+      61
+TORTURE_2+_2926.xml
+      83
+TOSS_2003.xml
+      22
+TOTAL_2_57.xml
+      45
+TOTAL_56.xml
+      52
+TOUCH-HEART_1212.xml
+      40
+TOUCH_2286.xml
+      50
+TOUCH_2_2287.xml
+      44
+TOUGH_1175.xml
+      40
+TOURNAMENT+_2158.xml
+      32
+TOWEL+_2288.xml
+      52
+TO^UNTIL_2722.xml
+      40
+TRACE-HEART_1213.xml
+      46
+TRADE_2290.xml
+      50
+TRADITION_2294.xml
+      39
+TRAFFIC+_2882.xml
+      25
+TRAIN++_2295.xml
+      46
+TRANSFER_2969.xml
+      49
+TRANSLATE_451.xml
+      38
+TRANSPORTATION+_2970.xml
+      68
+TRAP_2297.xml
+      29
+TRAP_2_2298.xml
+      35
+TRASH^BAG_205.xml
+      45
+TRAVEL_2977.xml
+      49
+TREAT_2559.xml
+      59
+TREAT_2_2560.xml
+      55
+TREE+DCL(branch)_3325.xml
+      43
+TREE+DCL(branches)+++_3326.xml
+      45
+TREE-pl_2541.xml
+      55
+TREE_2540.xml
+      42
+TRIGONOMETRY+_1538.xml
+      55
+TRIM-HEDGE_502.xml
+      51
+TRIM_2478.xml
+      67
+TRIP+_2968.xml
+      61
+TRIPLE_3334.xml
+      15
+TROMBONE+_2299.xml
+      62
+TROPHY+_2300.xml
+      56
+TROUBLE+_2439.xml
+      45
+TRUMPET_2824.xml
+      30
+TRY_2302.xml
+      38
+TUESDAY+_2305.xml
+      48
+TUNNEL_2683.xml
+      59
+TURN+BOY_2+CORRECT_3266.xml
+      36
+TURN+BROTHER_3265.xml
+      26
+TURN+FATHERwg_3268.xml
+      23
+TURN+GIRL+CORRECT_3395.xml
+      26
+TURN+MOTHER+_3269.xml
+      19
+TURN+MOTHERwg_3270.xml
+      20
+TURN+SISTER_3267.xml
+      25
+TURN-DOWN_2307.xml
+      32
+TURN-PAGE_2_989.xml
+      52
+TURN-PAGE_988.xml
+      65
+TURN-pl-arc_1668.xml
+      27
+TURN_1667.xml
+      23
+TURTLE+_3003.xml
+      37
+TUTOR+_2310.xml
+      39
+TWELVE+_3011.xml
+      30
+TWENTY+_3469.xml
+      19
+TWENTY-FIVE_3287.xml
+      17
+TWENTY-ONE+_2311.xml
+      40
+TWENTY-ONE_2+_2312.xml
+      38
+TWENTY-THREE++_3360.xml
+      18
+TWENTY-TWO_2313.xml
+      43
+TWICE_771.xml
+      42
+TWINS_2961.xml
+      51
+TWIST_620.xml
+      44
+TWO-HOURS_2964.xml
+      38
+TWO-MONTHS_2578.xml
+      33
+TWO-MORE_3289.xml
+      19
+TWO-WEEKS_2577.xml
+      33
+TWO_2+HOUR_2965.xml
+      40
+TWO_3033.xml
+      23
+TYPEWRITER_2972.xml
+      54
+TYPEWRITER_2_2973.xml
+      60
+TYPE_2974.xml
+      47
+T_2214.xml
+      29
+UGLY_2314.xml
+      45
+UMBRELLA_2315.xml
+      70
+UNCLE_160.xml
+      49
+UNCLE_2_161.xml
+      48
+UNDERPANTS+BRA_217.xml
+      64
+UNDERPANTS_2320.xml
+      48
+UNDERSTAND_2318.xml
+      36
+UNDERSTAND_2_2319.xml
+      36
+UNDERWEAR^PRECIOUS_2762.xml
+      22
+UNDER_35.xml
+      41
+UNIFORM_521.xml
+      50
+UNIVERSE_2436.xml
+      45
+UNIVERSITY_2533.xml
+      37
+UP-AHEAD_518.xml
+      50
+UP-TO-NOW_2042.xml
+      24
+UPPER_37.xml
+      42
+UPSET_2323.xml
+      44
+UPSIDE-DOWN_2324.xml
+      42
+UPSTAIRS_2124.xml
+      33
+UP_2322.xml
+      36
+URGE+_1836.xml
+      24
+USE++AGENT_3066.xml
+      82
+USE+_1157.xml
+      48
+USED-TO_1156.xml
+      42
+USE_2++AGENT_3067.xml
+      82
+USE_2+_1158.xml
+      47
+U_2492.xml
+      36
+VACATION_2710.xml
+      67
+VACATIONwg_2711.xml
+      46
+VACUUM+_2327.xml
+      53
+VACUUM-UP_2182.xml
+      28
+VAGINA+_2328.xml
+      55
+VAGUE+_2673.xml
+      66
+VAIN_2517.xml
+      42
+VALLEY_2329.xml
+      47
+VANILLA+_2330.xml
+     101
+VARY_2332.xml
+      46
+VARY_2_2333.xml
+      49
+VEGETABLE_2334.xml
+      39
+VERY-FAST_915.xml
+      46
+VERY-WRONG_1588.xml
+      46
+VERY_2337.xml
+      39
+VETO^REJECT_1018.xml
+      52
+VIBRATE_1659.xml
+      32
+VICE-PRESIDENT_2338.xml
+      34
+VIDEO-CAMERA_978.xml
+      58
+VIDEOTAPE_2_2339.xml
+      55
+VINEGAR+_2335.xml
+      44
+VINEGAR_2_2336.xml
+      43
+VIOLIN_2341.xml
+      54
+VIRGIN+fs-MARY_1527.xml
+      55
+VIRGIN-MARY_1526.xml
+      87
+VIRGIN_2342.xml
+      35
+VISIT i_2344.xml
+       0
+VISIT+AGENT_3291.xml
+      31
+VISUALIZE_2343.xml
+      42
+VOCABULARY+_2345.xml
+      51
+VOCABULARY_2++_2346.xml
+      47
+VODKA++_2347.xml
+      43
+VODKA_2+_2348.xml
+      38
+VOICE++(1)TEMPERATURE^PITCH_3219.xml
+      55
+VOICE_2350.xml
+      42
+VOLLEYBALL+_2351.xml
+      41
+VOLUNTEER^SHIRT+_2811.xml
+      21
+VOMIT_2352.xml
+      53
+VOTE_2354.xml
+      45
+V_2326.xml
+      21
+WAG++++_2217.xml
+      62
+WAG_2+++++_2218.xml
+      53
+WAIST+_2357.xml
+      53
+WAIT-A-MINUTE_8.xml
+      48
+WAIT_2359.xml
+      34
+WAKE-UP_165.xml
+      39
+WALK+_1006.xml
+      59
+WALLET+_2360.xml
+      46
+WALL_2490.xml
+      33
+WANT+NEG_3293.xml
+      18
+WANT_2+_2362.xml
+      38
+WANT_2361.xml
+      35
+WARM_2364.xml
+      43
+WARN++_2188.xml
+      24
+WASH+DISH-pl_2366.xml
+      55
+WASH+_2463.xml
+      49
+WASH-DISH+_2365.xml
+      78
+WASH-FACE+_2468.xml
+      67
+WASH-HANDS+_2470.xml
+      69
+WASHING-MACHINE+SOAP+_3079.xml
+      74
+WASHING-MACHINE+_2491.xml
+      50
+WASTE_2+_2369.xml
+      58
+WASTE_2368.xml
+      34
+WATCH_331.xml
+      47
+WATER++SCL 5(waterfall)_3301.xml
+       0
+WATER++SPRINKLER++_3299.xml
+      42
+WATER+BCL(drinking from a water fountain)_3300.xml
+       0
+WATER+DCL(round flat)_3317.xml
+       0
+WATER+FLOW_2_3073.xml
+      70
+WATER+MELON^PUMPKIN+_2372.xml
+      51
+WATER+OCEAN_230.xml
+      55
+WATER+WATER-RISE_3443.xml
+      33
+WATER+_2370.xml
+      36
+WATER-PUMP+_1838.xml
+      36
+WATER-RISE_990.xml
+      51
+WATERMELON_2371.xml
+      63
+WAVE-GOODBYE_2374.xml
+      41
+WEAK+_2375.xml
+      59
+WEALTHY_1914.xml
+      21
+WEATHER++_1861.xml
+      23
+WEAVE_2764.xml
+      32
+WEDDING_2376.xml
+      52
+WEDNESDAY+_2377.xml
+      46
+WEEKEND_2_557.xml
+      44
+WEEKEND_556.xml
+      41
+WELCOME_2740.xml
+      38
+WEST_2385.xml
+      34
+WET_2083.xml
+      25
+WHALE_2+_2388.xml
+      59
+WHALE_2386.xml
+      65
+WHAT_2502.xml
+      51
+WHAT_2503.xml
+      51
+WHEEL+CART_3465.xml
+      35
+WHEEL+_2389.xml
+      55
+WHEELBARROW_2395.xml
+      54
+WHEELCHAIR+_2390.xml
+      82
+WHEELCHAIR_2+_2392.xml
+      58
+WHEN_2396.xml
+      43
+WHERE_2399.xml
+      44
+WHEW^RELIEVED_1964.xml
+      29
+WHICH+_2400.xml
+      49
+WHIP_2401.xml
+      41
+WHIP_2_2402.xml
+      58
+WHISKERS_2983.xml
+      71
+WHISPER_2403.xml
+      44
+WHISPER_2_2404.xml
+      48
+WHISPER_3_2405.xml
+      47
+WHISTLE_2316.xml
+      40
+WHITE+(5)FACE_3464.xml
+      28
+WHITE+CHALK_3432.xml
+      34
+WHITE+_2406.xml
+      39
+WHO_2407.xml
+      31
+WHY_2409.xml
+      31
+WIDE_2801.xml
+      19
+WIFE_2981.xml
+      51
+WILD-ABOUT_1691.xml
+      25
+WILD_2_2870.xml
+      19
+WIND+_2411.xml
+      83
+WIND-IN-TREES+_2413.xml
+      82
+WINDOW+_2414.xml
+      55
+WINE++_2415.xml
+      48
+WINE+POP-CORK_3314.xml
+      32
+WINE-BOTTLE_319.xml
+      48
+WIN_1121.xml
+      56
+WISDOM+_2955.xml
+      44
+WITCH+_2416.xml
+      63
+WITH+NEG_2_3409.xml
+      23
+WITH+NEG_3410.xml
+      17
+WITH_2418.xml
+      40
+WOLF_1032.xml
+      46
+WOMAN_1518.xml
+      53
+WONDER_2949.xml
+      50
+WOOD++_2431.xml
+      61
+WORD+_2684.xml
+      49
+WORK+_1364.xml
+      56
+WORK-OUT+_873.xml
+      68
+WORK-OUT_2+_874.xml
+      57
+WORKSHOP_2433.xml
+      37
+WORLD_2434.xml
+      64
+WORM+++_2437.xml
+      43
+WORRY++_2438.xml
+      60
+WORSE_1542.xml
+      38
+WORTH+NEG_3413.xml
+      18
+WORTH+_1302.xml
+      52
+WOW+_2440.xml
+      48
+WOW^AWFUL_1184.xml
+      48
+WRAP_2441.xml
+      61
+WRENCH^PLUMBING+_2752.xml
+      24
+WRESTLE++AGENT_3304.xml
+      33
+WRIST+_2443.xml
+      48
+WRITE+AGENT_3242.xml
+      37
+WRITE+_2445.xml
+      51
+WRONG_1587.xml
+      33
+W_2356.xml
+      21
+XYLOPHONE++_796.xml
+      75
+X_2447.xml
+      21
+YAWN_2448.xml
+      50
+YAWN_2_2450.xml
+      43
+YEAR_2451.xml
+      53
+YELLOW++_2452.xml
+      45
+YES+_2453.xml
+      39
+YESTERDAY_867.xml
+      54
+YOM-KIPPUR_155.xml
+      69
+YOUNG+_1189.xml
+      34
+Y_2493.xml
+      24
+ZERO_1679.xml
+      21
+ZIPPER+_2456.xml
+      51
+ZITS+_1036.xml
+      51
+Z_2455.xml
+      45
+fs-BEAVER_2601.xml
+      44
+fs-BLOUSE_2834.xml
+      21
+fs-CHECKERS_466.xml
+     112
+fs-FEATHER_2629.xml
+      38
+fs-FEET_1011.xml
+      41
+fs-GRAVITY_3376.xml
+      19
+fs-HALL_1163.xml
+      34
+fs-HELL_1221.xml
+      36
+fs-HOLY_1245.xml
+      53
+fs-I+PHONE_3328.xml
+      25
+fs-ICE+ICE-SKATE_3377.xml
+      29
+fs-JELLY+FISH_3414.xml
+      32
+fs-JELLY_1359.xml
+      38
+fs-JEWELRY_1363.xml
+      54
+fs-LAKE_3316.xml
+      16
+fs-MAYO+ICL(spread with knife)_3177.xml
+       0
+fs-MAYO_3457.xml
+      19
+fs-PICKLE_1760.xml
+      24
+fs-REHAB_3239.xml
+      20
+fs-TATTOO_2232.xml
+      45
+fs-WART_3295.xml
+      21
+i SAME-1p+_1958.xml
+       0
+ns-#FLA_3118.xml
+      39
+ns-#HI_1161.xml
+      34
+ns-#KC_3155.xml
+      19
+ns-#LA_3171.xml
+      17
+ns-#SD_3248.xml
+      17
+ns-#SF_3249.xml
+      17
+ns-#US_3290.xml
+      27
+ns-AFRICA+ns-AMERICA+AGENT_3035.xml
+      93
+ns-AFRICA_65.xml
+      48
+ns-AMERICA+SIGN+LANGUAGE_3039.xml
+      90
+ns-AMERICA+_98.xml
+      56
+ns-AMERICAN-INDIAN_1649.xml
+      21
+ns-ARIZONA_136.xml
+      54
+ns-ASIA_143.xml
+      54
+ns-ASIA_2_144.xml
+      85
+ns-ATHENS_147.xml
+      53
+ns-ATLANTA_148.xml
+      69
+ns-AUSTRALIA_162.xml
+      52
+ns-BALTIMORE_192.xml
+      52
+ns-BANGLADESH_195.xml
+      61
+ns-BELGIUM_246.xml
+      54
+ns-BOSTON_315.xml
+      51
+ns-BRITAIN_850.xml
+      53
+ns-BULGARIA_2_369.xml
+      53
+ns-BULGARIA_368.xml
+      55
+ns-BURGER-KING_2620.xml
+      49
+ns-CALIFORNIA_2_2791.xml
+      19
+ns-CENTRAL-AMERICA_435.xml
+      59
+ns-CHARLOTTE_455.xml
+      41
+ns-CHICAGO_474.xml
+      50
+ns-CHINA_477.xml
+      54
+ns-COKE_526.xml
+      57
+ns-COLOR+fs-DO_535.xml
+      54
+ns-COLORADO_2_534.xml
+      67
+ns-COLORADO_533.xml
+      74
+ns-COLUMBIA_536.xml
+      47
+ns-COSTA-RICA_593.xml
+      42
+ns-DALLAS_646.xml
+      42
+ns-DETROIT_700.xml
+      46
+ns-ECUADOR_821.xml
+      59
+ns-EGYPT_824.xml
+      59
+ns-EL-SALVADOR_825.xml
+      56
+ns-ENGLAND^ENGLISH_849.xml
+      51
+ns-EUROPE_2_863.xml
+      52
+ns-EUROPE_862.xml
+      65
+ns-FORT-WORTH-DALLAS_1027.xml
+      69
+ns-FORT-WORTH_1026.xml
+      67
+ns-FRANCE_1033.xml
+      41
+ns-GALLAUDET_1101.xml
+      50
+ns-GERMANY_1085.xml
+      53
+ns-GOLDEN-ARCHES_2604.xml
+      55
+ns-GREECE_1132.xml
+      73
+ns-GREECE_2_1133.xml
+      59
+ns-HAWAII_1193.xml
+      55
+ns-HOLLYWOOD+_2714.xml
+      64
+ns-HOUSTON_1269.xml
+      49
+ns-HUNGARY_1275.xml
+      55
+ns-INDIA_1316.xml
+      43
+ns-IRAQ_1342.xml
+      45
+ns-IRELAND_1343.xml
+      46
+ns-ISLAND-HAITI_1160.xml
+      57
+ns-ISRAEL_1347.xml
+      51
+ns-ITALY_1351.xml
+      48
+ns-JESUS+AGENT_3309.xml
+      39
+ns-JESUS+BOOK_3052.xml
+      65
+ns-JESUS_1361.xml
+      75
+ns-LINCOLN_2602.xml
+      47
+ns-LONDON_1471.xml
+      54
+ns-LONDON_2_1472.xml
+      51
+ns-MAINE_2910.xml
+      22
+ns-MCDONALD_2603.xml
+      47
+ns-MEXICO^SPAIN_1565.xml
+      47
+ns-MIAMI_1566.xml
+      53
+ns-MICKEY-MOUSE_2606.xml
+      43
+ns-MONTANA_1602.xml
+      44
+ns-MOSES_1609.xml
+      44
+ns-NETHERLANDS_2994.xml
+      37
+ns-NETHERLANDS_2_2995.xml
+      46
+ns-NEW-ORLEANS_1663.xml
+      36
+ns-NEW-ORLEANS_2_1664.xml
+      34
+ns-NEW-YORK_1665.xml
+      26
+ns-NEW-YORK_2_1666.xml
+      24
+ns-NIGERIA_1670.xml
+      23
+ns-NORTH-AMERICA_1682.xml
+      25
+ns-PARIS_1731.xml
+      49
+ns-PEPSI_2610.xml
+      37
+ns-PHILADELPHIA_1756.xml
+      20
+ns-PINOCCHIO_2911.xml
+      18
+ns-PITTSBURGH_2909.xml
+      24
+ns-PORTUGAL_1796.xml
+      26
+ns-PORTUGAL_2_1797.xml
+      34
+ns-PUERTO-RICO_1830.xml
+      19
+ns-PUERTO-RICO_2_1831.xml
+      26
+ns-QUEBEC_2916.xml
+      21
+ns-RICHMOND_1915.xml
+      20
+ns-RUSSIA_1947.xml
+      24
+ns-SANTA-CLAUS_1962.xml
+      17
+ns-SCOTLAND_2520.xml
+      52
+ns-SINGAPORE_2990.xml
+      43
+ns-SWEDEN_2208.xml
+      25
+ns-SWITZERLAND_2211.xml
+      28
+ns-TEXAS_2243.xml
+      33
+ns-VIETNAM_2340.xml
+      40
+ns-WASHINGTON+fs-DC_3296.xml
+      37
+ns-WASHINGTON_2367.xml
+      49
+ns-fs-BEIJING_245.xml
+      61
+ns-fs-CHILE_476.xml
+      42
+ns-fs-COKE_527.xml
+      38
+ns-fs-DALLAS_647.xml
+      44
+ns-fs-JORDAN_1367.xml
+      50
+ns-nat-AMSTERDAM_101.xml
+      62
+ns-nat-AUSTRALIA_163.xml
+      57
+ns-nat-AUSTRIA_164.xml
+      60
+ns-nat-BEIJING_244.xml
+      52
+ns-nat-BOLIVIA_301.xml
+      53
+ns-nat-BOMBAY_305.xml
+      59
+ns-nat-BRAZIL_336.xml
+      50
+ns-nat-CANADA_392.xml
+      50
+ns-nat-CHILE_475.xml
+      53
+ns-nat-CHINA_478.xml
+      57
+ns-nat-CUBA_624.xml
+      74
+ns-nat-DENMARK_696.xml
+      52
+ns-nat-DOMINICAN-REPUBLIC_2_763.xml
+      55
+ns-nat-DOMINICAN-REPUBLIC_3_764.xml
+      64
+ns-nat-DOMINICAN-REPUBLIC_762.xml
+      49
+ns-nat-DUBLIN_800.xml
+      48
+ns-nat-FINLAND_967.xml
+      48
+ns-nat-GERMANY_1086.xml
+      70
+ns-nat-GREECE_1134.xml
+      80
+ns-nat-GUATEMALA_1140.xml
+      43
+ns-nat-HAMBURG_1166.xml
+      53
+ns-nat-HONG-KONG_1251.xml
+      47
+ns-nat-HUNGARY_1276.xml
+      47
+ns-nat-INDONESIA_1319.xml
+      52
+ns-nat-ISTANBUL_1349.xml
+      46
+ns-nat-ITALY_1352.xml
+      49
+ns-nat-JAMAICA_1354.xml
+      50
+ns-nat-JAPAN_1355.xml
+      46
+ns-nat-JERUSALEM_1360.xml
+      46
+ns-nat-JORDAN_1366.xml
+      48
+ns-nat-KOREA_1409.xml
+      48
+ns-nat-LEBANON_1427.xml
+      45
+ns-nat-MALAYSIA_1508.xml
+      68
+ns-nat-MEXICO_2885.xml
+      24
+ns-nat-MILAN_1575.xml
+      54
+ns-nat-NETHERLANDS_2996.xml
+      43
+ns-nat-PAKISTAN_1728.xml
+      57
+ns-nat-POLAND_1788.xml
+      24
+ns-nat-RUSSIA_1948.xml
+      23
+ns-nat-SHANGHAI_2017.xml
+      24
+ns-nat-SPAIN_2102.xml
+      22
+ns-nat-SRI-LANKA_2121.xml
+      31
+ns-nat-THAILAND_2244.xml
+      37
+ns-nat-TRINIDAD-AND-TOBAGO_2516.xml
+      51
