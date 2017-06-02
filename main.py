@@ -11,7 +11,7 @@ print(root.tag) #check that it's on the right file, should be signs
 #         for joint in children:
 #             print(joint.tag) #should be joint
 
-root.findall()
+root.findall('joint')
 for joint in root.findall('joint'):
     print(1)
     print(joint.get('name'))
