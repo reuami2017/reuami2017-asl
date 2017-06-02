@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+import os
 
 """
 AVG FUNCTION
@@ -15,9 +16,9 @@ def avg_coord(file, body_part, coord = 'x'):
     sum_of_bodypart = 0
     num_of_bodypart = 0
     # ok this is an meh solution because it works with the structure hard coded, but we shouldnt be changing much anyways if we change
-    for child in root:
-        for children in child:
-            for joint in children:
+    for sign in root:
+        for frame in sign:
+            for joint in frame:
                 if joint.get('name') == body_part:
                     sum_of_bodypart += float(joint.get(coord))
                     num_of_bodypart += 1
@@ -41,15 +42,41 @@ FRAME TIME!
 
 def seconds(file):
     """
-    this assumes that there is only 1 sign, will need to be modified
+    this assumes that there is only 1 sign, will need to be modified if there are ever multiple signs in 1 file
     :param file: the file
     :return: the seconds in the file
     """
-    num_of_frames = 0
     root = ET.parse(file).getroot()
     for sign in root:
-        len(sign)
-        # for frame in sign:
-        #     num_of_frames += 1
+        return len(sign) / 30.0
 
-seconds('XML_ASL_Files\(D)DINOSAUR_716.xml')
+
+print(seconds('XML_ASL_Files\(D)DINOSAUR_716.xml'))
+
+one_sec_signs = 0
+two_sec_signs = 0
+three_sec_signs = 0
+four_sec_signs = 0
+
+
+
+for file in os.listdir("XML_ASL_Files"):
+    try:
+        sec = seconds("XML_ASL_Files\\" + file)
+        if sec <= 0:
+            continue #whoopsies its broken
+        elif sec < 1:
+            one_sec_signs += 1
+        elif sec < 2:
+            two_sec_signs += 1
+        elif sec < 3:
+            three_sec_signs += 1
+        elif sec < 4:
+            four_sec_signs += 1
+    except ET.ParseError:
+        continue
+
+print(one_sec_signs)
+print(two_sec_signs)
+print(three_sec_signs)
+print(four_sec_signs)
