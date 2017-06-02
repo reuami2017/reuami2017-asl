@@ -36,9 +36,6 @@ avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'z'))
 """
 FRAME TIME!
 """
-# for sign in root:
-#     for frame in sign:
-#         print(frame.tag) #should be frame
 
 
 def seconds(filename):
@@ -61,6 +58,7 @@ four_sec_signs = 0
 
 num_of_words = 0
 sum_of_times = 0
+
 
 for file in os.listdir("XML_ASL_Files"):
     try:
