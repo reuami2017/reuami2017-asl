@@ -7,6 +7,13 @@ file with all range functionality
 import xml.etree.ElementTree as ET
 
 
+def coord_distance(filename):
+    """
+    :param filename: the file of the sign
+    :return: the average distance between the person's arm joints and hand joints to their chest for both hands (?)
+    """
+    return
+
 def coord_range(filename, body_part, coord):
     """
     :param body_part: any body part such as HipRight
@@ -24,3 +31,10 @@ def coord_range(filename, body_part, coord):
                     if joint.get(coord) > max:
                         max = float(joint.get(coord))
     return max - min
+
+def average_of_ranges(filename, body_part):
+    """
+    :param body_part: the body part in question
+    :return: the average of the x, y, and z ranges in a list
+    """
+    return [coord_range(filename, body_part, 'x'), coord_range(filename, body_part, 'y'), coord_range(filename, body_part, 'z')]
