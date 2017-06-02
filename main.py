@@ -51,35 +51,52 @@ def seconds(filename):
 
 print(seconds('XML_ASL_Files\(D)DINOSAUR_716.xml'))
 
-one_sec_signs = 0
-two_sec_signs = 0
-three_sec_signs = 0
-four_sec_signs = 0
 
-num_of_words = 0
-sum_of_times = 0
+#goes through all the files and gets various statistics
+def details(directory):
+    """
+    gets random details from the xml directory and prints them out
+    :param directory: the name of the directory with XML files in it
+    :return: none
+    """
+    one_sec_signs = 0
+    two_sec_signs = 0
+    three_sec_signs = 0
+    four_sec_signs = 0
+
+    num_of_words = 0
+    sum_of_times = 0
+    sum_of_arm_distances = 0
+    for file in os.listdir(directory):
+        try:
+            sec = seconds(directory + "\\" + file)
+            if sec <= 0:
+                continue  # whoopsies its broken
+            elif sec < 1:
+                one_sec_signs += 1
+            elif sec < 2:
+                two_sec_signs += 1
+            elif sec < 3:
+                three_sec_signs += 1
+            elif sec < 4:
+                four_sec_signs += 1
+
+            num_of_words += 1
+            sum_of_times += sec
+            sum_of_arm_distances += ranges.avg_arm_distance(file)
+
+        except ET.ParseError:  # some file derped on me and annoyed the hell out of me
+            continue
+
+    print("There are: " + str(one_sec_signs) + " one second long signs in the database")
+    print("There are: " + str(two_sec_signs) + " two second long signs in the database")
+    print("There are: " + str(three_sec_signs) + " three second long signs in the database")
+    print("There are: " + str(four_sec_signs) + " four second long signs in the database")
+    print("Average time is: " + str(sum_of_times / num_of_words))
+    print("Average distance is: " + str(sum_of_arm_distances / num_of_words))
 
 
-for file in os.listdir("XML_ASL_Files"):
-    try:
-        sec = seconds("XML_ASL_Files\\" + file)
-        if sec <= 0:
-            continue  # whoopsies its broken
-        elif sec < 1:
-            one_sec_signs += 1
-        elif sec < 2:
-            two_sec_signs += 1
-        elif sec < 3:
-            three_sec_signs += 1
-        elif sec < 4:
-            four_sec_signs += 1
-        num_of_words += 1
-        sum_of_times += sec
-    except ET.ParseError:  # some file derped on me and annoyed the hell out of me
-        continue
-
-print("There are: " + str(one_sec_signs) + " one second long signs in the database")
-print("There are: " + str(two_sec_signs) + " two second long signs in the database")
-print("There are: " + str(three_sec_signs) + " three second long signs in the database")
-print("There are: " + str(four_sec_signs) + " four second long signs in the database")
-print("Average time is: " + str(sum_of_times / num_of_words))
+"""
+Run program here
+"""
+details("XML_ASL_Files")
