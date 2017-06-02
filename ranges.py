@@ -1,7 +1,7 @@
 """
 file with all range functionality
 """
-
+import math
 
 
 import xml.etree.ElementTree as ET
