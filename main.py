@@ -6,10 +6,8 @@ import ranges
 AVG FUNCTION
 """
 
-
 def avg_coord(filename, body_part, coord = 'x'):
     """
-
     :param file: the file in question
     :param body_part: The body part to be analysed (ex. HipRight)
     :param coord: the coord, automatically set to x for testing
@@ -55,6 +53,9 @@ one_sec_signs = 0
 two_sec_signs = 0
 three_sec_signs = 0
 four_sec_signs = 0
+five_sec_signs = 0
+six_sec_signs = 0
+seven_sec_signs = 0
 
 num_of_words = 0
 sum_of_times = 0
@@ -73,6 +74,12 @@ for file in os.listdir("XML_ASL_Files"):
             three_sec_signs += 1
         elif sec < 4:
             four_sec_signs += 1
+        elif sec < 5:
+            five_sec_signs += 1
+        elif sec < 6:
+            six_sec_signs += 1
+        elif sec < 7:
+            seven_sec_signs += 1
         num_of_words += 1
         sum_of_times += sec
     except ET.ParseError:  # some file derped on me and annoyed the hell out of me
