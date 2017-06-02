@@ -17,13 +17,13 @@ def AvgDistance(filename, body_part):
             count += 1.0
             for joint in frame:
                 if joint.get('name') == "SpineMid":
-                    spineX = joint.get("x")
-                    spineY = joint.get("y")
-                    spineZ = joint.get("z")
+                    spineX = float(joint.get("x"))
+                    spineY = float(joint.get("y"))
+                    spineZ = float(joint.get("z"))
                 if joint.get('name') == body_part:
-                    bpX = joint.get("x")
-                    bpY = joint.get("y")
-                    bpZ = joint.get("z")
+                    bpX = float(joint.get("x"))
+                    bpY = float(joint.get("y"))
+                    bpZ = float(joint.get("z"))
                 sum += math.sqrt(((bpX - spineX) ** 2) + ((bpY - spineY) ** 2) + ((bpZ - spineZ) ** 2))
 
     print("The average distance from the SpineMid to " + body_part + " in the file " + filename + " is: " + str(sum/count))
@@ -33,7 +33,7 @@ def AvgDistance(filename, body_part):
 def coord_ranges_and_avgs(filename, body_part):
     """
     :param body_part: any body part such as HipRight
-    :return: the x range of the given body part
+    :return: the x, y, and z ranges and average values for that body part
     """
     root = ET.parse(filename).getroot()
     Xmax, Ymax, Zmax = -999999999999999999
@@ -46,21 +46,21 @@ def coord_ranges_and_avgs(filename, body_part):
             count += 1.0
             for joint in frame:
                 if joint.get('name') == body_part:
-                    Xsum += joint.get("x")
-                    Ysum += joint.get("y")
-                    Zsum += joint.get("z")
+                    Xsum += float(joint.get("x"))
+                    Ysum += float(joint.get("y"))
+                    Zsum += float(joint.get("z"))
                     if joint.get("x") < min:
-                        min = float(joint.get("x"))
+                        Xmin = float(joint.get("x"))
                     if joint.get("x") > max:
-                        max = float(joint.get("x"))
+                        Xmax = float(joint.get("x"))
                     if joint.get("y") < min:
-                        min = float(joint.get("y"))
+                        Ymin = float(joint.get("y"))
                     if joint.get("y") > max:
-                        max = float(joint.get("y"))
+                        Ymax = float(joint.get("y"))
                     if joint.get("z") < min:
-                        min = float(joint.get("z"))
+                        Zmin = float(joint.get("z"))
                     if joint.get("z") > max:
-                        max = float(joint.get("z"))
+                        Zmax = float(joint.get("z"))
 
     return Xmax-Xmin, Xsum/count, Ymax-Ymin, Ysum/count, Zmax-Zmin, Zsum/count
 
