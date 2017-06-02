@@ -1,28 +1,36 @@
 import xml.etree.ElementTree as ET
 
-root = ET.parse('XML_ASL_Files\(D)DINOSAUR_716.xml').getroot()
-
-print(root.tag) #check that it's on the right file, should be signs
-
-for sign in root.findall('sign'):
-    print(sign.tag)
-
-
 """
-AVERAGE X POSITION OF A HIPRIGHT, MODIFY THIS SLIGHTLY FOR OTHER LIMBS, ETC.
+AVG FUNCTION
 """
-#TODO TURN THIS INTO A FUNCTION!!!!
-sum_of_hiprights = 0
-num_of_hiprights = 0
-# ok this is an meh solution because it works with the structure hard coded, but we shouldnt be changing much anyways if we change
-for child in root:
-    for children in child:
-        for joint in children:
-            if joint.get('name') == 'HipRight':
-                sum_of_hiprights += float(joint.get('x'))
-                num_of_hiprights += 1
+def avg_coord(file, body_part, coord = 'x'):
+    """
 
-print("average hipright is: " + str(sum_of_hiprights / num_of_hiprights))
+    :param file: the file in question
+    :param body_part: The body part to be analysed (ex. HipRight)
+    :param coord: the coord, automatically set to x for testing
+    :return: the avg coord of the given body part in the file for the coord
+    """
+    root = ET.parse(file).getroot()
+    sum_of_bodypart = 0
+    num_of_bodypart = 0
+    # ok this is an meh solution because it works with the structure hard coded, but we shouldnt be changing much anyways if we change
+    for child in root:
+        for children in child:
+            for joint in children:
+                if joint.get('name') == body_part:
+                    sum_of_bodypart += float(joint.get(coord))
+                    num_of_bodypart += 1
+
+    return sum_of_bodypart / num_of_bodypart
+
+print(avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight'))
+avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'x')
+avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'y')
+avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'z')
+
+
+
 
 """
 FRAME TIME!
@@ -31,8 +39,17 @@ FRAME TIME!
 #     for frame in sign:
 #         print(frame.tag) #should be frame
 
+def seconds(file):
+    """
+    this assumes that there is only 1 sign, will need to be modified
+    :param file: the file
+    :return: the seconds in the file
+    """
+    num_of_frames = 0
+    root = ET.parse(file).getroot()
+    for sign in root:
+        len(sign)
+        # for frame in sign:
+        #     num_of_frames += 1
 
-
-for joint in root.findall('joint'):
-    print(1)
-    print(joint.get('name'))
+seconds('XML_ASL_Files\(D)DINOSAUR_716.xml')
