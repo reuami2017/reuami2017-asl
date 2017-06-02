@@ -64,6 +64,11 @@ def details(directory):
     three_sec_signs = 0
     four_sec_signs = 0
 
+    one_sec_arm_distances = 0
+    two_sec_arm_distances = 0
+    three_sec_arm_distances = 0
+    four_sec_arm_distances = 0
+
     num_of_words = 0
     sum_of_times = 0
     sum_of_arm_distances = 0
@@ -74,12 +79,16 @@ def details(directory):
                 continue  # whoopsies its broken
             elif sec < 1:
                 one_sec_signs += 1
+                one_sec_arm_distances += ranges.avg_arm_distance(file)
             elif sec < 2:
                 two_sec_signs += 1
+                two_sec_arm_distances += ranges.avg_arm_distance(file)
             elif sec < 3:
                 three_sec_signs += 1
+                three_sec_arm_distances += ranges.avg_arm_distance(file)
             elif sec < 4:
                 four_sec_signs += 1
+                four_sec_arm_distances += ranges.avg_arm_distance(file)
 
             num_of_words += 1
             sum_of_times += sec
@@ -94,6 +103,10 @@ def details(directory):
     print("There are: " + str(four_sec_signs) + " four second long signs in the database")
     print("Average time is: " + str(sum_of_times / num_of_words))
     print("Average distance is: " + str(sum_of_arm_distances / num_of_words))
+    print("Average one second distance is: " + str(one_sec_arm_distances / one_sec_arm_distances))
+    print("Average two second distance is: " + str(two_sec_arm_distances / one_sec_arm_distances))
+    print("Average three second distance is: " + str(three_sec_arm_distances / one_sec_arm_distances))
+    print("Average four second distance is: " + str(four_sec_arm_distances / one_sec_arm_distances))
 
 
 """
