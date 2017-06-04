@@ -57,6 +57,7 @@ def knuth(target):
     #             add n to S
     #             n.parent = current
     #             Q.enqueue(n)
+
     while not Q.empty():
         current = Q.get()
         if current.num == target:

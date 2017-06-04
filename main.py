@@ -53,9 +53,9 @@ one_sec_signs = 0
 two_sec_signs = 0
 three_sec_signs = 0
 four_sec_signs = 0
-five_sec_signs = 0
-six_sec_signs = 0
-seven_sec_signs = 0
+# five_sec_signs = 0
+# six_sec_signs = 0
+# seven_sec_signs = 0
 
 #goes through all the files and gets various statistics
 def details(directory):

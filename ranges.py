@@ -63,10 +63,3 @@ def coord_ranges_and_avgs(filename, body_part):
                         Zmax = float(joint.get("z"))
 
     return Xmax-Xmin, Xsum/count, Ymax-Ymin, Ysum/count, Zmax-Zmin, Zsum/count
-
-def average_of_ranges(filename, body_part):
-    """
-    :param body_part: the body part in question
-    :return: the average of the x, y, and z ranges in a list
-    """
-    return [coord_range(filename, body_part, 'x'), coord_range(filename, body_part, 'y'), coord_range(filename, body_part, 'z')]
