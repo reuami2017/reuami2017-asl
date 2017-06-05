@@ -1,6 +1,10 @@
 import xml.etree.ElementTree as ET
 import os
 import ranges
+#
+# fig = plt.figure()
+# ax = fig.add_subplot(111, projection='3d')
+
 
 """
 AVG FUNCTION
@@ -92,12 +96,13 @@ def details(directory):
                 three_sec_signs += 1
                 three_sec_arm_distances += ranges.avg_hand_distance_right(file)
             elif sec < 4:
+                print(file)
                 four_sec_signs += 1
                 four_sec_arm_distances += ranges.avg_hand_distance_right(file)
 
             num_of_words += 1
             if (num_of_words % 100) == 0:
-                print(str(num_of_words / 350) + "% done")
+                print(str(num_of_words / 35) + "% done")
             sum_of_times += sec
             sum_of_arm_distances += ranges.avg_hand_distance_right(file)
 
