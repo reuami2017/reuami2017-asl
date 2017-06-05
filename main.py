@@ -84,20 +84,20 @@ def details(directory):
                 continue  # whoopsies its broken
             elif sec < 1:
                 one_sec_signs += 1
-                one_sec_arm_distances += ranges.avg_arm_distance(file)
+                one_sec_arm_distances += ranges.avg_arm_distance_right(file)
             elif sec < 2:
                 two_sec_signs += 1
-                two_sec_arm_distances += ranges.avg_arm_distance(file)
+                two_sec_arm_distances += ranges.avg_arm_distance_right(file)
             elif sec < 3:
                 three_sec_signs += 1
-                three_sec_arm_distances += ranges.avg_arm_distance(file)
+                three_sec_arm_distances += ranges.avg_arm_distance_right(file)
             elif sec < 4:
                 four_sec_signs += 1
-                four_sec_arm_distances += ranges.avg_arm_distance(file)
+                four_sec_arm_distances += ranges.avg_arm_distance_right(file)
 
             num_of_words += 1
             sum_of_times += sec
-            sum_of_arm_distances += ranges.avg_arm_distance(file)
+            sum_of_arm_distances += ranges.avg_arm_distance_right(file)
 
         except ET.ParseError:  # some file derped on me and annoyed the hell out of me
             continue
