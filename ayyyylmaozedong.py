@@ -18,16 +18,13 @@ def get_x_y_z_values(filename, body_part):
 fig = pyplot.figure()
 ax = Axes3D(fig)
 
-x_vals = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "WristRight")[0]
-y_vals = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "WristRight")[1]
-z_vals = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "WristRight")[2]
+def graph(filename, body_part, color):
+    vals = get_x_y_z_values(filename, body_part)
 
-x_vals2 = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight")[0]
-y_vals2 = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight")[1]
-z_vals2 = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight")[2]
+    ax.plot(vals[0], vals[1], vals[2], c=color)
 
-
-ax.plot(x_vals, y_vals, z_vals)
-ax.plot(x_vals2, y_vals2, z_vals2, c='y')
+graph("UNEDITED_COPY_(D)DINOSAUR_716.xml", "WristRight", 'y')
+graph("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight", 'r')
+graph("UNEDITED_COPY_(D)DINOSAUR_716.xml", "ElbowRight", 'b')
 
 pyplot.show()
