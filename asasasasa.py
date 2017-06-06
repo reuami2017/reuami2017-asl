@@ -24,8 +24,7 @@ def Gen_RandLine(length, dims=2) :
     length is the number of points for the line.
     dims is the number of dimensions the line has.
     """
-    lineData = np.empty((dims, length))
-    lineData[:, 0] = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight")
+    lineData = np.array( get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight"))
     for index in range(1, length) :
         # scaling the random numbers by 0.1 so
         # movement is small compared to position.
