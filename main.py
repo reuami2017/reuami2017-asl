@@ -1,9 +1,24 @@
 import xml.etree.ElementTree as ET
 import os
 import ranges
+import csv
 #
 # fig = plt.figure()
 # ax = fig.add_subplot(111, projection='3d')
+
+
+def export_data(filename):
+    """
+    exports the data
+    :param filename: file
+    :return: none, but the data is exported to the filename
+    """
+    root = ET.parse("XML_ASL_Files\\" + filename).getroot()
+    with open("XML_ASL_Files\\" + filename) as file:
+        for sign in root:
+            for frame in sign:
+                for joint in frame:
+                    csv.writer(file)
 
 
 """

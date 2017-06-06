@@ -62,6 +62,15 @@ def update_lines(num, dataLines, lines) :
         line.set_3d_properties(data[2,:num])
     return lines
 
+
+def update_lines_poopy(num, dataLines, lines) :
+    for line, data in zip(lines, dataLines) :
+        # NOTE: there is no .set_data() for 3 dim data...
+        line.set_data(data[0:2, :num] + 1)
+        line.set_3d_properties(data[2,:num])
+    return lines
+
+
 # Attaching 3D axis to the figure
 fig = plt.figure()
 ax = p3.Axes3D(fig)
@@ -78,6 +87,9 @@ ax.set_title('3D Test')
 
 # Creating the Animation object
 line_ani = animation.FuncAnimation(fig, update_lines, 30, fargs=(data, lines),
+                              interval=30, blit=False)
+
+line_ani_2 = animation.FuncAnimation(fig, update_lines_poopy, 30, fargs=(data, lines),
                               interval=30, blit=False)
 
 plt.show()
