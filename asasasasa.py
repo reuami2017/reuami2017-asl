@@ -60,6 +60,6 @@ ax.set_title('3D Test')
 
 # Creating the Animation object
 line_ani = animation.FuncAnimation(fig, update_lines, 30, fargs=(data, lines),
-                              interval=50, blit=False)
+                              interval=30, blit=False)
 
 plt.show()
