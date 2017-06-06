@@ -1,9 +1,4 @@
-
 """
-============
-3D animation
-============
-
 A simple example of an animated plot... In 3D!
 """
 import numpy as np
@@ -11,7 +6,6 @@ import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as p3
 import matplotlib.animation as animation
 import xml.etree.ElementTree as ET
-
 def get_x_y_z_values(filename, body_part):
     values = [[],[],[]]
     root = ET.parse(filename).getroot()
@@ -23,14 +17,32 @@ def get_x_y_z_values(filename, body_part):
                     values[1].append(float(joint.get("y")))
                     values[2].append(float(joint.get("z")))
     return values
+def Gen_RandLine(length, dims=2) :
+    """
+    Create a line using a random walk algorithm
+
+    length is the number of points for the line.
+    dims is the number of dimensions the line has.
+    """
+    lineData = np.empty((dims, length))
+    lineData[:, 0] = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight")
+    for index in range(1, length) :
+        # scaling the random numbers by 0.1 so
+        # movement is small compared to position.
+        # subtraction by 0.5 is to change the range to [-0.5, 0.5]
+        # to allow a line to move backwards.
+        step = ((np.random.rand(dims) - 0.5) * 0.1)
+        lineData[:, index] = lineData[:, index-1] + step
 
 
+    print(lineData)
+    return lineData
 
-def update_lines(num, dataLines, lines):
-    for line, data in zip(lines, dataLines):
+def update_lines(num, dataLines, lines) :
+    for line, data in zip(lines, dataLines) :
         # NOTE: there is no .set_data() for 3 dim data...
-        line.set_data()
-        line.set_3d_properties(data[2, :num])
+        line.set_data(data[0:2, :num])
+        line.set_3d_properties(data[2,:num])
     return lines
 
 # Attaching 3D axis to the figure
@@ -38,25 +50,17 @@ fig = plt.figure()
 ax = p3.Axes3D(fig)
 
 # Fifty lines of random 3-D lines
+data = [Gen_RandLine(30, 3) for index in range(1)]
 
 # Creating fifty line objects.
+# NOTE: Can't pass empty arrays into 3d version of plot()
+lines = [ax.plot(dat[0], dat[1], dat[2])[0] for dat in data]
+
 
 ax.set_title('3D Test')
-def init():
-    x = np.linspace(0, 100, 100)
-    y = np.linspace(0, 100, 100)
-    data = get_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml", "HandRight")
 
-    ax.scatter(data[0], data[1],data[2] , marker='o', s=20, c="goldenrod", alpha=0.6)
-    return ()
-def animate(i):
-    ax.view_init(elev=10., azim=i)
-    return ()
-# Animate
-anim = animation.FuncAnimation(fig, animate, init_func=init,
-                               frames=360, interval=20, blit=True)
-
-
-anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+# Creating the Animation object
+line_ani = animation.FuncAnimation(fig, update_lines, 30, fargs=(data, lines),
+                              interval=50, blit=False)
 
 plt.show()
