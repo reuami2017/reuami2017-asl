@@ -17,6 +17,20 @@ def get_x_y_z_values(filename, body_part):
                     values[1].append(float(joint.get("y")))
                     values[2].append(float(joint.get("z")))
     return values
+
+
+def get_all_x_y_z_values(filename):
+    values = [[], [], []]
+    root = ET.parse(filename).getroot()
+    for sign in root:
+        for frame in sign:
+            for joint in frame:
+                values[0].append(float(joint.get("x")))
+                values[1].append(float(joint.get("y")))
+                values[2].append(float(joint.get("z")))
+    return values
+
+
 def Gen_RandLine(length, dims=2) :
     """
     Create a line using a random walk algorithm
@@ -29,6 +43,17 @@ def Gen_RandLine(length, dims=2) :
 
     print(lineData)
     return lineData
+
+
+def animate_file(filename):
+    """
+    animates the file
+    :param filename: the file to be animated
+    :return: none, uses matplotlib for animations
+    """
+    line_data = np.array(get_all_x_y_z_values("UNEDITED_COPY_(D)DINOSAUR_716.xml"))
+
+
 
 def update_lines(num, dataLines, lines) :
     for line, data in zip(lines, dataLines) :
