@@ -1,15 +1,32 @@
 import xml.etree.ElementTree as ET
 import os
 import ranges
+import csv
+#
+# fig = plt.figure()
+# ax = fig.add_subplot(111, projection='3d')
+
+
+def export_data(filename):
+    """
+    exports the data
+    :param filename: file
+    :return: none, but the data is exported to the filename
+    """
+    root = ET.parse("XML_ASL_Files\\" + filename).getroot()
+    with open("XML_ASL_Files\\" + filename) as file:
+        for sign in root:
+            for frame in sign:
+                for joint in frame:
+                    csv.writer(file)
+
 
 """
 AVG FUNCTION
 """
 
-
 def avg_coord(filename, body_part, coord = 'x'):
     """
-
     :param file: the file in question
     :param body_part: The body part to be analysed (ex. HipRight)
     :param coord: the coord, automatically set to x for testing
@@ -27,11 +44,11 @@ def avg_coord(filename, body_part, coord = 'x'):
                     num_of_bodypart += 1
 
     return str(sum_of_bodypart / num_of_bodypart)
-
-print(avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight') + " " +
-avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'x') + " " +
-avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'y') + " " +
-avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'z'))
+#
+# print(avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight') + " " +
+# avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'x') + " " +
+# avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'y') + " " +
+# avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'z'))
 
 """
 FRAME TIME!
@@ -51,6 +68,13 @@ def seconds(filename):
 
 print(seconds('XML_ASL_Files\(D)DINOSAUR_716.xml'))
 
+one_sec_signs = 0
+two_sec_signs = 0
+three_sec_signs = 0
+four_sec_signs = 0
+# five_sec_signs = 0
+# six_sec_signs = 0
+# seven_sec_signs = 0
 
 #goes through all the files and gets various statistics
 def details(directory):
@@ -79,20 +103,23 @@ def details(directory):
                 continue  # whoopsies its broken
             elif sec < 1:
                 one_sec_signs += 1
-                one_sec_arm_distances += ranges.avg_arm_distance(file)
+                one_sec_arm_distances += ranges.avg_hand_distance_right(file)
             elif sec < 2:
                 two_sec_signs += 1
-                two_sec_arm_distances += ranges.avg_arm_distance(file)
+                two_sec_arm_distances += ranges.avg_hand_distance_right(file)
             elif sec < 3:
                 three_sec_signs += 1
-                three_sec_arm_distances += ranges.avg_arm_distance(file)
+                three_sec_arm_distances += ranges.avg_hand_distance_right(file)
             elif sec < 4:
+                print(file)
                 four_sec_signs += 1
-                four_sec_arm_distances += ranges.avg_arm_distance(file)
+                four_sec_arm_distances += ranges.avg_hand_distance_right(file)
 
             num_of_words += 1
+            if (num_of_words % 100) == 0:
+                print(str(num_of_words / 35) + "% done")
             sum_of_times += sec
-            sum_of_arm_distances += ranges.avg_arm_distance(file)
+            sum_of_arm_distances += ranges.avg_hand_distance_right(file)
 
         except ET.ParseError:  # some file derped on me and annoyed the hell out of me
             continue
