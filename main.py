@@ -2,9 +2,26 @@ import xml.etree.ElementTree as ET
 import os
 import ranges
 import csv
+import re
+from nltk.book import *
 #
 # fig = plt.figure()
 # ax = fig.add_subplot(111, projection='3d')
+
+
+def list_of_names():
+    """
+    gets a list of all the filenames for a quick look at the files. Also introduces the regex
+    :param filename:
+    :return:
+    """
+    list = []
+    for file in os.listdir("XML_ASL_Files"):
+        list.append(re.match('[a-zA-Z]', file))
+    return list
+
+
+list_of_names()
 
 
 def export_data(filename):
@@ -18,7 +35,7 @@ def export_data(filename):
         for sign in root:
             for frame in sign:
                 for joint in frame:
-                    csv.writer(file)
+                    csv.writer(file)  # not complete
 
 
 """
