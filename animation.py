@@ -29,20 +29,6 @@ def make_lines(filename):
     return lines
 
 
-def gen_randline():
-
-    linedata = np.array(ayy.get_x_y_z_values("COPY_OF_CARROT_414.xml", "HandRight"))
-
-    return linedata
-
-
-def gen_randline2():
-
-    linedata = np.array(ayy.get_x_y_z_values("COPY_OF_EXAGGERATE+_2496.xml", "HandRight"))
-
-    return linedata
-
-
 def update_lines(num, datalines, lines):
     for line, data in zip(lines, datalines):
         # NOTE: there is no .set_data() for 3 dim data...
@@ -51,14 +37,14 @@ def update_lines(num, datalines, lines):
     return lines
 
 
-def make_graph():
+def make_graph(filename):
     # Attaching 3D axis to the figure
     fig = plt.figure()
     ax = p3.Axes3D(fig)
     ax.set_title('3D animation of body part paths')
 
     temp = []  # things must be assigned to something or the graph will statically display everything
-    for data in make_lines("COPY OF DINOSAUR+_715.xml"):
+    for data in make_lines(filename):
         data = [np.array(data)]
         temp.append(animation.FuncAnimation(fig, update_lines, 30,
                                 fargs=(data, [ax.plot(dat[0], dat[1], dat[2])[0] for dat in data]),
@@ -66,4 +52,4 @@ def make_graph():
 
     plt.show()
 
-make_graph()
+make_graph("COPY_OF_FORK+_1023.xml")

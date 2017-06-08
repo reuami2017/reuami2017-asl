@@ -1,11 +1,26 @@
-# REU AMI 2017: ASL Project
-## Week 1 objectives:
-* <s>Get an x value for a specific body part </s>
-* <s>Get the average x value for a specific body part over a single xml file</s>
-* <s>Get the average x value for a specific body part over all xml files and store the output </s>
-* Sort the signs by their x value averages over that body part
-* <s>Find the average time per sign spent</s>
-## Friday afternoon / Monday objectives:
-##### Provide more information for prior work - Hypothesis: ASL = 2x time of spoken language, and 2x the information
-* range of motion for signs
+# REU AMI ASL Project
 
+Classifying sign language using machine learning and computer vision techniques.
+
+## Getting Started
+
+Just download the repository and run in python. A requirements.txt might be made at some point.
+
+### Prerequisites
+
+This will be detailed in requirements.txt
+
+```
+pip install nltk
+pip install matplotlib
+```
+
+## Authors
+
+* **Shareef Alis** - *Researcher* - [ShareefAlis](https://github.com/shareefalis)
+* **Kesavan Kushalnagar** - *Researcher* - [Kasplat](https://github.com/kasplat)
+* **Abraham Glassser** - *Researcher* - [Abrahplaya](https://github.com/abrahplaya)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

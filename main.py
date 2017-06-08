@@ -1,46 +1,38 @@
 import xml.etree.ElementTree as ET
 import os
 import ranges
-import csv
 import re
-from nltk.book import *
-#
-# fig = plt.figure()
-# ax = fig.add_subplot(111, projection='3d')
+import nltk
+import pandas as pd
+import numpy as np
 
 
-def list_of_names():
+"""
+Somehow create a database
+Ideally it will have a format as such:
+
+name,attrname
+
+Later, more attributes such as sentiment can be added as they are understood.
+
+"""
+
+
+def make_database():
     """
-    gets a list of all the filenames for a quick look at the files. Also introduces the regex
-    :param filename:
-    :return:
+    makes the database
+    :return: a dict with all the files. The dict relates each word to their type (noun, verb, etc)
     """
-    list = []
     for file in os.listdir("XML_ASL_Files"):
-        list.append(re.match('[a-zA-Z]', file))
-    return list
+        temp = re.sub('\b-\b', " ", file)
+        temp = re.sub("[^a-zA-Z ]", "", temp)
+        temp = re.sub("xml", "", temp).lower()
+        print(temp)
+    return
+
+make_database()
 
 
-list_of_names()
-
-
-def export_data(filename):
-    """
-    exports the data
-    :param filename: file
-    :return: none, but the data is exported to the filename
-    """
-    root = ET.parse("XML_ASL_Files\\" + filename).getroot()
-    with open("XML_ASL_Files\\" + filename) as file:
-        for sign in root:
-            for frame in sign:
-                for joint in frame:
-                    csv.writer(file)  # not complete
-
-
-"""
-AVG FUNCTION
-"""
 
 def avg_coord(filename, body_part, coord = 'x'):
     """
@@ -67,10 +59,6 @@ def avg_coord(filename, body_part, coord = 'x'):
 # avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'y') + " " +
 # avg_coord('XML_ASL_Files\(D)DINOSAUR_716.xml', 'HipRight', 'z'))
 
-"""
-FRAME TIME!
-"""
-
 
 def seconds(filename):
     """
@@ -81,8 +69,6 @@ def seconds(filename):
     root = ET.parse(filename).getroot()
     for sign in root:
         return len(sign) / 30.0
-
-
 print(seconds('XML_ASL_Files\(D)DINOSAUR_716.xml'))
 
 one_sec_signs = 0
@@ -156,4 +142,4 @@ def details(directory):
 """
 Run program here
 """
-details("XML_ASL_Files")
+# details("XML_ASL_Files")
