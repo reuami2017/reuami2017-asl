@@ -15,8 +15,8 @@ def get_x_y_z_values(filename, body_part):
                     values[2].append(float(joint.get("z")))
     return values
 
-#fig = pyplot.figure()
-#ax = Axes3D(fig)
+fig = pyplot.figure()
+ax = Axes3D(fig)
 
 
 def graph(filename, body_part, color):

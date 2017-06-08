@@ -24,8 +24,13 @@ def make_database():
     :return: a dict with all the files. The dict relates each word to their type (noun, verb, etc)
     """
     for file in os.listdir("XML_ASL_Files"):
-        temp = re.sub('\b-\b', " ", file)
-        temp = re.sub("[^a-zA-Z ]", "", temp)
+        temp = re.sub("_", "", file)
+        temp = re.sub("xml", "", temp).lower()
+        temp = re.sub(r"([a-z])\^([a-z])", r"\1 \2", temp, 0, re.IGNORECASE)
+        temp = re.sub(r"([a-z])\-([a-z])", r"\1 \2", temp, 0, re.IGNORECASE)
+        temp = re.sub(r"([a-z])\+\+([a-z])", r"\1 \2", temp, 0, re.IGNORECASE)
+        temp = re.sub(r"([a-z])\+([a-z])", r"\1 \2", temp, 0, re.IGNORECASE)
+        temp = re.sub("[^a-z ]", "", temp)
         temp = re.sub("xml", "", temp).lower()
         print(temp)
     return
