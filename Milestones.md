@@ -15,5 +15,8 @@
 * Read over more papers in the subject
 * Find out what work has been done in the field
 ##Thursday 
-* Start implementing NLTK
-* Create a database within python so that it can be manipulated (python script)
+* ~~create a regex to fix up the filenames~~
+* ~~Start implementing NLTK~~
+* ~~Create a database within python so that it can be manipulated (python script)~~
+* Create a data frame so that more features can be extracted
+* https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html is cool

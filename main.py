@@ -2,9 +2,12 @@ import xml.etree.ElementTree as ET
 import os
 import ranges
 import re
-import nltk
+from textblob import TextBlob
+from itertools import *
+    
 import pandas as pd
 import numpy as np
+# import nltk
 
 
 """
@@ -23,6 +26,7 @@ def make_database():
     makes the database
     :return: a dict with all the files. The dict relates each word to their type (noun, verb, etc)
     """
+    new_dict = {}
     for file in os.listdir("XML_ASL_Files"):
         temp = re.sub("_", "", file)
         temp = re.sub("xml", "", temp).lower()
@@ -32,10 +36,11 @@ def make_database():
         temp = re.sub(r"([a-z])\+([a-z])", r"\1 \2", temp, 0, re.IGNORECASE)
         temp = re.sub("[^a-z ]", "", temp)
         temp = re.sub("xml", "", temp).lower()
-        print(temp)
-    return
+        new_dict[temp] = TextBlob(temp).tags[0][1]
+    return new_dict
 
-make_database()
+database = make_database()
+print(database)
 
 
 
