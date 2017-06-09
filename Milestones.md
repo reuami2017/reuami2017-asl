@@ -24,7 +24,7 @@
 * ~~C# translate the XML data from CameraSpace to DepthSpace so the data can better represent the absolute x, y, and z values~~
 * https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html is cool
 ##Friday
-* Make the data frame work properly
+* ~~Make the data frame work properly~~
 * Split the data frame into multiple objects, figure out more things to add to the df
 * In C# have the "converted" XML data become skeletal animations (and be able to save said animations)
 
