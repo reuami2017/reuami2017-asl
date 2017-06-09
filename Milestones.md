@@ -20,3 +20,6 @@
 * ~~Create a database within python so that it can be manipulated (python script)~~
 * Create a data frame so that more features can be extracted
 * https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html is cool
+##Friday
+* Make the data frame work properly
+* Split the data frame into multiple objects, figure out more things to add to the df
