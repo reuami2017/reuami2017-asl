@@ -18,6 +18,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
     using Microsoft.Kinect;
     using System.Xml;
     using System.Threading;
+    using System.Xml.Linq;
 
     /// <summary>
     /// Interaction logic for MainWindow
@@ -142,13 +143,15 @@ namespace Microsoft.Samples.Kinect.BodyBasics
 
             // get the depth (display) extents
             // FrameDescription frameDescription = this.kinectSensor.DepthFrameSource.FrameDescription;
+            // get the depth (display) extents
+            FrameDescription frameDescription = this.kinectSensor.DepthFrameSource.FrameDescription;
 
             // get size of joint space
-            this.displayWidth = 640;
-            this.displayHeight = 480;
+            this.displayWidth = frameDescription.Width;
+            this.displayHeight = frameDescription.Height;
 
             // open the reader for the body frames
-            //this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();
+
 
             // a bone defined as a line between two joints
             this.bones = new List<Tuple<JointType, JointType>>();
@@ -208,11 +211,12 @@ namespace Microsoft.Samples.Kinect.BodyBasics
 
             // use the window object as the view model in this simple example
             this.DataContext = this;
-
+            
             // initialize the components (controls) of the window
             this.InitializeComponent();
-
-            new Thread(xmldata).Start();
+  
+            this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();
+            //   new Thread(xmldata).Start();
         }
 
         /// <summary>
@@ -297,84 +301,27 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         /// <param name="e">event arguments</param>
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
-            bool dataReceived = false;
-
-            using (BodyFrame bodyFrame = e.FrameReference.AcquireFrame())
+            if (this.kinectSensor != null)
             {
-                if (bodyFrame != null)
-                {
-                    if (this.bodies == null)
-                    {
-                        this.bodies = new Body[bodyFrame.BodyCount];
-                    }
-
-                    // The first time GetAndRefreshBodyData is called, Kinect will allocate each Body in the array.
-                    // As long as those body objects are not disposed and not set to null in the array,
-                    // those body objects will be re-used.
-                    bodyFrame.GetAndRefreshBodyData(this.bodies);
-                    dataReceived = true;
-                }
+                   new Thread(xmldata).Start();
+               // xmldata();
+                this.kinectSensor = null;
             }
-
-            if (dataReceived)
-            {
-
-                    using (DrawingContext dc = this.drawingGroup.Open())
-                {
-                    // Draw a transparent background to set the render size
-                    dc.DrawRectangle(Brushes.Black, null, new Rect(0.0, 0.0, this.displayWidth, this.displayHeight));
-
-                    int penIndex = 0;
-                    foreach (Body body in this.bodies)
-                    {
-                        Pen drawPen = this.bodyColors[penIndex++];
-
-                        if (body.IsTracked)
-                        {
-                            //is.DrawClippedEdges(body, dc);
-
-                            IReadOnlyDictionary<JointType, Joint> joints = body.Joints;
-                        
-
-                            // convert the joint points to depth (display) space
-                            Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
-
-                            foreach (JointType jointType in joints.Keys)
-                            {
-                                // sometimes the depth(Z) of an inferred joint may show as negative
-                                // clamp down to 0.1f to prevent coordinatemapper from returning (-Infinity, -Infinity)
-                                CameraSpacePoint position = joints[jointType].Position;
-                                if (position.Z < 0)
-                                {
-                                    position.Z = InferredZPositionClamp;
-                                }
-
-                                DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
-                                jointPoints[jointType] = new Point(depthSpacePoint.X, depthSpacePoint.Y);
-                            }
-
-                            this.DrawBody(joints, jointPoints, dc, drawPen);
-
-                            this.DrawHand(body.HandLeftState, jointPoints[JointType.HandLeft], dc);
-                            this.DrawHand(body.HandRightState, jointPoints[JointType.HandRight], dc);
-                        }
-                    }
-
-                    // prevent drawing outside of our render area
-                    this.drawingGroup.ClipGeometry = new RectangleGeometry(new Rect(0.0, 0.0, this.displayWidth, this.displayHeight));
-                }
-            }
+            
         }
 
      void xmldata()
         {
+        ///    Thread.Sleep(5000);
             Dictionary<JointType, Joint> joints = new Dictionary<JointType, Joint>();
             XmlDocument xml = new XmlDocument();
-            xml.Load("UNEDITED_COPY_(D)DINOSAUR_716.xml");
-            while (true)
-            {
+
+           string[]fileArray = Directory.GetFiles(@"XML_ASL_Files\", "*.xml");
+           foreach (var filename in fileArray) {
+           xml.Load( filename);
                 foreach (XmlNode node in xml.SelectNodes("signs/sign/frame"))
                 {
+                    
                     //Console.WriteLine(node.ChildNodes.Count);
                     for (int i = 0; i < node.ChildNodes.Count; i++)
                     {
@@ -386,39 +333,53 @@ namespace Microsoft.Samples.Kinect.BodyBasics
 
                         joints[(JointType)i] = new Joint { JointType = (JointType)i, Position = new CameraSpacePoint { X = float.Parse(x.Value), Y = float.Parse(y.Value), Z = float.Parse(z.Value) }, TrackingState = TrackingState.Tracked };
                     }
-                    Thread.Sleep(1000/30);
+
+                    //Thread.Sleep(1000/30);
                     Application.Current.Dispatcher.Invoke(new Action(() =>
                     {
+                        title.Text = filename;
                         using (DrawingContext dc = this.drawingGroup.Open())
+                    {
+
+
+                        Pen drawPen = this.bodyColors[0];
+                        // convert the joint points to depth (display) space
+                        Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
+
+                        foreach (JointType jointType in joints.Keys)
                         {
-
-
-                            Pen drawPen = this.bodyColors[0];
-                            // convert the joint points to depth (display) space
-                            Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
-
-                            foreach (JointType jointType in joints.Keys)
+                            // sometimes the depth(Z) of an inferred joint may show as negative
+                            // clamp down to 0.1f to prevent coordinatemapper from returning (-Infinity, -Infinity)
+                            CameraSpacePoint position = joints[jointType].Position;
+                            if (position.Z < 0)
                             {
-                                // sometimes the depth(Z) of an inferred joint may show as negative
-                                // clamp down to 0.1f to prevent coordinatemapper from returning (-Infinity, -Infinity)
-                                CameraSpacePoint position = joints[jointType].Position;
-                                if (position.Z < 0)
-                                {
-                                    position.Z = InferredZPositionClamp;
-                                }
+                                position.Z = InferredZPositionClamp;
+                            }
 
-                                DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
-                               
+                            var depthSpacePoint = this.coordinateMapper.MapCameraPointToColorSpace(position);
+                                       var z=   joints[jointType].Position.Z * 275.36339626;
+                             
                                 jointPoints[jointType] = new Point(depthSpacePoint.X, depthSpacePoint.Y);
+                                 var joint = node.ChildNodes[(int)jointType];
+                        joint.Attributes[1].Value = jointPoints[jointType].X.ToString();
+                        joint.Attributes[2].Value = jointPoints[jointType].Y.ToString();
+                       joint.Attributes[3].Value= z.ToString();
+
+                                                           
+
+
                                 // this is in 0 - 640 by 480
                             }
 
                             this.DrawBody(joints, jointPoints, dc, drawPen);
+                           
 
                         }
                     }));
             }
+                xml.Save("edited\\"+filename);
             }
+            
         }
         /// <summary>
         /// Draws a body
@@ -450,24 +411,27 @@ namespace Microsoft.Samples.Kinect.BodyBasics
                 {
                     drawBrush = this.inferredJointBrush;
                 }
-
+                
                 if (drawBrush != null&& jointPoints[jointType].X  >=0)
                 {
+                    //Console.WriteLine("spinesholder " + joints[jointType].Position.Z * 83);
+
                     drawingContext.DrawEllipse(drawBrush, null, jointPoints[jointType], JointThickness, JointThickness);
+                  
+
                 }
             }
         }
-
-        /// <summary>
-        /// Draws one bone of a body (joint to joint)
-        /// </summary>
-        /// <param name="joints">joints to draw</param>
-        /// <param name="jointPoints">translated positions of joints to draw</param>
-        /// <param name="jointType0">first joint of bone to draw</param>
-        /// <param name="jointType1">second joint of bone to draw</param>
-        /// <param name="drawingContext">drawing context to draw to</param>
-        /// /// <param name="drawingPen">specifies color to draw a specific bone</param>
-        private void DrawBone(IReadOnlyDictionary<JointType, Joint> joints, IDictionary<JointType, Point> jointPoints, JointType jointType0, JointType jointType1, DrawingContext drawingContext, Pen drawingPen)
+            /// <summary>
+            /// Draws one bone of a body (joint to joint)
+            /// </summary>
+            /// <param name="joints">joints to draw</param>
+            /// <param name="jointPoints">translated positions of joints to draw</param>
+            /// <param name="jointType0">first joint of bone to draw</param>
+            /// <param name="jointType1">second joint of bone to draw</param>
+            /// <param name="drawingContext">drawing context to draw to</param>
+            /// /// <param name="drawingPen">specifies color to draw a specific bone</param>
+            private void DrawBone(IReadOnlyDictionary<JointType, Joint> joints, IDictionary<JointType, Point> jointPoints, JointType jointType0, JointType jointType1, DrawingContext drawingContext, Pen drawingPen)
         {
             Joint joint0 = joints[jointType0];
             Joint joint1 = joints[jointType1];
