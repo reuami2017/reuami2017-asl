@@ -132,7 +132,7 @@ def details(directory):
             name = get_word(file)
             time_dict[name] = sec
             arm_dict[name] = ranges.avg_hand_distance_right(file)
-            print("Creating directory")
+            print("Creating arm length database")
             if (len(time_dict) % 100) == 0:
                 print(str(int(len(time_dict) / 35)) + "% done")
 
@@ -142,7 +142,7 @@ def details(directory):
     return time_dict
 
 
-df = pd.DataFrame([word_types, details("XML_ASL_Files")], index=["type", "seconds"]).transpose()
+df = pd.DataFrame([word_types, details("XML_ASL_Files"), arm_dict], index=["type", "seconds"]).transpose()
 df[['seconds']] = df[['seconds']].apply(pd.to_numeric)
 
 one_sec = df[(1 > df['seconds']) | (df['seconds'] >= 0)]
