@@ -43,9 +43,12 @@ def make_database():
     :return: a dict with all the files. The dict relates each word to their type (noun, verb, etc)
     """
     new_dict = {}
+    print("Making word database")
     for file in os.listdir("XML_ASL_Files"):
         temp = get_word(file)
         new_dict[temp] = TextBlob(temp).tags[0][1]
+        if (len(new_dict) % 100) == 0:
+            print(str(len(new_dict) / 35) + "% done")
     return new_dict
 
 word_types = make_database()
@@ -99,19 +102,6 @@ def details(directory):
     :return: a dictionary of all signs mapped to all signs
     """
     time_dict = {}
-    # one_sec_signs = 0
-    # two_sec_signs = 0
-    # three_sec_signs = 0
-    # four_sec_signs = 0
-
-    # one_sec_arm_distances = 0
-    # two_sec_arm_distances = 0
-    # three_sec_arm_distances = 0
-    # four_sec_arm_distances = 0
-
-    # num_of_words = 0  # might be able to replace with len(time_dict)
-    # sum_of_times = 0
-    # sum_of_arm_distances = 0
 
     for file in os.listdir(directory):
         try:
@@ -119,54 +109,20 @@ def details(directory):
             name = get_word(file)
             time_dict[name] = sec
             arm_dict[name] = ranges.avg_hand_distance_right(file)
-            # if sec <= 0:
-            #     continue  # whoopsies its broken
-            # elif sec < 1:
-            #     time_dict[name] = 1
-            #     # one_sec_signs += 1
-            #     one_sec_arm_distances += ranges.avg_hand_distance_right(file)
-            # elif sec < 2:
-            #     # two_sec_signs += 1
-            #     time_dict[name] = 2
-            #     two_sec_arm_distances += ranges.avg_hand_distance_right(file)
-            # elif sec < 3:
-            #     # three_sec_signs += 1
-            #     time_dict[name] = 3
-            #     three_sec_arm_distances += ranges.avg_hand_distance_right(file)
-            # else:  # technically the signs could be longer than 4 seconds, maybe we should remove them altogether
-            #     time_dict[name] = 4
-            #     # print(file)
-            #     # four_sec_signs += 1
-            #     four_sec_arm_distances += ranges.avg_hand_distance_right(file)
-            #
-            # num_of_words += 1
-            # if (num_of_words % 100) == 0:
-            #     print(str(num_of_words / 35) + "% done")
             if (len(time_dict) % 100) == 0:
-                print(str(len(time_dict) / 35) + "% done")
-            # sum_of_times += sec
-            # sum_of_arm_distances += ranges.avg_hand_distance_right(file)
+                print(str(int(len(time_dict) / 35)) + "% done")
 
-        except ET.ParseError:  # some file derped on me and annoyed the hell out of me
+        except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
 
-    # print("There are: " + str(one_sec_signs) + " one second long signs in the database")
-    # print("There are: " + str(two_sec_signs) + " two second long signs in the database")
-    # print("There are: " + str(three_sec_signs) + " three second long signs in the database")
-    # print("There are: " + str(four_sec_signs) + " four second long signs in the database")
-    # print("Average time is: " + str(sum_of_times / num_of_words))
-    # print("Average distance is: " + str(sum_of_arm_distances / num_of_words))
-    # print("Average one second distance is: " + str(one_sec_arm_distances / one_sec_arm_distances))
-    # print("Average two second distance is: " + str(two_sec_arm_distances / one_sec_arm_distances))
-    # print("Average three second distance is: " + str(three_sec_arm_distances / one_sec_arm_distances))
-    # print("Average four second distance is: " + str(four_sec_arm_distances / one_sec_arm_distances))
     return time_dict
-df = pd.DataFrame([word_types, details("XML_ASL_Files")], index=["type", "seconds"]).transpose()
-print(df[df['seconds'] > 0])
-one_sec = df[df['seconds'] == 1]
-two_sec = df[df['seconds'] == 2]
-three_sec = df[df['seconds'] == 3]
-four_sec = df[df['seconds'] == 4]
+# df = pd.DataFrame([word_types, details("XML_ASL_Files")], index=["type", "seconds"]).transpose()
+df = pd.DataFrame()
+
+one_sec = df[1 > abs(df['seconds'] - 1)]  # has to be less than 1
+two_sec = df[1 > abs(df['seconds'] - 2)]  # has to be between 1 and 2
+three_sec = df[3 > df['seconds'] >= 2]
+four_sec = df[df['seconds'] >= 3]
 print("One sec: \n" + str(one_sec.describe()))
 print("Two sec: \n" + str(two_sec.describe()))
 print("Three sec: \n" + str(three_sec.describe()))
