@@ -45,11 +45,13 @@ def make_graph(filename):
 
     temp = []  # things must be assigned to something or the graph will statically display everything
     for data in make_lines(filename):
-        data = [np.array(data)]
-        temp.append(animation.FuncAnimation(fig, update_lines, 30,
+        data = [np.array(data)]                                  ##
+        temp.append(animation.FuncAnimation(fig, update_lines,len(ET.parse(filename).getroot()[0][0]),
                                 fargs=(data, [ax.plot(dat[0], dat[1], dat[2])[0] for dat in data]),
-                                interval=30, blit=False))
+                                interval=1000.0/300, blit=False))
+
 
     plt.show()
 
-make_graph("COPY_OF_FORK+_1023.xml")
+make_graph("DINOSAUR_716.xml")
+#make_graph("THROW_2256.xml")
