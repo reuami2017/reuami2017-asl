@@ -27,14 +27,22 @@
 ##Friday
 * ~~Make the data frame work properly~~
 * ~~Split the data frame into multiple objects, figure out more things to add to the df~~
-* In C# have the "converted" XML data become skeletal animations (and be able to save said animations)
-
-##Later
-* translated data (absolute x, y, z) --> avatar?
-* feed videos into machine learning somehow
+* ~~In C# have the "converted" XML data become skeletal animations (and be able to save said animations)~~
 
 #Week 3:
 ##Monday
 * ~~Split up the data frame into different objects and changed to useful stats~~
 * ~~set up the printer~~
 * Talk and find out what to do next
+
+
+
+##Later
+* write the actual research paper !!!
+* Vasu will work on pausing between signs ?
+* organize code and make it better etc
+* find most common words spoken to alexa, google, siri, etc
+    * sign these words (get people from rosica and possibly golisano)
+    * feed these to machine learning
+* translated data (absolute x, y, z) --> avatar?
+* feed videos into machine learning somehow
