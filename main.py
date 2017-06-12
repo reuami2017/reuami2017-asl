@@ -48,7 +48,7 @@ def make_database():
         temp = get_word(file)
         new_dict[temp] = TextBlob(temp).tags[0][1]
         if (len(new_dict) % 100) == 0:
-            print(str(len(new_dict) / 35) + "% done")
+            print(str(int(len(new_dict) / 35)) + "% done")
     return new_dict
 
 word_types = make_database()
@@ -116,12 +116,38 @@ def details(directory):
             continue
 
     return time_dict
-# df = pd.DataFrame([word_types, details("XML_ASL_Files")], index=["type", "seconds"]).transpose()
-df = pd.DataFrame()
 
-one_sec = df[1 > abs(df['seconds'] - 1)]  # has to be less than 1
-two_sec = df[1 > abs(df['seconds'] - 2)]  # has to be between 1 and 2
-three_sec = df[3 > df['seconds'] >= 2]
+
+def details(directory):
+    """
+    gets random details from the xml directory and prints them out
+    :param directory: the name of the directory with XML files in it
+    :return: a dictionary of all signs mapped to all signs
+    """
+    time_dict = {}
+
+    for file in os.listdir(directory):
+        try:
+            sec = seconds(directory + "\\" + file)
+            name = get_word(file)
+            time_dict[name] = sec
+            arm_dict[name] = ranges.avg_hand_distance_right(file)
+            print("Creating directory")
+            if (len(time_dict) % 100) == 0:
+                print(str(int(len(time_dict) / 35)) + "% done")
+
+        except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
+            continue
+
+    return time_dict
+
+
+df = pd.DataFrame([word_types, details("XML_ASL_Files")], index=["type", "seconds"]).transpose()
+df[['seconds']] = df[['seconds']].apply(pd.to_numeric)
+
+one_sec = df[(1 > df['seconds']) | (df['seconds'] >= 0)]
+two_sec = df[(2 > df['seconds']) | (df['seconds'] >= 1)]
+three_sec = df[(3 > df['seconds']) | (df['seconds'] >= 2)]
 four_sec = df[df['seconds'] >= 3]
 print("One sec: \n" + str(one_sec.describe()))
 print("Two sec: \n" + str(two_sec.describe()))
