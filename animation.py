@@ -49,7 +49,7 @@ def make_graph(filename):
         temp.append(animation.FuncAnimation(fig, update_lines,len(ET.parse(filename).getroot()[0][0]),
                                 fargs=(data, [ax.plot(dat[0], dat[1], dat[2])[0] for dat in data]),
                                 interval=1000.0/30, blit=False))
-
+#test
 
     plt.show()
 
