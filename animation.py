@@ -28,7 +28,6 @@ def make_lines(filename):
             lines.append(d[key])
     return lines
 
-
 def update_lines(num, datalines, lines):
     for line, data in zip(lines, datalines):
         # NOTE: there is no .set_data() for 3 dim data...
@@ -42,7 +41,6 @@ def make_graph(filename):
     fig = plt.figure()
     ax = p3.Axes3D(fig)
     ax.set_title('3D animation of body part paths')
-
     temp = []  # things must be assigned to something or the graph will statically display everything
     for data in make_lines(filename):
         data = [np.array(data)]                                  ##
@@ -53,5 +51,5 @@ def make_graph(filename):
 
     plt.show()
 
-make_graph("DINOSAUR_716.xml")
+#make_graph("UNEDITED_COPY_(D)DINOSAUR_716.xml")
 #make_graph("THROW_2256.xml")
