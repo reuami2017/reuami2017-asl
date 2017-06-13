@@ -19,7 +19,7 @@ pip install matplotlib
 
 * **Shareef Alis** - *Researcher* - [ShareefAlis](https://github.com/shareefalis)
 * **Kesavan Kushalnagar** - *Researcher* - [Kasplat](https://github.com/kasplat)
-* **Abraham Glassser** - *Researcher* - [Abrahplaya](https://github.com/abrahplaya)
+* **Abraham Glasser** - *Researcher* - [Abrahplaya](https://github.com/abrahplaya)
 
 ## License
 

@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import os
 import ranges
 import re
+import matplotlib.pyplot as plt
 from textblob import TextBlob
 from itertools import *
     
@@ -110,7 +111,7 @@ def details(directory):
             time_dict[name] = sec
             arm_dict[name] = ranges.avg_hand_distance_right(file)
             if (len(time_dict) % 100) == 0:
-                print(str(int(len(time_dict) / 35)) + "% done")
+                print(str(int(len(time_dict) / 34)) + "% done")
 
         except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
@@ -126,15 +127,15 @@ def details(directory):
     """
     time_dict = {}
 
+    print("Creating arm length database")
     for file in os.listdir(directory):
         try:
             sec = seconds(directory + "\\" + file)
             name = get_word(file)
             time_dict[name] = sec
             arm_dict[name] = ranges.avg_hand_distance_right(file)
-            print("Creating arm length database")
             if (len(time_dict) % 100) == 0:
-                print(str(int(len(time_dict) / 35)) + "% done")
+                print(str(int(len(time_dict) / 34)) + "% done")
 
         except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
@@ -142,18 +143,28 @@ def details(directory):
     return time_dict
 
 
-df = pd.DataFrame([word_types, details("XML_ASL_Files"), arm_dict], index=["type", "seconds"]).transpose()
-df[['seconds']] = df[['seconds']].apply(pd.to_numeric)
+df = pd.DataFrame([word_types, details("XML_ASL_Files"), arm_dict], index=["type", "seconds", "arm"]).transpose()
+df[['seconds', 'arm']] = df[['seconds', 'arm']].apply(pd.to_numeric)
+
 
 one_sec = df[(1 > df['seconds']) | (df['seconds'] >= 0)]
 two_sec = df[(2 > df['seconds']) | (df['seconds'] >= 1)]
 three_sec = df[(3 > df['seconds']) | (df['seconds'] >= 2)]
 four_sec = df[df['seconds'] >= 3]
+nouns = df[(df['type'] == "NN") | (df['type'] == "NNS") | (df['type'] == "NNP") | (df['type'] == "NNPS")]  # all nouns start with NN
+verbs = df[(df['type'] == "VB") | (df['type'] == "VBD") | (df['type'] == "VBG") | (df['type'] == "VBN") | (df['type'] == "VBP") | (df['type'] == "VBZ") ]  # all verbs start with VB
+adjectives = df[(df['type'] == "JJ") | (df['type'] == "JJR") | (df['type'] == "JJS")]  # adjectives
+adverbs = df[(df['type'] == "RB") | (df['type'] == "RBS") | (df['type'] == "RBR")]  # adverbs obviously
 print("One sec: \n" + str(one_sec.describe()))
 print("Two sec: \n" + str(two_sec.describe()))
 print("Three sec: \n" + str(three_sec.describe()))
 print("Four sec: \n" + str(four_sec.describe()))
-
+print("Overall: \n" + str(df.describe()))
+print("Type: \n" + str(df['type'].describe()))
+print('Nouns: \n' + str(nouns.describe()))
+print("Verbs: \n" + str(verbs.describe()))
+print('Adjectives: \n' + str(adjectives.describe()))
+print('Adverbs: \n' + str(adverbs.describe()))
 """
 Run program here
 """
