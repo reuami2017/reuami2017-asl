@@ -1,5 +1,5 @@
 # REU AMI 2017: ASL Project
-## Week 1 objectives:
+# Week 1:
 * ~~Get an x value for a specific body part~~
 * ~~Get the average x value for a specific body part over a single xml file~~
 * ~~Get the average x value for a specific body part over all xml files and store the output~~
@@ -8,7 +8,8 @@
 ## Friday afternoon / Monday objectives:
 ##### Provide more information for prior work - Hypothesis: ASL = 2x time of spoken language, and 2x the information
 * ~~range of motion for signs~~
-##Monday - Wednesday week 2
+#Week 2
+##Monday - Wednesday
 * ~~Create an animation for a given xml file's body part~~
 * ~~Make that animation work for all body parts~~
 * ~~Have a way to create a video out of that animation for computer vision purposes if needed~~
@@ -25,9 +26,15 @@
 * https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html is cool
 ##Friday
 * ~~Make the data frame work properly~~
-* Split the data frame into multiple objects, figure out more things to add to the df
+* ~~Split the data frame into multiple objects, figure out more things to add to the df~~
 * In C# have the "converted" XML data become skeletal animations (and be able to save said animations)
 
 ##Later
 * translated data (absolute x, y, z) --> avatar?
 * feed videos into machine learning somehow
+
+#Week 3:
+##Monday
+* ~~Split up the data frame into different objects and changed to useful stats~~
+* ~~set up the printer~~
+* Talk and find out what to do next
