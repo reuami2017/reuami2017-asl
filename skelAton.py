@@ -1,8 +1,8 @@
 import animation as am
 import xml.etree.ElementTree as ET # fone home
+import matplotlib.animation as animation
 import matplotlib.pyplot as plt
-
-import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d.axes3d as p3
 from mpl_toolkits.mplot3d import Axes3D
 def make_lines(filename):
     """
@@ -28,11 +28,11 @@ def getxyzplot( body, frame):
         return [dict[body][0][frame],dict[body][1][frame],dict[body][2][frame]]
 
 def bodypart(body, body2, frame):
-    plt.plot([getxyzplot(body,  frame)[0], getxyzplot(body2, frame)[0]],
+    ax.plot([getxyzplot(body,  frame)[0], getxyzplot(body2, frame)[0]],
              [getxyzplot(body,  frame)[1], getxyzplot(body2, frame)[1]],
-             [getxyzplot(body, frame)[2], getxyzplot(body2, frame)[2]])
-dict= make_lines("DINOSAUR_716.xml")
+             zs=[getxyzplot(body, frame)[2], getxyzplot(body2, frame)[2]])
 def makebody(frame):
+    ax.clear()
     ## head
     bodypart("Head", "Neck", frame)
     bodypart("SpineShoulder", "Neck", frame)
@@ -65,5 +65,16 @@ def makebody(frame):
     bodypart("AnkleRight", "KneeRight", frame)
     bodypart("AnkleRight", "FootRight", frame)
 dict= make_lines("DINOSAUR_716.xml")
-makebody(0)
+
+fig = plt.figure()
+ax = p3.Axes3D(fig)
+def updatefig(i):
+    fig = plt.figure()
+
+    ax = p3.Axes3D(fig)
+    makebody(i)
+    fig.clear()
+
+anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
 plt.show()
+
