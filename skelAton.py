@@ -28,40 +28,42 @@ def getxyzplot( body, frame):
         return [dict[body][0][frame],dict[body][1][frame],dict[body][2][frame]]
 
 def bodypart(body, body2, frame):
-    plt.plot([getxyzplot(body,  frame)[0], getxyzplot(body2, frame)[1]],
+    plt.plot([getxyzplot(body,  frame)[0], getxyzplot(body2, frame)[0]],
              [getxyzplot(body,  frame)[1], getxyzplot(body2, frame)[1]],
              [getxyzplot(body, frame)[2], getxyzplot(body2, frame)[2]])
 dict= make_lines("DINOSAUR_716.xml")
-## head
-bodypart("Head",  "Neck", 0)
-bodypart("SpineShoulder",  "Neck", 0)
-bodypart( "SpineShoulder", "SpineMid", 0)
-bodypart( "SpineBase","SpineMid", 0)
-# leg left
-bodypart( "SpineBase","HipLeft", 0)
-bodypart( "HipLeft","KneeLeft", 0)
-bodypart( "AnkleLeft","KneeLeft", 0)
-bodypart( "AnkleLeft","FootLeft", 0)
-# arm left
-bodypart("SpineShoulder","ShoulderLeft", 0)
-bodypart("ElbowLeft","ShoulderLeft", 0)
-bodypart("ElbowLeft","WristLeft", 0)
+def makebody(frame):
+    ## head
+    bodypart("Head", "Neck", frame)
+    bodypart("SpineShoulder", "Neck", frame)
+    bodypart("SpineShoulder", "SpineMid", frame)
+    bodypart("SpineBase", "SpineMid", frame)
+    # leg left
+    bodypart("SpineBase", "HipLeft", frame)
+    bodypart("HipLeft", "KneeLeft", frame)
+    bodypart("AnkleLeft", "KneeLeft", frame)
+    bodypart("AnkleLeft", "FootLeft", frame)
+    # arm left
+    bodypart("SpineShoulder", "ShoulderLeft", frame)
+    bodypart("ElbowLeft", "ShoulderLeft", frame)
+    bodypart("ElbowLeft", "WristLeft", frame)
+    bodypart("HandLeft", "WristLeft", frame)
+    bodypart("HandLeft", "HandTipLeft", frame)
+    bodypart("WristLeft", "ThumbLeft", frame)
 
-bodypart("HandLeft","WristLeft", 0)
-bodypart("HandLeft","HandTipLeft", 0)
-bodypart("HandLeft","ThumbLeft", 0)
+    ## right arm
+    bodypart("SpineShoulder", "ShoulderRight", frame)
+    bodypart("ElbowRight", "ShoulderRight", frame)
+    bodypart("ElbowRight", "WristRight", frame)
+    bodypart("HandRight", "WristRight", frame)
+    bodypart("WristRight", "ThumbRight", frame)
+    bodypart("HandRight", "HandTipRight", frame)
 
-## right arm
-bodypart("ElbowRight","ShoulderRight", 0)
-bodypart("HandRight","WristRight", 0)
-bodypart("HandRight","ThumbRight", 0)
-bodypart("HandRight","HandTipRight", 0)
-bodypart("ElbowRight","ShoulderRight", 0)
-bodypart("SpineShoulder", "ShoulderRight", 0)
-# leg right
-bodypart( "SpineBase","HipRight", 0)
-bodypart( "HipRight","KneeRight", 0)
-bodypart( "AnkleRight","KneeRight", 0)
-bodypart( "AnkleRight","FootRight", 0)
-
+    # leg right
+    bodypart("SpineBase", "HipRight",  frame)
+    bodypart("HipRight", "KneeRight", frame)
+    bodypart("AnkleRight", "KneeRight", frame)
+    bodypart("AnkleRight", "FootRight", frame)
+dict= make_lines("DINOSAUR_716.xml")
+makebody(0)
 plt.show()
