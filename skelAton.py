@@ -69,11 +69,7 @@ dict= make_lines("DINOSAUR_716.xml")
 fig = plt.figure()
 ax = p3.Axes3D(fig)
 def updatefig(i):
-    fig = plt.figure()
-
-    ax = p3.Axes3D(fig)
     makebody(i)
-    fig.clear()
 
 anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
 plt.show()
