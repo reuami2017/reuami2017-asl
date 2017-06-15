@@ -4,7 +4,9 @@ import ranges
 import re
 import matplotlib.pyplot as plt
 from textblob import TextBlob
+import sys
 from itertools import *
+import pickle
     
 import pandas as pd
 import numpy as np
@@ -143,10 +145,19 @@ def details(directory):
     return time_dict
 
 
-df = pd.DataFrame([word_types, details("XML_ASL_Files"), arm_dict], index=["type", "seconds", "arm"]).transpose()
+"""
+Run the program here
+"""
+
+
+if len(sys.argv) > 1:  # if there are arguments, recreate the database
+    df = pd.DataFrame([word_types, details("XML_ASL_Files"), arm_dict], index=["type", "seconds", "arm"]).transpose()
+    df.to_pickle("database.pkl")
+else:  # else read the stored db
+    df = pd.read_pickle("database.pkl")
+
+
 df[['seconds', 'arm']] = df[['seconds', 'arm']].apply(pd.to_numeric)
-
-
 one_sec = df[(1 > df['seconds']) | (df['seconds'] >= 0)]
 two_sec = df[(2 > df['seconds']) | (df['seconds'] >= 1)]
 three_sec = df[(3 > df['seconds']) | (df['seconds'] >= 2)]
@@ -165,6 +176,9 @@ print('Nouns: \n' + str(nouns.describe()))
 print("Verbs: \n" + str(verbs.describe()))
 print('Adjectives: \n' + str(adjectives.describe()))
 print('Adverbs: \n' + str(adverbs.describe()))
+
+
+
 """
 Run program here
 """
