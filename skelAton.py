@@ -1,9 +1,8 @@
-import animation as am
+#import animation as am
 import xml.etree.ElementTree as ET # fone home
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as p3
-from mpl_toolkits.mplot3d import Axes3D
 def make_lines(filename):
     """
     looks at the file
@@ -43,7 +42,7 @@ def makebody(frame):
     bodypart("HipLeft", "KneeLeft", frame)
     bodypart("AnkleLeft", "KneeLeft", frame)
     bodypart("AnkleLeft", "FootLeft", frame)
-    # arm left
+    #arm left
     bodypart("SpineShoulder", "ShoulderLeft", frame)
     bodypart("ElbowLeft", "ShoulderLeft", frame)
     bodypart("ElbowLeft", "WristLeft", frame)
@@ -68,9 +67,25 @@ dict= make_lines("DINOSAUR_716.xml")
 
 fig = plt.figure()
 ax = p3.Axes3D(fig)
+ax.view_init(270,270)
+
 def updatefig(i):
     makebody(i)
-
+    #ax.canvas.draw_idle()
+   # plt.pause(1000)
 anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
+#anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+import threading
+
+
+
 plt.show()
+#def thread():
+#    while True:
+#        for i in range (len(dict["Head"][0])):
+ #           updatefig(i)
+
+#t = threading.Thread(target=thread)
+#t.daemon = False
+#t.start()
 
