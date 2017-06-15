@@ -38,3 +38,13 @@
 * ~~Split up the data frame into different objects and changed to useful stats~~
 * ~~set up the printer~~
 * Talk and find out what to do next
+
+##Tuesday
+* ~~find interesting details on the datasets that were split up~~
+* Create a list of signs that are unique and can be used to train
+    * signs should be distinguishable commands to Google assistant
+* Finish up presentation for tomorrow
+* ~~Some work on the ASR for deaf people using mturk~~
+
+##Wednesday
+* Use the average of x,y,z to find the min and max, and subtract those 2 for the range

@@ -4,7 +4,9 @@ Classifying sign language using machine learning and computer vision techniques.
 
 ## Getting Started
 
-Just download the repository and run in python. A requirements.txt might be made at some point.
+If there are edits to the database file being made, add any number of arguments when running the program (python main.py makedb). 
+Otherwise just run "python main.py" to run the program and instantiate the database. Running
+this in Rodeo makes it easier to look into the database and mess with the data as needed.
 
 ### Prerequisites
 
@@ -19,7 +21,7 @@ pip install matplotlib
 
 * **Shareef Ali** - *Researcher* - [shareefalis](https://github.com/shareefalis)
 * **Kesavan Kushalnagar** - *Researcher* - [kasplat](https://github.com/kasplat)
-* **Abraham Glassser** - *Researcher* - [abrahplaya](https://github.com/abrahplaya)
+* **Abraham Glasser** - *Researcher* - [abrahplaya](https://github.com/abrahplaya)
 
 ## License
 
