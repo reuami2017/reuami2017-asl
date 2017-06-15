@@ -42,3 +42,43 @@ def avg_distance(filename, body_part):
         return total
     return total/count
 
+
+def max_arm_distance(filename):
+    """
+    finds the max arm distance for the hands for the given file
+    :param filename: the file
+    :return: a tuple of the left, then the right max arm distance
+    """
+    root = ET.parse("XML_ASL_Files" + "\\" + filename).getroot()
+    max_range_right = 0
+    max_range_left = 0
+    for sign in root:
+        for frame in sign:
+            for joint in frame:
+                pointsum_right = [0, 0, 0]
+                pointsum_left = [0, 0, 0]
+                if joint.get('name') == "SpineMid":
+                    spine = [float(joint.get("x"))
+                             , float(joint.get("y"))
+                             , float(joint.get("z"))]
+                elif joint.get('name') in ['WristRightHand', 'HandRight', 'HandTipRight', 'ThumbRight']:
+                    pointsum_right[0] += float(joint.get("x"))
+                    pointsum_right[1] += float(joint.get("y"))
+                    pointsum_right[2] += float(joint.get("z"))
+                elif joint.get('name') in ['WristLeftHand', 'HandLeft', 'HandTipLeft', 'ThumbLeft']:
+                    pointsum_left[0] += float(joint.get("x"))
+                    pointsum_left[1] += float(joint.get("y"))
+                    pointsum_left[2] += float(joint.get("z"))
+            # if the max range is less than the current average range from the right hand to the spine, update it.
+            new_range_right = math.sqrt(
+                (pointsum_right[0] / 4 - spine[0]) ** 2 + (pointsum_right[1] / 4 - spine[1]) ** 2 + (
+                    pointsum_right[2] / 4 - spine[2]) ** 2)
+            new_range_left = math.sqrt(
+                (pointsum_left[0] / 4 - spine[0]) ** 2 + (pointsum_left[1] / 4 - spine[1]) ** 2 + (
+                    pointsum_left[2] / 4 - spine[2]) ** 2)
+            if max_range_right < new_range_right:
+                max_range_right = new_range_right
+            if max_range_left < new_range_left:
+                max_range_left = new_range_left
+    return max_range_left, max_range_right
+

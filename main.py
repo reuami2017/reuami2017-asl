@@ -7,10 +7,7 @@ from textblob import TextBlob
 import sys
 from itertools import *
 import pickle
-    
 import pandas as pd
-import numpy as np
-# import nltk
 
 
 """
@@ -40,7 +37,7 @@ def get_word(file):
     return re.sub("xml", "", temp).lower()
 
 
-def make_database():
+def make_word_database():
     """
     makes the database
     :return: a dict with all the files. The dict relates each word to their type (noun, verb, etc)
@@ -53,9 +50,6 @@ def make_database():
         if (len(new_dict) % 100) == 0:
             print(str(int(len(new_dict) / 35)) + "% done")
     return new_dict
-
-word_types = make_database()
-
 
 
 def avg_coord(filename, body_part, coord = 'x'):
@@ -95,54 +89,60 @@ def seconds(filename):
 # print(seconds('XML_ASL_Files\(D)DINOSAUR_716.xml'))
 
 
-arm_dict = {}
 
-def details(directory):
+def create_database(directory):
     """
     gets random details from the xml directory and prints them out
     :param directory: the name of the directory with XML files in it
     :return: a dictionary of all signs mapped to all signs
     """
     time_dict = {}
+    max_arm_range = {}
+    arm_dict = {}
 
-    print("Creating arm length database")
+    print("Creating arm length, time, and ranges databases")
     for file in os.listdir(directory):
         try:
             sec = seconds(directory + "\\" + file)
             name = get_word(file)
             time_dict[name] = sec
             arm_dict[name] = ranges.avg_hand_distance_right(file)
-            if (len(time_dict) % 100) == 0:
+            max_arm_range[name] = ranges.max_arm_distance(file)
+            if (len(time_dict) % 100) == 0:  # neato percentage tracking so that we can feel happy
                 print(str(int(len(time_dict) / 34)) + "% done")
 
         except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
 
-    return time_dict
+    return time_dict, arm_dict, max_arm_range
 
 
 """
 Run the program here
 """
 
-
-if len(sys.argv) > 1:  # if there are arguments, recreate the database
-    df = pd.DataFrame([word_types, details("XML_ASL_Files"), arm_dict], index=["type", "seconds", "arm"]).transpose()
-    df.to_pickle("database.pkl")
-else:  # else read the stored db
+check = input("Should the database be loaded from the database.pkl file? (Y/N)   ")
+if check in ["Y", "y"]:
     df = pd.read_pickle("database.pkl")
+else:
+    word_types = make_word_database()
+    time, arm, ranges = create_database("XML_ASL_Files")
+    df = pd.DataFrame([word_types, time, arm, ranges], index=["type", "seconds", "arm", "ranges"]).transpose()
+    df.to_pickle("database.pkl")
 
 
 df[['seconds', 'arm']] = df[['seconds', 'arm']].apply(pd.to_numeric)
-one_sec = df[(1 > df['seconds']) | (df['seconds'] >= 0)]
-two_sec = df[(2 > df['seconds']) | (df['seconds'] >= 1)]
-three_sec = df[(3 > df['seconds']) | (df['seconds'] >= 2)]
+one_sec = df[(1 > df['seconds']) & (df['seconds'] >= 0)]
+two_sec = df[(2 > df['seconds']) & (df['seconds'] >= 1)]
+three_sec = df[(3 > df['seconds']) & (df['seconds'] >= 2)]
 four_sec = df[df['seconds'] >= 3]
 nouns = df[(df['type'] == "NN") | (df['type'] == "NNS") | (df['type'] == "NNP") | (df['type'] == "NNPS")]  # all nouns start with NN
 verbs = df[(df['type'] == "VB") | (df['type'] == "VBD") | (df['type'] == "VBG") | (df['type'] == "VBN") | (df['type'] == "VBP") | (df['type'] == "VBZ") ]  # all verbs start with VB
 adjectives = df[(df['type'] == "JJ") | (df['type'] == "JJR") | (df['type'] == "JJS")]  # adjectives
 adverbs = df[(df['type'] == "RB") | (df['type'] == "RBS") | (df['type'] == "RBR")]  # adverbs obviously
 print("One sec: \n" + str(one_sec.describe()))
+print("One sec nouns: \n" + str(nouns[(1 > nouns['seconds']) & (nouns['seconds'] >= 0)].describe()))
+
 print("Two sec: \n" + str(two_sec.describe()))
 print("Three sec: \n" + str(three_sec.describe()))
 print("Four sec: \n" + str(four_sec.describe()))
@@ -152,10 +152,3 @@ print('Nouns: \n' + str(nouns.describe()))
 print("Verbs: \n" + str(verbs.describe()))
 print('Adjectives: \n' + str(adjectives.describe()))
 print('Adverbs: \n' + str(adverbs.describe()))
-
-
-
-"""
-Run program here
-"""
-# details("XML_ASL_Files")
