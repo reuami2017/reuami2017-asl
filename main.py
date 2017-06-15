@@ -97,30 +97,6 @@ def seconds(filename):
 
 arm_dict = {}
 
-#goes through all the files and gets various statistics
-def details(directory):
-    """
-    gets random details from the xml directory and prints them out
-    :param directory: the name of the directory with XML files in it
-    :return: a dictionary of all signs mapped to all signs
-    """
-    time_dict = {}
-
-    for file in os.listdir(directory):
-        try:
-            sec = seconds(directory + "\\" + file)
-            name = get_word(file)
-            time_dict[name] = sec
-            arm_dict[name] = ranges.avg_hand_distance_right(file)
-            if (len(time_dict) % 100) == 0:
-                print(str(int(len(time_dict) / 34)) + "% done")
-
-        except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
-            continue
-
-    return time_dict
-
-
 def details(directory):
     """
     gets random details from the xml directory and prints them out
