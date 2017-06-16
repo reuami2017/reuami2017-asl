@@ -3,11 +3,9 @@
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>
 //------------------------------------------------------------------------------
-
-namespace Microsoft.Samples.Kinect.BodyBasics
+namespace Microsoft.Samples.Kinect.ColorBasics
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Globalization;
@@ -16,9 +14,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using Microsoft.Kinect;
-    using System.Xml;
-    using System.Threading;
-    using System.Xml.Linq;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Interaction logic for MainWindow
@@ -83,7 +79,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         /// <summary>
         /// Drawing image that we will display
         /// </summary>
-        private DrawingImage imageSource;
+        private DrawingImage depthimageSource;
 
         /// <summary>
         /// Active Kinect sensor
@@ -130,20 +126,33 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         /// </summary>
         private string statusText = null;
 
+
+
+        /// <summary>
+        /// Reader for color frames
+        /// </summary>
+        private ColorFrameReader colorFrameReader = null;
+
+        /// <summary>
+        /// Bitmap to display
+        /// </summary>
+        private WriteableBitmap colorBitmap = null;
+
+  
+
         /// <summary>
         /// Initializes a new instance of the MainWindow class.
         /// </summary>
         public MainWindow()
         {
-            // one sensor is currently supporte
-            kinectSensor =KinectSensor.GetDefault();
-            kinectSensor.Open();
-            // get the coordinate mapper
-            this.coordinateMapper = kinectSensor.CoordinateMapper;
+            // get the kinectSensor object
+            this.kinectSensor = KinectSensor.GetDefault();
 
-            // get the depth (display) extents
-            // FrameDescription frameDescription = this.kinectSensor.DepthFrameSource.FrameDescription;
-            // get the depth (display) extents
+            // open the reader for the color frames
+            this.colorFrameReader = this.kinectSensor.ColorFrameSource.OpenReader();
+
+            // wire handler for frame arrival
+            this.colorFrameReader.FrameArrived += this.Reader_ColorFrameArrived;
             FrameDescription frameDescription = this.kinectSensor.DepthFrameSource.FrameDescription;
 
             // get size of joint space
@@ -151,7 +160,7 @@ namespace Microsoft.Samples.Kinect.BodyBasics
             this.displayHeight = frameDescription.Height;
 
             // open the reader for the body frames
-
+            this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();
 
             // a bone defined as a line between two joints
             this.bones = new List<Tuple<JointType, JointType>>();
@@ -200,23 +209,37 @@ namespace Microsoft.Samples.Kinect.BodyBasics
             this.bodyColors.Add(new Pen(Brushes.Indigo, 6));
             this.bodyColors.Add(new Pen(Brushes.Violet, 6));
 
+            // get the coordinate mapper
+            this.coordinateMapper = this.kinectSensor.CoordinateMapper;
 
 
-        
             // Create the drawing group we'll use for drawing
             this.drawingGroup = new DrawingGroup();
 
             // Create an image source that we can use in our image control
-            this.imageSource = new DrawingImage(this.drawingGroup);
+            this.depthimageSource = new DrawingImage(this.drawingGroup);
+
+            // create the colorFrameDescription from the ColorFrameSource using Bgra format
+            FrameDescription colorFrameDescription = this.kinectSensor.ColorFrameSource.CreateFrameDescription(ColorImageFormat.Bgra);
+
+            // create the bitmap to display
+            this.colorBitmap = new WriteableBitmap(colorFrameDescription.Width, colorFrameDescription.Height, 96.0, 96.0, PixelFormats.Bgr32, null);
+
+            // set IsAvailableChanged event notifier
+            this.kinectSensor.IsAvailableChanged += this.Sensor_IsAvailableChanged;
+
+            // open the sensor
+            this.kinectSensor.Open();
+
+            // set the status text
+            this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
+                                                            : Properties.Resources.NoSensorStatusText;
 
             // use the window object as the view model in this simple example
             this.DataContext = this;
-            
+            this.bodyFrameReader.FrameArrived += this.Reader_FrameArrived;
             // initialize the components (controls) of the window
             this.InitializeComponent();
-  
-            this.bodyFrameReader = this.kinectSensor.BodyFrameSource.OpenReader();
-            //   new Thread(xmldata).Start();
         }
 
         /// <summary>
@@ -231,10 +254,16 @@ namespace Microsoft.Samples.Kinect.BodyBasics
         {
             get
             {
-                return this.imageSource;
+                return this.colorBitmap;
             }
         }
-
+        public ImageSource depthImageSource
+        {
+            get
+            {
+                return this.depthimageSource;
+            }
+        }
         /// <summary>
         /// Gets or sets the current status text to display
         /// </summary>
@@ -259,128 +288,75 @@ namespace Microsoft.Samples.Kinect.BodyBasics
                 }
             }
         }
-
-        /// <summary>
-        /// Execute start up tasks
-        /// </summary>
-        /// <param name="sender">object sending the event</param>
-        /// <param name="e">event arguments</param>
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (this.bodyFrameReader != null)
-            {
-                this.bodyFrameReader.FrameArrived += this.Reader_FrameArrived;
-            }
-        }
-
-        /// <summary>
-        /// Execute shutdown tasks
-        /// </summary>
-        /// <param name="sender">object sending the event</param>
-        /// <param name="e">event arguments</param>
-        private void MainWindow_Closing(object sender, CancelEventArgs e)
-        {
-            if (this.bodyFrameReader != null)
-            {
-                // BodyFrameReader is IDisposable
-                this.bodyFrameReader.Dispose();
-                this.bodyFrameReader = null;
-            }
-
-            if (this.kinectSensor != null)
-            {
-                this.kinectSensor.Close();
-                this.kinectSensor = null;
-            }
-        }
-
-        /// <summary>
-        /// Handles the body frame data arriving from the sensor
-        /// </summary>
-        /// <param name="sender">object sending the event</param>
-        /// <param name="e">event arguments</param>
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
-            if (this.kinectSensor != null)
+            bool dataReceived = false;
+
+            using (BodyFrame bodyFrame = e.FrameReference.AcquireFrame())
             {
-                   new Thread(xmldata).Start();
-               // xmldata();
-                this.kinectSensor = null;
-            }
-            
-        }
-
-     void xmldata()
-        {
-        ///    Thread.Sleep(5000);
-            Dictionary<JointType, Joint> joints = new Dictionary<JointType, Joint>();
-            XmlDocument xml = new XmlDocument();
-
-           string[]fileArray = Directory.GetFiles(@"XML_ASL_Files\", "*.xml");
-           foreach (var filename in fileArray) {
-           xml.Load( filename);
-                foreach (XmlNode node in xml.SelectNodes("signs/sign/frame"))
+                if (bodyFrame != null)
                 {
-                    
-                    //Console.WriteLine(node.ChildNodes.Count);
-                    for (int i = 0; i < node.ChildNodes.Count; i++)
+                    if (this.bodies == null)
                     {
-
-                        var joint = node.ChildNodes[i];
-                        var x = joint.Attributes[1];
-                        var y = joint.Attributes[2];
-                        var z = joint.Attributes[3];
-
-                        joints[(JointType)i] = new Joint { JointType = (JointType)i, Position = new CameraSpacePoint { X = float.Parse(x.Value), Y = float.Parse(y.Value), Z = float.Parse(z.Value) }, TrackingState = TrackingState.Tracked };
+                        this.bodies = new Body[bodyFrame.BodyCount];
                     }
 
-                    Thread.Sleep(1000/30);
-                    Application.Current.Dispatcher.Invoke(new Action(() =>
+                    // The first time GetAndRefreshBodyData is called, Kinect will allocate each Body in the array.
+                    // As long as those body objects are not disposed and not set to null in the array,
+                    // those body objects will be re-used.
+                    bodyFrame.GetAndRefreshBodyData(this.bodies);
+                    dataReceived = true;
+                }
+            }
+            Console.WriteLine(" foo");
+            if (dataReceived)
+            {
+                using (DrawingContext dc = this.drawingGroup.Open())
+                {
+                    // Draw a transparent background to set the render size
+                    dc.DrawRectangle(Brushes.Black, null, new Rect(0.0, 0.0, this.displayWidth, this.displayHeight));
+
+                    int penIndex = 0;
+                    foreach (Body body in this.bodies)
                     {
-                        title.Text = filename;
-                        using (DrawingContext dc = this.drawingGroup.Open())
-                    {
+                        Pen drawPen = this.bodyColors[penIndex++];
 
-
-                        Pen drawPen = this.bodyColors[0];
-                        // convert the joint points to depth (display) space
-                        Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
-
-                        foreach (JointType jointType in joints.Keys)
+                        if (body.IsTracked)
                         {
-                            // sometimes the depth(Z) of an inferred joint may show as negative
-                            // clamp down to 0.1f to prevent coordinatemapper from returning (-Infinity, -Infinity)
-                            CameraSpacePoint position = joints[jointType].Position;
-                            if (position.Z < 0)
+                            this.DrawClippedEdges(body, dc);
+
+                            IReadOnlyDictionary<JointType, Joint> joints = body.Joints;
+
+                            // convert the joint points to depth (display) space
+                            Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
+
+                            foreach (JointType jointType in joints.Keys)
                             {
-                                position.Z = InferredZPositionClamp;
-                            }
+                                // sometimes the depth(Z) of an inferred joint may show as negative
+                                // clamp down to 0.1f to prevent coordinatemapper from returning (-Infinity, -Infinity)
+                                CameraSpacePoint position = joints[jointType].Position;
+                                if (position.Z < 0)
+                                {
+                                    position.Z = InferredZPositionClamp;
+                                }
 
-                            var depthSpacePoint = this.coordinateMapper.MapCameraPointToColorSpace(position);
-                                       var z=   joints[jointType].Position.Z * 275.36339626;
-                             
+                                DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
                                 jointPoints[jointType] = new Point(depthSpacePoint.X, depthSpacePoint.Y);
-                                 var joint = node.ChildNodes[(int)jointType];
-                        joint.Attributes[1].Value = jointPoints[jointType].X.ToString();
-                        joint.Attributes[2].Value = jointPoints[jointType].Y.ToString();
-                       joint.Attributes[3].Value= z.ToString();
-
-                                                           
-
-
-                                // this is in 0 - 640 by 480
                             }
 
                             this.DrawBody(joints, jointPoints, dc, drawPen);
-                           
 
+                            this.DrawHand(body.HandLeftState, jointPoints[JointType.HandLeft], dc);
+                            this.DrawHand(body.HandRightState, jointPoints[JointType.HandRight], dc);
                         }
-                    }));
+                    }
+
+                    // prevent drawing outside of our render area
+                    this.drawingGroup.ClipGeometry = new RectangleGeometry(new Rect(0.0, 0.0, this.displayWidth, this.displayHeight));
+                }
             }
-                //xml.Save("edited\\"+filename);
-            }
-            
         }
+
         /// <summary>
         /// Draws a body
         /// </summary>
@@ -411,27 +387,24 @@ namespace Microsoft.Samples.Kinect.BodyBasics
                 {
                     drawBrush = this.inferredJointBrush;
                 }
-                
-                if (drawBrush != null&& jointPoints[jointType].X  >=0)
+
+                if (drawBrush != null)
                 {
-                    //Console.WriteLine("spinesholder " + joints[jointType].Position.Z * 83);
-
                     drawingContext.DrawEllipse(drawBrush, null, jointPoints[jointType], JointThickness, JointThickness);
-                  
-
                 }
             }
         }
-            /// <summary>
-            /// Draws one bone of a body (joint to joint)
-            /// </summary>
-            /// <param name="joints">joints to draw</param>
-            /// <param name="jointPoints">translated positions of joints to draw</param>
-            /// <param name="jointType0">first joint of bone to draw</param>
-            /// <param name="jointType1">second joint of bone to draw</param>
-            /// <param name="drawingContext">drawing context to draw to</param>
-            /// /// <param name="drawingPen">specifies color to draw a specific bone</param>
-            private void DrawBone(IReadOnlyDictionary<JointType, Joint> joints, IDictionary<JointType, Point> jointPoints, JointType jointType0, JointType jointType1, DrawingContext drawingContext, Pen drawingPen)
+
+        /// <summary>
+        /// Draws one bone of a body (joint to joint)
+        /// </summary>
+        /// <param name="joints">joints to draw</param>
+        /// <param name="jointPoints">translated positions of joints to draw</param>
+        /// <param name="jointType0">first joint of bone to draw</param>
+        /// <param name="jointType1">second joint of bone to draw</param>
+        /// <param name="drawingContext">drawing context to draw to</param>
+        /// /// <param name="drawingPen">specifies color to draw a specific bone</param>
+        private void DrawBone(IReadOnlyDictionary<JointType, Joint> joints, IDictionary<JointType, Point> jointPoints, JointType jointType0, JointType jointType1, DrawingContext drawingContext, Pen drawingPen)
         {
             Joint joint0 = joints[jointType0];
             Joint joint1 = joints[jointType1];
@@ -519,6 +492,102 @@ namespace Microsoft.Samples.Kinect.BodyBasics
             }
         }
 
+        
+        /// <summary>
+        /// Execute shutdown tasks
+        /// </summary>
+        /// <param name="sender">object sending the event</param>
+        /// <param name="e">event arguments</param>
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            if (this.colorFrameReader != null)
+            {
+                // ColorFrameReder is IDisposable
+                this.colorFrameReader.Dispose();
+                this.colorFrameReader = null;
+            }
+            if (this.bodyFrameReader != null)
+            {
+                // BodyFrameReader is IDisposable
+                this.bodyFrameReader.Dispose();
+                this.bodyFrameReader = null;
+            }
+
+            if (this.kinectSensor != null)
+            {
+                this.kinectSensor.Close();
+                this.kinectSensor = null;
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the user clicking on the screenshot button
+        /// </summary>
+        /// <param name="sender">object sending the event</param>
+        /// <param name="e">event arguments</param>
+
+        /// <summary>
+        /// Handles the color frame data arriving from the sensor
+        /// </summary>
+        /// <param name="sender">object sending the event</param>
+
+        /// <param name="e">event arguments</param>
+        int frames = 0;
+        private bool record = false;
+
+        private void Reader_ColorFrameArrived(object sender, ColorFrameArrivedEventArgs e)
+        {
+            // ColorFrame is IDisposable
+            using (ColorFrame colorFrame = e.FrameReference.AcquireFrame())
+            {
+                if (colorFrame != null)
+                {
+                    FrameDescription colorFrameDescription = colorFrame.FrameDescription;
+
+                    using (KinectBuffer colorBuffer = colorFrame.LockRawImageBuffer())
+                    {
+                        this.colorBitmap.Lock();
+
+                        // verify data and write the new color frame data to the display bitmap
+                        if ((colorFrameDescription.Width == this.colorBitmap.PixelWidth) && (colorFrameDescription.Height == this.colorBitmap.PixelHeight))
+                        {
+                            colorFrame.CopyConvertedFrameDataToIntPtr(
+                                this.colorBitmap.BackBuffer,
+                                (uint)(colorFrameDescription.Width * colorFrameDescription.Height * 4),
+                                ColorImageFormat.Bgra);
+
+                            this.colorBitmap.AddDirtyRect(new Int32Rect(0, 0, this.colorBitmap.PixelWidth, this.colorBitmap.PixelHeight));
+                        }
+                  
+                        this.colorBitmap.Unlock();
+                        if (record)
+                        {
+                            // create a png bitmap encoder which knows how to save a .png file
+                            BitmapEncoder encoder = new JpegBitmapEncoder();
+
+                            // create frame from the writable bitmap and add to encoder
+                            encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
+
+                            string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
+
+                            
+                            string path = Path.Combine(@".\"+sign.Text,  frames + ".png");
+
+                            System.IO.Directory.CreateDirectory(@".\" + sign.Text);
+                            frames++;
+                            // write the new file to disk
+                            // FileStream is IDisposable
+                            using (FileStream fs = new FileStream(path, FileMode.Create))
+                            {
+                                encoder.Save(fs);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Handles the event which the sensor becomes unavailable (E.g. paused, closed, unplugged).
         /// </summary>
@@ -529,6 +598,13 @@ namespace Microsoft.Samples.Kinect.BodyBasics
             // on failure, set the status text
             this.StatusText = this.kinectSensor.IsAvailable ? Properties.Resources.RunningStatusText
                                                             : Properties.Resources.SensorNotAvailableStatusText;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            record = !record;
+            frames = 0;
+            recordb.Content = !record ? "Record" : "stop recording";
         }
     }
 }
