@@ -46,5 +46,16 @@
 * Finish up presentation for tomorrow
 * ~~Some work on the ASR for deaf people using mturk~~
 
-##Wednesday
-* Use the average of x,y,z to find the min and max, and subtract those 2 for the range
+##Wednesday/Thursday
+* ~~Use the average of x,y,z to find the min and max, and subtract those 2 for the range~~
+* ~~Get a skeleton for the figure~~
+* ~~Animate the skeleton~~
+* ~~Get Rodeo to work~~
+
+##Friday
+* Read papers about ASL recognition and discuss what has been done
+* Get voice samples for subjects for the deaf speech side project
+
+
+##Monday
+* Add features of each sign into the database
