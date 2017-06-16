@@ -6,10 +6,9 @@
 using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
-namespace Xml2CSharp
-{
+
     [XmlRoot(ElementName = "joint")]
-    public class Joint
+    public class Joint1
     {
         [XmlAttribute(AttributeName = "name")]
         public string Name { get; set; }
@@ -24,15 +23,15 @@ namespace Xml2CSharp
     [XmlRoot(ElementName = "frame")]
     public class Frame
     {
-        [XmlElement(ElementName = "joint")]
-        public List<Joint> Joint { get; set; }
+    [XmlElement(ElementName = "joint")]
+    public List<Joint1> Joint { get; set; } = new List<Joint1>();
     }
 
     [XmlRoot(ElementName = "sign")]
     public class Sign
     {
-        [XmlElement(ElementName = "frame")]
-        public List<Frame> Frame { get; set; }
+    [XmlElement(ElementName = "frame")]
+    public List<Frame> Frame { get; set; } = new List<Frame>();
         [XmlAttribute(AttributeName = "name")]
         public string Name { get; set; }
     }
@@ -40,8 +39,6 @@ namespace Xml2CSharp
     [XmlRoot(ElementName = "signs")]
     public class Signs
     {
-        [XmlElement(ElementName = "sign")]
-        public Sign Sign { get; set; }
+         [XmlElement(ElementName = "sign")]
+         public Sign Sign { get; set; } = new Sign();
     }
-
-}

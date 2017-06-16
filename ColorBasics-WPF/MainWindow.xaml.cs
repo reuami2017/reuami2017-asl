@@ -291,6 +291,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         private void Reader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
             bool dataReceived = false;
+            var currentrecord = record;
 
             using (BodyFrame bodyFrame = e.FrameReference.AcquireFrame())
             {
@@ -308,7 +309,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                     dataReceived = true;
                 }
             }
-            Console.WriteLine(" foo");
+            //Console.WriteLine(" foo");
             if (dataReceived)
             {
                 using (DrawingContext dc = this.drawingGroup.Open())
@@ -329,7 +330,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
 
                             // convert the joint points to depth (display) space
                             Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
-
+                           var frame = new Frame();
                             foreach (JointType jointType in joints.Keys)
                             {
                                 // sometimes the depth(Z) of an inferred joint may show as negative
@@ -342,9 +343,20 @@ namespace Microsoft.Samples.Kinect.ColorBasics
 
                                 DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
                                 jointPoints[jointType] = new Point(depthSpacePoint.X, depthSpacePoint.Y);
+                                var z = joints[jointType].Position.Z * 275.36339626;
+                                 var joint= new Joint1();
+                                joint.Name = Enum.GetName(typeof(JointType), jointType);
+                                joint.X= jointPoints[jointType].X.ToString();
+                                joint.Y= jointPoints[jointType].Y.ToString();
+                                joint.Z = z.ToString();
+                               if(currentrecord) frame.Joint.Add(joint);
+
                             }
+                            if(currentrecord) signs.Sign.Frame.Add(frame);
+                      
 
                             this.DrawBody(joints, jointPoints, dc, drawPen);
+
 
                             this.DrawHand(body.HandLeftState, jointPoints[JointType.HandLeft], dc);
                             this.DrawHand(body.HandRightState, jointPoints[JointType.HandRight], dc);
@@ -355,6 +367,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                     this.drawingGroup.ClipGeometry = new RectangleGeometry(new Rect(0.0, 0.0, this.displayWidth, this.displayHeight));
                 }
             }
+          
         }
 
         /// <summary>
@@ -535,9 +548,11 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         /// <param name="e">event arguments</param>
         int frames = 0;
         private bool record = false;
+        private Signs signs;
 
         private void Reader_ColorFrameArrived(object sender, ColorFrameArrivedEventArgs e)
         {
+            var currentrecord = record;
             // ColorFrame is IDisposable
             using (ColorFrame colorFrame = e.FrameReference.AcquireFrame())
             {
@@ -561,7 +576,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                         }
                   
                         this.colorBitmap.Unlock();
-                        if (record)
+                        if (currentrecord)
                         {
                             // create a png bitmap encoder which knows how to save a .png file
                             BitmapEncoder encoder = new JpegBitmapEncoder();
@@ -600,9 +615,21 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                                                             : Properties.Resources.SensorNotAvailableStatusText;
         }
 
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             record = !record;
+            if (!record)
+            {
+                System.Xml.Serialization.XmlSerializer writer =new System.Xml.Serialization.XmlSerializer(typeof(Signs));
+                using (FileStream fs = new FileStream(@".\" + sign.Text+".xml", FileMode.Create))
+                {
+                    writer.Serialize(fs, signs);
+                }
+            }
+            signs = new Signs();
+            signs.Sign.Name = sign.Text;
+            
             frames = 0;
             recordb.Content = !record ? "Record" : "stop recording";
         }
