@@ -4,10 +4,8 @@ Classifying sign language using machine learning and computer vision techniques.
 
 ## Getting Started
 
-If there are edits to the database file being made, add any number of arguments when running the program (python main.py makedb). 
-Otherwise just run "python main.py" to run the program and instantiate the database. Running
-this in Rodeo makes it easier to look into the database and mess with the data as needed.
-
+Run python main.py to run the program. It will ask if you would like to use the stored database.
+Generally the answer to this questions is yes.
 ### Prerequisites
 
 This will be detailed in requirements.txt
