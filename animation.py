@@ -42,7 +42,7 @@ def make_graph(filename):
     ax.set_title('3D animation of body part paths')
     temp = []  # things must be assigned to something or the graph will statically display everything
     for data in make_lines(filename):
-        data = [np.array(data)]                                  ##
+        data = [np.array(data)]
         temp.append(animation.FuncAnimation(fig, update_lines,len(ET.parse(filename).getroot()[0][0]),
                                 fargs=(data, [ax.plot(dat[0], dat[1], dat[2])[0] for dat in data]),
                                 interval=1000.0/30, blit=False))

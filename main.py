@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from textblob import TextBlob
 import sys
 from itertools import *
-import pickle
+import pickle  # this is being used, python just can't see it``
 import pandas as pd
 
 
@@ -14,7 +14,7 @@ import pandas as pd
 Somehow create a database
 Ideally it will have a format as such:
 
-name,attrname
+name, attrname
 
 Later, more attributes such as sentiment can be added as they are understood.
 
@@ -43,13 +43,15 @@ def make_word_database():
     :return: a dict with all the files. The dict relates each word to their type (noun, verb, etc)
     """
     new_dict = {}
+    sentiment_dict = {}
     print("Making word database")
     for file in os.listdir("XML_ASL_Files"):
         temp = get_word(file)
         new_dict[temp] = TextBlob(temp).tags[0][1]
+        sentiment_dict[temp] = TextBlob(temp).sentiment.polarity  # add sentiment to the database
         if (len(new_dict) % 100) == 0:
-            print(str(int(len(new_dict) / 32)) + "% done")
-    return new_dict
+            print(str(int(len(new_dict) / 30)) + "% done")
+    return new_dict, sentiment_dict
 
 
 def avg_coord(filename, body_part, coord = 'x'):
@@ -109,7 +111,7 @@ def create_database(directory):
             arm_dict[name] = ranges.avg_hand_distance_right(file)
             max_arm_range_right[name], max_arm_range_left[name] = ranges.max_arm_distance(file)
             if (len(time_dict) % 100) == 0:  # neato percentage tracking so that we can feel happy
-                print(str(int(len(time_dict) / 32)) + "% done")
+                print(str(int(len(time_dict) / 30)) + "% done")
 
         except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
@@ -125,13 +127,13 @@ check = input("Should the database be loaded from the database.pkl file? (Y/N)  
 if check in ["Y", "y"]:
     df = pd.read_pickle("database.pkl")
 else:
-    word_types = make_word_database()
-    time, arm, right, left = create_database("XML_ASL_Files")
-    df = pd.DataFrame([word_types, time, arm, right, left], index=["type", "seconds", "arm", "right", "left"]).transpose()
+    word_types, sentiment = make_word_database()
+    time, arm, ranges = create_database("XML_ASL_Files")
+    df = pd.DataFrame([word_types, sentiment, time, arm, ranges[0], ranges[1]], index=["type", "sentiment", "seconds", "arm", "right", "left"]).transpose()
     df.to_pickle("database.pkl")
 
 
-df[['seconds', 'arm', 'right', 'left']] = df[['seconds', 'arm', 'right', 'left']].apply(pd.to_numeric)
+df[['seconds', 'sentiment', 'arm', 'right', 'left']] = df[['seconds', 'sentiment', 'arm', 'right', 'left']].apply(pd.to_numeric)
 one_sec = df[(1 > df['seconds']) & (df['seconds'] >= 0)]
 two_sec = df[(2 > df['seconds']) & (df['seconds'] >= 1)]
 three_sec = df[(3 > df['seconds']) & (df['seconds'] >= 2)]
