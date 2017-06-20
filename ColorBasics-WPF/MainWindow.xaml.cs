@@ -15,7 +15,6 @@ namespace Microsoft.Samples.Kinect.ColorBasics
     using System.Windows.Media.Imaging;
     using Microsoft.Kinect;
     using System.Collections.Generic;
-    using System.Threading;
 
     /// <summary>
     /// Interaction logic for MainWindow
@@ -582,29 +581,22 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                             // create a png bitmap encoder which knows how to save a .png file
                             BitmapEncoder encoder = new JpegBitmapEncoder();
 
+                            // create frame from the writable bitmap and add to encoder
+                            encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
 
                             string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
 
-
-                            string path = Path.Combine(@".\" + sign.Text, frames + ".png");
+                            
+                            string path = Path.Combine(@".\"+sign.Text,  frames + ".png");
 
                             System.IO.Directory.CreateDirectory(@".\" + sign.Text);
                             frames++;
-                            new Thread(() =>
+                            // write the new file to disk
+                            // FileStream is IDisposable
+                            using (FileStream fs = new FileStream(path, FileMode.Create))
                             {
-                                // write the new file to disk
-                                // FileStream is IDisposable
-                                using (FileStream fs = new FileStream(path, FileMode.Create))
-                                {
-                                    Application.Current.Dispatcher.Invoke(() =>
-                                    {
-                                        // create frame from the writable bitmap and add to encoder
-                                        encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
-
-                                        encoder.Save(fs);
-                                    });
-                                }
-                            }).Start();
+                                encoder.Save(fs);
+                            }
                         }
                     }
                 }
