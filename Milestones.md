@@ -59,7 +59,7 @@
 * Discuss how we will record ourselves with the Kinect
     * (need XML and human video)
     * Finish up list of words to sign
-
+* ~~Get video and xml data simultaneously from the kinect~~
 
 ##Monday
 * Add features of each sign into the database
