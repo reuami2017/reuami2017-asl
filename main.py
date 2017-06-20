@@ -48,7 +48,7 @@ def make_word_database():
         temp = get_word(file)
         new_dict[temp] = TextBlob(temp).tags[0][1]
         if (len(new_dict) % 100) == 0:
-            print(str(int(len(new_dict) / 35)) + "% done")
+            print(str(int(len(new_dict) / 32)) + "% done")
     return new_dict
 
 
@@ -89,7 +89,6 @@ def seconds(filename):
 # print(seconds('XML_ASL_Files\(D)DINOSAUR_716.xml'))
 
 
-
 def create_database(directory):
     """
     gets random details from the xml directory and prints them out
@@ -110,12 +109,12 @@ def create_database(directory):
             arm_dict[name] = ranges.avg_hand_distance_right(file)
             max_arm_range_right[name], max_arm_range_left[name] = ranges.max_arm_distance(file)
             if (len(time_dict) % 100) == 0:  # neato percentage tracking so that we can feel happy
-                print(str(int(len(time_dict) / 34)) + "% done")
+                print(str(int(len(time_dict) / 32)) + "% done")
 
         except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
 
-    return time_dict, arm_dict, max_arm_range_right, max_arm_range_left
+    return time_dict, arm_dict, [max_arm_range_right, max_arm_range_left]
 
 
 """
