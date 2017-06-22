@@ -15,6 +15,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
     using System.Windows.Media.Imaging;
     using Microsoft.Kinect;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     /// <summary>
     /// Interaction logic for MainWindow
@@ -546,7 +547,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         /// <param name="sender">object sending the event</param>
 
         /// <param name="e">event arguments</param>
-        int frames = 0;
+       // int frames = 0;
         private bool record = false;
         private Signs signs;
 
@@ -620,21 +621,21 @@ namespace Microsoft.Samples.Kinect.ColorBasics
 
 
                 System.IO.Directory.CreateDirectory(@".\" + sign.Text);
-                var frames = 0;
-               
+                //var frames = 0;
+
                 // write the new file to disk
                 // FileStream is IDisposable
-                foreach ( var encoder  in  encoderframes) {
-                    
-                    string path = Path.Combine(@".\" + sign.Text, frames + ".png");
-                    frames++;
-                    using (FileStream fs = new FileStream(path, FileMode.Create))
-                    {
-                        encoder.Save(fs);
-                       
-                    }
-               
-                }
+                Parallel.For(0, encoderframes.Count,
+                   frame => { var encoder = encoderframes[frame];
+
+                       string path = Path.Combine(@".\" + sign.Text, frame + ".png");
+                       using (FileStream fs = new FileStream(path, FileMode.Create))
+                       {
+                           encoder.Save(fs);
+
+                       }
+
+                   });
             }
              
             encoderframes = new List<BitmapEncoder>();
@@ -645,7 +646,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
            GC.Collect();
             GC.WaitForPendingFinalizers();
 
-            frames = 0;
+            //frames = 0;
             recordb.Content = !record ? "Record" : "stop recording";
         }
     }
