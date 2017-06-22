@@ -550,6 +550,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         private bool record = false;
         private Signs signs;
 
+        List<BitmapEncoder> encoderframes;
         private void Reader_ColorFrameArrived(object sender, ColorFrameArrivedEventArgs e)
         {
             var currentrecord = record;
@@ -578,25 +579,12 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                         this.colorBitmap.Unlock();
                         if (currentrecord)
                         {
-                            // create a png bitmap encoder which knows how to save a .png file
+                             
                             BitmapEncoder encoder = new JpegBitmapEncoder();
-
                             // create frame from the writable bitmap and add to encoder
-                            encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
-
-                            string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
-
-                            
-                            string path = Path.Combine(@".\"+sign.Text,  frames + ".png");
-
-                            System.IO.Directory.CreateDirectory(@".\" + sign.Text);
-                            frames++;
-                            // write the new file to disk
-                            // FileStream is IDisposable
-                            using (FileStream fs = new FileStream(path, FileMode.Create))
-                            {
-                                encoder.Save(fs);
-                            }
+                             
+                             encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap.Clone()));
+                            encoderframes.Add(encoder);
                         }
                     }
                 }
@@ -621,15 +609,42 @@ namespace Microsoft.Samples.Kinect.ColorBasics
             record = !record;
             if (!record)
             {
-                System.Xml.Serialization.XmlSerializer writer =new System.Xml.Serialization.XmlSerializer(typeof(Signs));
-                using (FileStream fs = new FileStream(@".\" + sign.Text+".xml", FileMode.Create))
+                kinectSensor.Close();
+                System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(Signs));
+                using (FileStream fs = new FileStream(@".\" + sign.Text + ".xml", FileMode.Create))
                 {
                     writer.Serialize(fs, signs);
                 }
+
+                string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
+
+
+                System.IO.Directory.CreateDirectory(@".\" + sign.Text);
+                var frames = 0;
+               
+                // write the new file to disk
+                // FileStream is IDisposable
+                foreach ( var encoder  in  encoderframes) {
+                    
+                    string path = Path.Combine(@".\" + sign.Text, frames + ".png");
+                    frames++;
+                    using (FileStream fs = new FileStream(path, FileMode.Create))
+                    {
+                        encoder.Save(fs);
+                       
+                    }
+               
+                }
             }
+             
+            encoderframes = new List<BitmapEncoder>();
             signs = new Signs();
             signs.Sign.Name = sign.Text;
-            
+             if(!kinectSensor.IsOpen)
+            kinectSensor.Open();
+           GC.Collect();
+            GC.WaitForPendingFinalizers();
+
             frames = 0;
             recordb.Content = !record ? "Record" : "stop recording";
         }
