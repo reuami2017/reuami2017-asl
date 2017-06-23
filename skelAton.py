@@ -63,7 +63,9 @@ def makebody(frame):
     bodypart("HipRight", "KneeRight", frame)
     bodypart("AnkleRight", "KneeRight", frame)
     bodypart("AnkleRight", "FootRight", frame)
-dict= make_lines("DINOSAUR_716.xml")
+
+
+dict = make_lines("DINOSAUR_716.xml")
 
 fig = plt.figure()
 ax = p3.Axes3D(fig)
