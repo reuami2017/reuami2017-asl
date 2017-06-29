@@ -13,7 +13,7 @@ for dir,subdir,files in os.walk(pic_path):
 print(length)
 prev_frame = cv2.resize(cv2.imread(pic_path+'/0.png',0), (0,0), fx=0.5, fy=0.5)
 
-for x in range(1,length,5):
+for x in range(1,length):
     print(x)
     str1 = pic_path+'/'+str(x)+'.png'
     img = cv2.imread(str1,0)
@@ -21,7 +21,7 @@ for x in range(1,length,5):
     small = cv2.resize(img, (0,0), fx=0.5, fy=0.5)
 
     cv2.imshow('image',small)
-    cv2.waitKey(500)
+    cv2.waitKey(int(1000/30))
 
     #time.sleep(5)
 
