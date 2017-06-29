@@ -32,6 +32,15 @@ def bodypart(body, body2, frame):
              zs=[getxyzplot(body, frame)[2], getxyzplot(body2, frame)[2]])
 def makebody(frame):
     ax.clear()
+    ax.set_xlim3d([100, 400])
+    ax.set_xlabel('X')
+
+    ax.set_ylim3d([0, 480])
+    ax.set_ylabel('Y')
+
+    ax.set_zlim3d([400, 600])
+    ax.set_zlabel('Z')
+   # ax.view_init(-80, 270)
     ## head
     bodypart("Head", "Neck", frame)
     bodypart("SpineShoulder", "Neck", frame)
@@ -64,18 +73,30 @@ def makebody(frame):
     bodypart("AnkleRight", "KneeRight", frame)
     bodypart("AnkleRight", "FootRight", frame)
 
+pic_path = '../picture_files/abraham_coffee3.xml'
 
-dict = make_lines("DINOSAUR_716.xml")
+dict = make_lines(pic_path)
 
 fig = plt.figure()
+
+
 ax = p3.Axes3D(fig)
-ax.view_init(270,270)
+ax.set_xlim3d([0.0, 640])
+ax.set_xlabel('X')
+
+ax.set_ylim3d([0.0, 480])
+ax.set_ylabel('Y')
+
+ax.set_zlim3d([0.0, 700])
+ax.set_zlabel('Z')
+ax.view_init(-80,270)
 
 def updatefig(i):
     makebody(i)
     #ax.canvas.draw_idle()
    # plt.pause(1000)
 anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
+#use this function to create video file
 #anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 import threading
 
