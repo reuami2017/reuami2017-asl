@@ -22,9 +22,9 @@ def make_scatter():
     wer_fine = []
     wer_bad = []
     percent_total_good = []
+    percent_correct_good = []
     percent_total_fine = [91.3, 86, 89.6, 75.3, 76.9, 91.3, 84.9, 83.5, 88.8, 86, 65.8, 100, 96.1, 100, 91.1]
     percent_correct_fine = [12.5, 15.1, 29.9, 34.1, 24.4, 18.8, 16.3, 17.6, 15, 24.4, 35.5, 13.9, 15.6, 0, 12.7]
-
     all_scores = good_scores + fine_scores + bad_scores
     all_wer = wer_good + wer_fine + wer_bad
     # plt.scatter(good_scores,wer_good)
