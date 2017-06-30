@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
+
 def make_scatter():
     """
     makes the scatterplot
@@ -34,8 +35,58 @@ def make_scatter():
     print(np.mean(percent_correct_good))
     print(np.mean(percent_total_good))
 
+    print("\n\nSTATS HERE *****")
+    print(len(percent_total_bad))
+    print(len(percent_total_good))
+    print(np.average(percent_total_bad))
+    print(np.average(percent_total_good))
+    print(np.std(percent_total_bad))
+    print(np.std(percent_total_good))
+    print("END OF STATS LOL ****\n\n")
+    print(np.average(percent_total_fine))
+    print(np.std(percent_total_fine))
+    print("\nJK\n\n")
     print(np.mean(all_total))
     print(np.mean(all_correct))
+
+    N = 3
+    men_means = (95.0643, 87.1066, 52.02)
+    men_std = (3.6394, 8.9123, 21.9762)
+
+    ind = np.arange(N)  # the x locations for the groups
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(ind, men_means, width, color='g', yerr=men_std)
+
+    # add some text for labels, title and axes ticks
+    ax.set_title('Groups vs average WER')
+    ax.set_xticks(ind + width / 2)
+    ax.set_xticklabels(('Bad', 'Ok', 'Good'))
+    plt.xlabel("Groups")
+    plt.ylabel("Word Error Rate")
+
+
+    def autolabel(rects):
+        """
+        Attach a text label above each bar displaying its height
+        """
+        for rect in rects:
+            height = rect.get_height()
+            ax.text(rect.get_x() + rect.get_width() / 2., 1.05 * height,
+                    '%d' % int(height),
+                    ha='center', va='bottom')
+
+    autolabel(rects1)
+
+    ax.margins(0.04, 0)
+    plt.xlim([0, 100])
+    plt.autoscale()
+    plt.show()
+
+
+
+
 
     # z = np.polyfit(all_scores, all_total, deg=1)
     # p = np.poly1d(z)
