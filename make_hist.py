@@ -66,7 +66,6 @@ def make_scatter():
     plt.xlabel("Groups")
     plt.ylabel("Word Error Rate")
 
-
     def autolabel(rects):
         """
         Attach a text label above each bar displaying its height
@@ -78,7 +77,6 @@ def make_scatter():
                     ha='center', va='bottom')
 
     autolabel(rects1)
-
     ax.margins(0.04, 0)
     plt.xlim([0, 100])
     plt.autoscale()
