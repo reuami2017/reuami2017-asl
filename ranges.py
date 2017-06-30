@@ -5,29 +5,42 @@ file with all range functionality
 import xml.etree.ElementTree as ET
 import math
 
-def AvgDistance(filename, body_part):
 
-    root = ET.parse(filename).getroot()
+def avg_hand_distance_right(filename):
+    return (avg_distance(filename, "WristRight") +
+            avg_distance(filename, "HandRight") +
+            avg_distance(filename, "HandTipRight") +
+            avg_distance(filename, "ThumbRight")) / 4
 
-    sum = 0.0
+
+def avg_distance(filename, body_part):
+    """
+    avg distance
+    :param filename: filename
+    :param body_part: body part
+    :return: the avg distance int
+    """
+    root = ET.parse("XML_ASL_Files" + "\\" + filename).getroot()
+    total = 0.0
     count = 0.0
-
     for sign in root:
         for frame in sign:
             count += 1.0
             for joint in frame:
                 if joint.get('name') == "SpineMid":
-                    spineX = float(joint.get("x"))
-                    spineY = float(joint.get("y"))
-                    spineZ = float(joint.get("z"))
+                    spine_x = float(joint.get("x"))
+                    spine_y = float(joint.get("y"))
+                    spine_z = float(joint.get("z"))
                 if joint.get('name') == body_part:
-                    bpX = float(joint.get("x"))
-                    bpY = float(joint.get("y"))
-                    bpZ = float(joint.get("z"))
-                sum += math.sqrt(((bpX - spineX) ** 2) + ((bpY - spineY) ** 2) + ((bpZ - spineZ) ** 2))
+                    bp_x = float(joint.get("x"))
+                    bp_y = float(joint.get("y"))
+                    bp_z = float(joint.get("z"))
+            total += math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
 
-    print("The average distance from the SpineMid to " + body_part + " in the file " + filename + " is: " + str(sum/count))
-    return sum/count
+    if total == 0.0:
+        print("no object found")
+        return total
+    return total/count
 
 
 def coord_ranges_and_avgs(filename, body_part):

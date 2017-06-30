@@ -78,7 +78,7 @@ def knuth(target):
     return "Error: Queue was empty"
 
 
-print("5 can be expressed as: " + knuth(5))
-print("8 can be expressed as: " + knuth(8))
-print("13 can be expressed as: " + knuth(13))
-print("6 can be expressed as: " + knuth(6))
+print("7 can be expressed as: " + knuth(7))
+#print("8 can be expressed as: " + knuth(8))
+#print("13 can be expressed as: " + knuth(13))
+#print("6 can be expressed as: " + knuth(6))
