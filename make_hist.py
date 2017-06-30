@@ -18,15 +18,12 @@ def make_scatter():
     good_scores = [41,41,44,47,47,50,50,50,50,50,50,50,50,50,50]
     fine_scores = [37,38,39,40,41,41,41,42,42,44,45,45,47,47,50]
     bad_scores = [19,30,34,39,48,14,14,17,20,21,23,23,24,25,30]
-    wer_good = []  # fill this in with actual values later
-    wer_fine = []
-    wer_bad = []
-    percent_total_good = []
-    percent_correct_good = []
+    percent_total_good = [72.7, 61, 31.6, 48.8, 82.4, 41.5, 60.5, 16.5, 65, 85.2, 13, 24, 50.7, 70.4, 57]
+    percent_correct_good = [29.9, 43.9, 72.2, 54.9, 21.6, 81.7, 40.7, 83.5,48.8,  14.8, 88.3, 77.3, 54.7, 30.9, 44.3]
     percent_total_fine = [91.3, 86, 89.6, 75.3, 76.9, 91.3, 84.9, 83.5, 88.8, 86, 65.8, 100, 96.1, 100, 91.1]
     percent_correct_fine = [12.5, 15.1, 29.9, 34.1, 24.4, 18.8, 16.3, 17.6, 15, 24.4, 35.5, 13.9, 15.6, 0, 12.7]
     all_scores = good_scores + fine_scores + bad_scores
-    all_wer = wer_good + wer_fine + wer_bad
+    all_total = percent_total_good + percent_total_fine
     # plt.scatter(good_scores,wer_good)
     # time to make the trendline!
     z = np.polyfit(all_scores, all_wer, deg=1)
