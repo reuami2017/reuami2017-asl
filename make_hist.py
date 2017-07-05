@@ -5,11 +5,10 @@ make_hist.py
 """
 import re
 import os
-import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-
+import matplotlib.patches as mpatches
 
 def make_scatter():
     """
@@ -35,78 +34,39 @@ def make_scatter():
     print(np.mean(percent_correct_good))
     print(np.mean(percent_total_good))
 
-    print("\n\nSTATS HERE *****")
-    print(len(percent_total_bad))
-    print(len(percent_total_good))
-    print(np.average(percent_total_bad))
-    print(np.average(percent_total_good))
-    print(np.std(percent_total_bad))
-    print(np.std(percent_total_good))
-    print("END OF STATS LOL ****\n\n")
-    print(np.average(percent_total_fine))
-    print(np.std(percent_total_fine))
-    print("\nJK\n\n")
     print(np.mean(all_total))
     print(np.mean(all_correct))
 
-    N = 3
-    men_means = (95.0643, 87.1066, 52.02)
-    men_std = (3.6394, 8.9123, 21.9762)
-
-    ind = np.arange(N)  # the x locations for the groups
-    width = 0.35  # the width of the bars
-
-    fig, ax = plt.subplots()
-    rects1 = ax.bar(ind, men_means, width, color='g', yerr=men_std)
-
-    # add some text for labels, title and axes ticks
-    ax.set_title('Groups vs average WER')
-    ax.set_xticks(ind + width / 2)
-    ax.set_xticklabels(('Bad', 'Ok', 'Good'))
-    plt.xlabel("Groups")
-    plt.ylabel("Word Error Rate")
-
-    def autolabel(rects):
-        """
-        Attach a text label above each bar displaying its height
-        """
-        for rect in rects:
-            height = rect.get_height()
-            ax.text(rect.get_x() + rect.get_width() / 2., 1.05 * height,
-                    '%d' % int(height),
-                    ha='center', va='bottom')
-
-    autolabel(rects1)
-    ax.margins(0.04, 0)
-    plt.xlim([0, 100])
-    plt.autoscale()
-    plt.show()
-
-
-
-
-
-    # z = np.polyfit(all_scores, all_total, deg=1)
-    # p = np.poly1d(z)
-    # plt.scatter(all_scores, all_total)
-    # plt.scatter(good_scores, percent_total_good, color="blue")
-    # plt.scatter(fine_scores, percent_total_fine, color="orange")
-    # plt.scatter(bad_scores, percent_total_bad, color="green")
-    # plt.plot(all_scores, p(all_scores), color="red")
-    # plt.title("Score vs Word Error Rate")
-    # plt.xlabel("Score")
-    # plt.ylabel("Word Error Rate")
-
-    z = np.polyfit(all_scores, all_correct, deg=1)
+    z = np.polyfit(all_scores, all_total, deg=1)
     p = np.poly1d(z)
-    plt.scatter(good_scores, percent_correct_good, color="blue")
-    plt.scatter(fine_scores, percent_correct_fine, color="orange")
-    plt.scatter(bad_scores, percent_correct_bad, color="green")
+    plt.scatter(all_scores, all_total)
+    plt.scatter(good_scores, percent_total_good, color="blue")
+    plt.scatter(fine_scores, percent_total_fine, color="orange")
+    plt.scatter(bad_scores, percent_total_bad, color="green")
     plt.plot(all_scores, p(all_scores), color="red")
-    plt.title("Score vs Percent Correct")
+    plt.title("Score vs Word Error Rate")
+    blue_patch = mpatches.Patch(color='blue', label='Good Deaf Speech')
+    orange_patch = mpatches.Patch(color='orange', label='Mediocre Deaf Speech')
+    green_patch = mpatches.Patch(color='green', label = 'Bad Deaf Speech')
+    plt.legend(handles=[blue_patch, orange_patch, green_patch])
     plt.xlabel("Score")
-    plt.ylabel("Percent Correct")
+    plt.ylabel("Word Error Rate")
     plt.show()
+
+    # z = np.polyfit(all_scores, all_correct, deg=1)
+    # p = np.poly1d(z)
+    # plt.scatter(good_scores, percent_correct_good, color="blue")
+    # plt.scatter(fine_scores, percent_correct_fine, color="orange")
+    # plt.scatter(bad_scores, percent_correct_bad, color="green")
+    # plt.plot(all_scores, p(all_scores), color="red")
+    # plt.title("Score vs Percent Correct")
+    # plt.xlabel("Score")
+    # plt.ylabel("Percent Correct")
+    # blue_patch = mpatches.Patch(color='blue', label='Good Deaf Speech')
+    # orange_patch = mpatches.Patch(color='orange', label='Mediocre Deaf Speech')
+    # green_patch = mpatches.Patch(color='green', label = 'Bad Deaf Speech')
+    # plt.legend(handles=[blue_patch, orange_patch, green_patch])
+    # plt.show()
 
 make_scatter()
 
