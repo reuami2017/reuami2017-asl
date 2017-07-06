@@ -43,7 +43,8 @@ def avg_distance(filename, body_part):
 
     return total/count
 
-def avg_distance_n_frames(filename, body_part, origin="SpineMid", n, first_last):
+
+def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid"):
     """
         avg distance between 2 body parts default origin is SpineMid, which is assumed to not move, for the first/last n frames
         :param filename: filename
@@ -101,7 +102,8 @@ def avg_distance_n_frames(filename, body_part, origin="SpineMid", n, first_last)
         print("no object found")
         return total
 
-    return total / count
+    return total / n
+
 
 def max_arm_distance(filename):
     """
