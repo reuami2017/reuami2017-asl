@@ -119,6 +119,18 @@ def create_database(directory):
     return time_dict, arm_dict, [max_arm_range_right, max_arm_range_left]
 
 
+
+def get_avg_distance
+
+
+
+
+
+
+
+
+
+
 """
 Run the program here
 """
