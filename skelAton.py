@@ -54,13 +54,13 @@ def bodypart_sphere(body, body2, frame, width_line):  # x
 
 def makebody(frame):
     ax.clear()
-    ax.set_xlim3d([0,1920])
+    ax.set_xlim3d([0,x])
    # ax.set_xlabel('X')
 
-    ax.set_ylim3d([0, 1080])
+    ax.set_ylim3d([0, y])
    # ax.set_ylabel('Y')
 
-    ax.set_zlim3d([0, 700])
+    ax.set_zlim3d([400, 700])
    # ax.set_zlabel('Z')
    # ax.view_init(-80, 270)
     ## head
@@ -97,27 +97,35 @@ def makebody(frame):
     bodypart("AnkleRight", "FootRight", frame,5)
 
 
-# dict= make_lines("XML_ASL_Files/LATER_2890.xml")
-# dict= make_lines("/DINOSAUR_716.xml")
-# dict=make_lines("edited/XML_ASL_Files/MOTHER+_1611.xml")
-# dict=make_lines("edited/XML_ASL_Files/MOTHER+FATHER_3213.xml")
-dict=make_lines("edited/XML_ASL_Files/FATHER+_1613.xml")
+#dict= make_lines("XML_ASL_Files/LATER_2890.xml")
+#dict= make_lines("DINOSAUR_716.xml")
+#dict=make_lines("edited/XML_ASL_Files/MOTHER+_1611.xml")
+dict=make_lines("edited/XML_ASL_Files/MOTHER+FATHER_3213.xml")
+#dict=make_lines("edited/XML_ASL_Files/FATHER+_1613.xml")
 
 fig = plt.figure()
 
+#eric data
+x = 1920
+y = 1080
+# for some reason that eric data is 1080p resolution. Different calibratiion data? only microsoft knows
+currentdata= False
+if (currentdata):
+    x= 640
+    y= 480
 
 ax = p3.Axes3D(fig)
 #ax.view_init(270,270)
 ax.axis("off")  # comment this line and a later line to put back in the axis
-ax.set_xlim3d([0.0, 1920])
+ax.set_xlim3d([0.0, x])
 # ax.set_xlabel('X')
 
-ax.set_ylim3d([0.0, 1080])
+ax.set_ylim3d([0.0, y])
 #ax.set_ylabel('Y')
 
-ax.set_zlim3d([0.0, 700])
+ax.set_zlim3d([0, 700])
 #ax.set_zlabel('Z')
-ax.view_init(-80,270)
+ax.view_init(-100,270)
 
 def updatefig(i):
     makebody(i)
