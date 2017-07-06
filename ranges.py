@@ -43,7 +43,8 @@ def avg_distance(filename, body_part):
 
     return total/count
 
-def avg_distance_n_frames(filename, body_part, origin="SpineMid", n, first_last):
+
+def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid"):
     """
         avg distance between 2 body parts default origin is SpineMid, which is assumed to not move, for the first/last n frames
         :param filename: filename
@@ -101,7 +102,8 @@ def avg_distance_n_frames(filename, body_part, origin="SpineMid", n, first_last)
         print("no object found")
         return total
 
-    return total / count
+    return total / n
+
 
 def max_arm_distance(filename):
     """
@@ -141,4 +143,22 @@ def max_arm_distance(filename):
             if max_range_left < new_range_left:
                 max_range_left = new_range_left
     return max_range_left, max_range_right
+
+def closest_body_part(filename):
+    """
+    returns the closest body part (SpineMid, etc) by going through each and calculating the average.
+    It might be a good idea to combine this with the above function so that runtime is reduced
+    :param filename: the name of the file
+    :return: a string of the closest body part
+    """
+
+def vector_right_hand_from_body_part(filename):
+    """
+    returns the average x,y,z vector from the right hand to spine (just add up all the x's, y's, and z's and average them).
+    There should be really similar code for a distance function above, basically just call that one and do it again
+    :param filename: the file
+    :return: a vector for the average distance
+    """
+
+
 
