@@ -54,6 +54,15 @@ def bodypart_sphere(body, body2, frame, width_line):  # x
 
 def makebody(frame):
     ax.clear()
+    ax.set_xlim3d([0,1920])
+   # ax.set_xlabel('X')
+
+    ax.set_ylim3d([0, 1080])
+   # ax.set_ylabel('Y')
+
+    ax.set_zlim3d([0, 700])
+   # ax.set_zlabel('Z')
+   # ax.view_init(-80, 270)
     ## head
               #from    to?
     bodypart("Head", "Neck", frame,10)
@@ -87,23 +96,36 @@ def makebody(frame):
     bodypart("AnkleRight", "KneeRight", frame,5)
     bodypart("AnkleRight", "FootRight", frame,5)
 
+
 # dict= make_lines("XML_ASL_Files/LATER_2890.xml")
 # dict= make_lines("/DINOSAUR_716.xml")
 # dict=make_lines("edited/XML_ASL_Files/MOTHER+_1611.xml")
 # dict=make_lines("edited/XML_ASL_Files/MOTHER+FATHER_3213.xml")
 dict=make_lines("edited/XML_ASL_Files/FATHER+_1613.xml")
 
-
 fig = plt.figure()
+
+
 ax = p3.Axes3D(fig)
-ax.view_init(270,270)
+#ax.view_init(270,270)
 ax.axis("off")  # comment this line and a later line to put back in the axis
+ax.set_xlim3d([0.0, 1920])
+# ax.set_xlabel('X')
+
+ax.set_ylim3d([0.0, 1080])
+#ax.set_ylabel('Y')
+
+ax.set_zlim3d([0.0, 700])
+#ax.set_zlabel('Z')
+ax.view_init(-80,270)
+
 def updatefig(i):
     makebody(i)
     ax.axis("off")  # comment this line and a later line to put back in the axis
     #ax.canvas.draw_idle()
    # plt.pause(1000)
 anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
+#use this function to create video file
 #anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 import threading
 
