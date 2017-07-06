@@ -60,7 +60,7 @@ def makebody(frame):
     ax.set_ylim3d([0, y])
    # ax.set_ylabel('Y')
 
-    ax.set_zlim3d([400, 700])
+    ax.set_zlim3d([0, 700])
    # ax.set_zlabel('Z')
    # ax.view_init(-80, 270)
     ## head
