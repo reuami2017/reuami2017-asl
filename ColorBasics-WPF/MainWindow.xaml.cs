@@ -15,6 +15,9 @@ namespace Microsoft.Samples.Kinect.ColorBasics
     using System.Windows.Media.Imaging;
     using Microsoft.Kinect;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using System.Windows.Threading;
+    using System.Threading;
 
     /// <summary>
     /// Interaction logic for MainWindow
@@ -546,10 +549,11 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         /// <param name="sender">object sending the event</param>
 
         /// <param name="e">event arguments</param>
-        int frames = 0;
+       // int frames = 0;
         private bool record = false;
         private Signs signs;
 
+        List<BitmapSource> encoderframes;
         private void Reader_ColorFrameArrived(object sender, ColorFrameArrivedEventArgs e)
         {
             var currentrecord = record;
@@ -578,25 +582,9 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                         this.colorBitmap.Unlock();
                         if (currentrecord)
                         {
-                            // create a png bitmap encoder which knows how to save a .png file
-                            BitmapEncoder encoder = new JpegBitmapEncoder();
-
-                            // create frame from the writable bitmap and add to encoder
-                            encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
-
-                            string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
-
-                            
-                            string path = Path.Combine(@".\"+sign.Text,  frames + ".png");
-
-                            System.IO.Directory.CreateDirectory(@".\" + sign.Text);
-                            frames++;
-                            // write the new file to disk
-                            // FileStream is IDisposable
-                            using (FileStream fs = new FileStream(path, FileMode.Create))
-                            {
-                                encoder.Save(fs);
-                            }
+                                              var i = this.colorBitmap.Clone();
+                           i.Freeze();
+                                encoderframes.Add(i);
                         }
                     }
                 }
@@ -619,18 +607,48 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             record = !record;
+            
             if (!record)
             {
-                System.Xml.Serialization.XmlSerializer writer =new System.Xml.Serialization.XmlSerializer(typeof(Signs));
-                using (FileStream fs = new FileStream(@".\" + sign.Text+".xml", FileMode.Create))
+                Thread.Sleep(100);
+                //kinectSensor.Close();
+                System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(Signs));
+                using (FileStream fs = new FileStream(@".\" + sign.Text + ".xml", FileMode.Create))
                 {
                     writer.Serialize(fs, signs);
                 }
+
+                string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
+
+
+                System.IO.Directory.CreateDirectory(@".\" + sign.Text);
+                //var frames = 0;
+                var text = sign.Text;
+                   // write the new file to disk
+                // FileStream is IDisposable
+                var completed = Parallel.For(0,encoderframes.Count,
+                  frame => {
+                      BitmapEncoder encoder = new JpegBitmapEncoder();
+                      encoder.Frames.Add(BitmapFrame.Create(encoderframes[frame]));
+                      string path = Path.Combine(@".\" + text, frame + ".png");
+                       using (FileStream fs = new FileStream(path, FileMode.Create))
+                      {
+            //              Monitor.Enter(text);
+                           encoder.Save(fs);
+              //            Monitor.Exit(text);
+                       }
+                    });
+
             }
+            encoderframes = new List<BitmapSource>();
             signs = new Signs();
             signs.Sign.Name = sign.Text;
-            
-            frames = 0;
+             if(!kinectSensor.IsOpen)
+            kinectSensor.Open();
+           GC.Collect();
+            GC.WaitForPendingFinalizers();
+
+            //frames = 0;
             recordb.Content = !record ? "Record" : "stop recording";
         }
     }
