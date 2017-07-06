@@ -157,6 +157,8 @@ df[['seconds', 'sentiment', 'arm', 'right', 'left',
     "sound_len", "first_wrist_left", "first_wrist_right"]] = df[['seconds', 'sentiment', 'arm', 'right', 'left',
                                                                  "sound_len", "first_wrist_left",
                                                                  "first_wrist_right"]].apply(pd.to_numeric)
+
+#TODO split the dataset into a section with "words on google" so that the linguistic properties can be kinda analysed
 one_sec = df[(1 > df['seconds']) & (df['seconds'] >= 0)]
 two_sec = df[(2 > df['seconds']) & (df['seconds'] >= 1)]
 three_sec = df[(3 > df['seconds']) & (df['seconds'] >= 2)]
