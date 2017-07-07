@@ -60,6 +60,6 @@
         <StatusBarItem Content="{Binding StatusText}" />
     </StatusBar>
         <Button x:Name="recordb" Content="Record" HorizontalAlignment="Left" Margin="588,204,-1,0" Grid.Row="2" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.704,0.193" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="574,122,-32,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="sign"/>
-    </Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="574,122,-32,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="sign" TextChanged="sign_TextChanged"/>
+   </Grid>
 </Window>

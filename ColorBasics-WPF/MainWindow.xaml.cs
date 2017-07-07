@@ -603,17 +603,21 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                                                             : Properties.Resources.SensorNotAvailableStatusText;
         }
 
-        
+        public int count = 0;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             record = !record;
-            
+       
             if (!record)
             {
+                             
+                count++;
+                               
+
                 Thread.Sleep(100);
                 //kinectSensor.Close();
                 System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(Signs));
-                using (FileStream fs = new FileStream(@".\" + sign.Text + ".xml", FileMode.Create))
+                using (FileStream fs = new FileStream(@".\" + sign.Text + count + ".xml", FileMode.Create))
                 {
                     writer.Serialize(fs, signs);
                 }
@@ -621,7 +625,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                 string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
 
 
-                System.IO.Directory.CreateDirectory(@".\" + sign.Text);
+                System.IO.Directory.CreateDirectory(@".\" + sign.Text+count);
                 //var frames = 0;
                 var text = sign.Text;
                    // write the new file to disk
@@ -649,7 +653,16 @@ namespace Microsoft.Samples.Kinect.ColorBasics
             GC.WaitForPendingFinalizers();
 
             //frames = 0;
-            recordb.Content = !record ? "Record" : "stop recording";
+            recordb.Content = !record ? "Record " + (count+1 ): "stop recording";
+        }
+
+        private void sign_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            count = 0;
+            recordb.Content = "Record " + (count + 1);
+            //count = 0
+            //signtext += "_" + count;
+
         }
     }
 }
