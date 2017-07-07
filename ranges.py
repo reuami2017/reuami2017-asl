@@ -151,29 +151,50 @@ def max_arm_distance(filename):
                 max_range_left = new_range_left
     return max_range_left, max_range_right
 
-def closest_body_part(filename,  hands=["HandRight"]):
+def closest_body_part(filename,  hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
     :param filename: the name of the file
     :return: a string of the closest body part
     """
-    lowest =99999999999
-    bodypartfrom=""
-    bodypartto= ""
+    lowest = lowestpoint(filename, hands)*1.5
+    bodydef = []
     bodypart ={}
     bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
-    bodypart["HandRight"]= bodypartneedtoscan
-    bodypart["HandLeft"]=bodypartneedtoscan
+    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
+    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
 
+    bodypart["WristRight"]=bodypart["HandRight"]
+    bodypart["WristLeft"] = bodypart["HandLeft"]
     for i in hands:
         for j in bodypart[i]:
                 avg = avg_distance(filename, i, j)
                 if(lowest>avg):
-                    lowest = avg
-                    bodypartfrom =i
-                    bodypartto= j
-    return lowest, bodypartfrom, bodypartto
+                   bodydef.append([avg, i, j])
+    return bodydef
+
+def  lowestpoint(filename,  hands=["HandRight", "WristRight"]):
+    """
+    returns the closest body part (SpineMid, etc) by going through each and calculating the average.
+    It might be a good idea to combine this with the above function so that runtime is reduced
+    :param filename: the name of the file
+    :return: a string of the closest body part
+    """
+    lowest =9999999999
+    bodypart ={}
+    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
+    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
+    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
+
+    bodypart["WristRight"]=bodypart["HandRight"]
+    bodypart["WristLeft"] = bodypart["HandLeft"]
+    for i in hands:
+        for j in bodypart[i]:
+                avg = avg_distance(filename, i, j)
+                if(lowest>avg):
+                    lowest=avg
+    return lowest
 
 print(closest_body_part("MOTHER+_1611.xml"))
 
