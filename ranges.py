@@ -11,27 +11,34 @@ def avg_hand_distance_right(filename):
             avg_distance(filename, "HandRight") +
             avg_distance(filename, "HandTipRight") +
             avg_distance(filename, "ThumbRight")) / 4
-
-
-def avg_distance(filename, body_part):
+def  getallbodypart(filename):
+    """
+    """
+    name = []
+    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    for joint in root[0][0]:
+        name.append(joint.get('name'))
+    return name
+print(getallbodypart("#ALL_89.xml"))
+def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
     """
     avg distance
     :param filename: filename
     :param body_part: body part
     :return: the avg distance float
     """
-    root = ET.parse("edited\XML_ASL_Files" + "\\" + filename).getroot()
+    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     total = 0.0
     count = 0.0
     for sign in root:
         for frame in sign:
             count += 1.0
             for joint in frame:
-                if joint.get('name') == "SpineMid":
+                if joint.get('name') == body_part_to:
                     spine_x = float(joint.get("x"))
                     spine_y = float(joint.get("y"))
                     spine_z = float(joint.get("z"))
-                if joint.get('name') == body_part:
+                if joint.get('name') == body_part_from:
                     bp_x = float(joint.get("x"))
                     bp_y = float(joint.get("y"))
                     bp_z = float(joint.get("z"))
@@ -54,7 +61,7 @@ def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid")
         :param first_last: [first or last] n frames
         :return: the avg distance float
     """
-    root = ET.parse("edited\XML_ASL_Files" + "\\" + filename).getroot()
+    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     total = 0.0
     frame_count = 0
     n_count = 0.0
@@ -111,7 +118,7 @@ def max_arm_distance(filename):
     :param filename: the file
     :return: a tuple of the left, then the right max arm distance
     """
-    root = ET.parse("XML_ASL_Files" + "\\" + filename).getroot()
+    root = ET.parse("XML_ASL_Files" + "/" + filename).getroot()
     max_range_right = 0
     max_range_left = 0
     for sign in root:
@@ -144,21 +151,32 @@ def max_arm_distance(filename):
                 max_range_left = new_range_left
     return max_range_left, max_range_right
 
-def closest_body_part(filename):
+def closest_body_part(filename,  hands=["HandRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
     :param filename: the name of the file
     :return: a string of the closest body part
     """
+    lowest =99999999999
+    bodypartfrom=""
+    bodypartto= ""
+    bodypart ={}
+    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
+    bodypart["HandRight"]= bodypartneedtoscan
+    bodypart["HandLeft"]=bodypartneedtoscan
 
-def vector_right_hand_from_body_part(filename):
-    """
-    returns the average x,y,z vector from the right hand to spine (just add up all the x's, y's, and z's and average them).
-    There should be really similar code for a distance function above, basically just call that one and do it again
-    :param filename: the file
-    :return: a vector for the average distance
-    """
+    for i in hands:
+        for j in bodypart[i]:
+                avg = avg_distance(filename, i, j)
+                if(lowest>avg):
+                    lowest = avg
+                    bodypartfrom =i
+                    bodypartto= j
+    return lowest, bodypartfrom, bodypartto
+
+print(closest_body_part("MOTHER+_1611.xml"))
+
 
 
 
