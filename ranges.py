@@ -276,7 +276,7 @@ def  lowestpoint_per_frame(filename, bodypart, frame ,  hands=["HandRight", "Wri
                 if(lowest>avg):
                     lowest=avg
     return lowest
-print(closest_body_part("MOTHER+_1611.xml"))
+print(closest_body_part_per_frame("MOTHER+FATHER_3213.xml"))
 
 
 
