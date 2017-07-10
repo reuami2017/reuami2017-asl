@@ -1,5 +1,9 @@
 #import animation as am
-import xml.etree.ElementTree as ET # fone home
+try:
+    import xml.etree.cElementTree as ET
+except ImportError:
+    import xml.etree.ElementTree as ET
+
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as p3
@@ -132,7 +136,7 @@ def updatefig(i):
     ax.axis("off")  # comment this line and a later line to put back in the axis
     #ax.canvas.draw_idle()
    # plt.pause(1000)
-anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
+#anim = animation.FuncAnimation(fig, updatefig,frames= len(dict["Head"][0]), interval=1000/30)
 #use this function to create video file
 #anim.save('basic_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
 import threading
