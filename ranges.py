@@ -40,6 +40,8 @@ def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
     for sign in root:
         for frame in sign:
             count += 1.0
+            bp_x = -1
+            spine_x = -1
             for joint in frame:
                 if joint.get('name') == body_part_to:
                     spine_x = float(joint.get("x"))
@@ -49,6 +51,8 @@ def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
                     bp_x = float(joint.get("x"))
                     bp_y = float(joint.get("y"))
                     bp_z = float(joint.get("z"))
+                if (bp_x != -1 and spine_x != -1):
+                    break
             total += math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
 
     if total == 0.0:
@@ -61,6 +65,8 @@ def distance_per_frame(filename, body_part_from, frame, body_part_to="SpineMid")
         root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     else:
         root = filename
+    bp_x = -1
+    spine_x=-1
     for joint in root[0][frame]:
         if joint.get('name') == body_part_to:
             spine_x = float(joint.get("x"))
@@ -70,6 +76,8 @@ def distance_per_frame(filename, body_part_from, frame, body_part_to="SpineMid")
             bp_x = float(joint.get("x"))
             bp_y = float(joint.get("y"))
             bp_z = float(joint.get("z"))
+        if(bp_x!=-1 and spine_x!=-1):
+            break
 
     return math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
 
@@ -100,6 +108,8 @@ def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid")
                 if n_count >= n:
                     flag = False
                 if flag:
+                    bp_x = -1
+                    spine_x = -1
                     for joint in frame:
                         if joint.get('name') == origin:
                             spine_x = float(joint.get("x"))
@@ -109,6 +119,8 @@ def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid")
                             bp_x = float(joint.get("x"))
                             bp_y = float(joint.get("y"))
                             bp_z = float(joint.get("z"))
+                        if (bp_x != -1 and spine_x != -1):
+                            break
                     total += math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
         else:
             for frame in sign:
@@ -117,7 +129,10 @@ def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid")
                 if frame_count - n_count >= n:
                     flag = False
                 if flag:
+                    bp_x = -1
+                    spine_x = -1
                     for joint in frame:
+
                         if joint.get('name') == origin:
                             spine_x = float(joint.get("x"))
                             spine_y = float(joint.get("y"))
@@ -126,6 +141,8 @@ def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid")
                             bp_x = float(joint.get("x"))
                             bp_y = float(joint.get("y"))
                             bp_z = float(joint.get("z"))
+                        if (bp_x != -1 and spine_x != -1):
+                            break
                     total += math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
 
     if total == 0.0:
@@ -258,7 +275,7 @@ def  lowestpoint_per_frame(filename, bodypart, frame ,  hands=["HandRight", "Wri
                 if(lowest>avg):
                     lowest=avg
     return lowest
-print(closest_body_part_per_frame("MOTHER+_1611.xml"))
+print(closest_body_part("MOTHER+_1611.xml"))
 
 
 
