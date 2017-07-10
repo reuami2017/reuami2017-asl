@@ -174,6 +174,15 @@ def max_arm_distance(filename):
                 max_range_left = new_range_left
     return max_range_left, max_range_right
 
+def getbodypart():
+    bodypart ={}
+    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
+    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
+    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
+
+    bodypart["WristRight"]=bodypart["HandRight"]
+    bodypart["WristLeft"] = bodypart["HandLeft"]
+    return bodypart
 def closest_body_part(filename,  hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
@@ -182,22 +191,16 @@ def closest_body_part(filename,  hands=["HandRight", "WristRight"]):
     :return: a string of the closest body part
     """
     root =ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
-    lowest = lowestpoint(root, hands)*1.5
+    bodypart = getbodypart()
+    lowest = lowestpoint(root,  bodypart, hands)*1.5
     bodydef = []
-    bodypart ={}
-
-    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
-    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
-    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
-
-    bodypart["WristRight"]=bodypart["HandRight"]
-    bodypart["WristLeft"] = bodypart["HandLeft"]
     for i in hands:
         for j in bodypart[i]:
                 avg = avg_distance(root, i, j)
                 if(lowest>avg):
                    bodydef.append([avg, i, j])
     return bodydef
+
 def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
@@ -208,16 +211,10 @@ def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
     root=ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     count = len(root[0])
     framebuff = []
-    bodypart ={}
-    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
-    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
-    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
-
-    bodypart["WristRight"]=bodypart["HandRight"]
-    bodypart["WristLeft"] = bodypart["HandLeft"]
+    bodypart =getbodypart()
     for frame in range(count):
         bodydef = []
-        lowest = lowestpoint_per_frame(root, frame,  hands) * 1.5
+        lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * 1.5
         for i in hands:
             for j in bodypart[i]:
                     avg =  distance_per_frame(root, i, frame, j)
@@ -226,7 +223,7 @@ def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
         framebuff.append(bodydef)
     return framebuff
 
-def  lowestpoint(filename,  hands=["HandRight", "WristRight"]):
+def  lowestpoint(filename, bodypart,   hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -238,13 +235,7 @@ def  lowestpoint(filename,  hands=["HandRight", "WristRight"]):
     else:
         root = filename
     lowest =9999999999
-    bodypart ={}
-    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
-    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
-    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
 
-    bodypart["WristRight"]=bodypart["HandRight"]
-    bodypart["WristLeft"] = bodypart["HandLeft"]
     for i in hands:
         for j in bodypart[i]:
                 avg = avg_distance(root, i, j)
@@ -253,7 +244,7 @@ def  lowestpoint(filename,  hands=["HandRight", "WristRight"]):
     return lowest
 
 
-def  lowestpoint_per_frame(filename, frame ,  hands=["HandRight", "WristRight"]):
+def  lowestpoint_per_frame(filename, bodypart, frame ,  hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -261,20 +252,13 @@ def  lowestpoint_per_frame(filename, frame ,  hands=["HandRight", "WristRight"])
     :return: a string of the closest body part
     """
     lowest =9999999999
-    bodypart ={}
-    bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
-    bodypart["HandRight"]= bodypartneedtoscan+["HandLeft", "ElbowLeft","WristLeft" ]
-    bodypart["HandLeft"]=bodypartneedtoscan+["HandRight", "ElbowRight", "WristRight"]
-
-    bodypart["WristRight"]=bodypart["HandRight"]
-    bodypart["WristLeft"] = bodypart["HandLeft"]
     for i in hands:
         for j in bodypart[i]:
                 avg = distance_per_frame(filename, i, frame, j)
                 if(lowest>avg):
                     lowest=avg
     return lowest
-print(closest_body_part("MOTHER+_1611.xml"))
+print(closest_body_part_per_frame("MOTHER+_1611.xml"))
 
 
 
