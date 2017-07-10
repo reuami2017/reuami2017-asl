@@ -11,10 +11,11 @@ import math
 
 
 def avg_hand_distance_right(filename):
-    return (avg_distance(filename, "WristRight") +
-            avg_distance(filename, "HandRight") +
-            avg_distance(filename, "HandTipRight") +
-            avg_distance(filename, "ThumbRight")) / 4
+    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    return (avg_distance(root, "WristRight") +
+            avg_distance(root, "HandRight") +
+            avg_distance(root, "HandTipRight") +
+            avg_distance(root, "ThumbRight")) / 4
 def  getallbodypart(filename):
     """
     """
