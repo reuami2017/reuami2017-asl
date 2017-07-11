@@ -141,7 +141,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
         /// </summary>
         private WriteableBitmap colorBitmap = null;
 
-  
+
 
         /// <summary>
         /// Initializes a new instance of the MainWindow class.
@@ -327,13 +327,16 @@ namespace Microsoft.Samples.Kinect.ColorBasics
 
                         if (body.IsTracked)
                         {
+
                             this.DrawClippedEdges(body, dc);
 
                             IReadOnlyDictionary<JointType, Joint> joints = body.Joints;
 
                             // convert the joint points to depth (display) space
                             Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
-                           var frame = new Frame();
+                            var frame = new Frame2();
+                            List<Joint1> Joint = new List<Joint1>();
+
                             foreach (JointType jointType in joints.Keys)
                             {
                                 // sometimes the depth(Z) of an inferred joint may show as negative
@@ -347,16 +350,21 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                                 DepthSpacePoint depthSpacePoint = this.coordinateMapper.MapCameraPointToDepthSpace(position);
                                 jointPoints[jointType] = new Point(depthSpacePoint.X, depthSpacePoint.Y);
                                 var z = joints[jointType].Position.Z * 275.36339626;
-                                 var joint= new Joint1();
+                                var joint = new Joint1();
+
+
                                 joint.Name = Enum.GetName(typeof(JointType), jointType);
-                                joint.X= jointPoints[jointType].X.ToString();
-                                joint.Y= jointPoints[jointType].Y.ToString();
+                                joint.X = jointPoints[jointType].X.ToString();
+                                joint.Y = jointPoints[jointType].Y.ToString();
                                 joint.Z = z.ToString();
-                               if(currentrecord) frame.Joint.Add(joint);
+
+                                Joint.Add(joint);
 
                             }
-                            if(currentrecord) signs.Sign.Frame.Add(frame);
-                      
+
+                            frame.Joint = closestTobody(Joint);
+                            if (currentrecord) signs.Sign.Frame.Add(frame);
+
 
                             this.DrawBody(joints, jointPoints, dc, drawPen);
 
@@ -370,8 +378,82 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                     this.drawingGroup.ClipGeometry = new RectangleGeometry(new Rect(0.0, 0.0, this.displayWidth, this.displayHeight));
                 }
             }
-          
+
         }
+
+        List<Joint1> closestTobody(List<Joint1> input) {
+            var output = new List<Joint1>();
+            var hands = new string[] { "HandRight", "WristRight" };
+            var bodypart = new string[] { "SpineBase", "SpineMid", "Neck", "Head", "ShoulderLeft", "ShoulderRight", "HipLeft", "SpineShoulder", "HipRight", "HandLeft", "ElbowLeft", "WristLeft" };
+            var lowest = Lowestpoint(input, bodypart, hands) * 1.5;
+            foreach (string i in hands)
+            {
+                foreach (string j in bodypart)
+                {
+                    var avg = avg_distance(input, i, j);
+                    Console.WriteLine(input.Count);
+
+
+                    if (lowest >= avg)
+                    {
+                        output.Add(new Joint1() { From =i, To= j, distance = avg.ToString()});
+                    }
+                }
+
+            }
+            return output;
+        }
+
+        private double Lowestpoint(List<Joint1> input, string[] bodypart, string[] hands)
+        {
+            var lowest = 9999999999.999;
+            foreach (string i in hands)
+            {
+                foreach (string j in bodypart)
+                {
+                    var avg = avg_distance(input, i, j);
+                    Console.WriteLine(avg);
+                    if (lowest > avg)
+                        lowest = avg;
+
+                }
+            }
+            return lowest;
+        }
+
+        private double avg_distance(List<Joint1> input, string i, string j)
+        {
+            double spine_x = -1;
+            double spine_y = -1;
+            double spine_z = -1;
+            double bp_x = -1;
+            double bp_y = -1;
+            double bp_z = -1;
+
+            foreach (var joint in input) {
+                if (joint.Name == i) {
+                    spine_x = Double.Parse(joint.X);
+                    spine_y = Double.Parse(joint.Y);
+                    spine_z = Double.Parse(joint.Z);
+                }
+                if (joint.Name == j) {
+
+                    bp_x = Double.Parse(joint.X);
+
+
+                    bp_y = Double.Parse(joint.Y);
+                    bp_z = Double.Parse(joint.Z);
+                }
+                
+
+                if (bp_x != -1 && spine_x != -1)
+                    break;
+            }
+        
+        
+        
+        return  Math.Sqrt(Math.Pow((bp_x - spine_x),2 ) + Math.Pow((bp_y - spine_y), 2) + Math.Pow((bp_z - spine_z), 2));
+            }
 
         /// <summary>
         /// Draws a body
@@ -582,9 +664,9 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                         this.colorBitmap.Unlock();
                         if (currentrecord)
                         {
-                                              var i = this.colorBitmap.Clone();
-                           i.Freeze();
-                                encoderframes.Add(i);
+// var i = this.colorBitmap.Clone();
+// i.Freeze();
+                            // encoderframes.Add(i);
                         }
                     }
                 }
