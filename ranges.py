@@ -201,7 +201,7 @@ def getbodypart():
     bodypart["WristRight"]=bodypart["HandRight"]
     bodypart["WristLeft"] = bodypart["HandLeft"]
     return bodypart
-def closest_body_part(filename,  hands=["HandRight", "WristRight"]):
+def closest_body_part(filename,  hands=["HandRight", "WristRight"], sensitivity = 1.5):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -210,16 +210,16 @@ def closest_body_part(filename,  hands=["HandRight", "WristRight"]):
     """
     root =ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     bodypart = getbodypart()
-    lowest = lowestpoint(root,  bodypart, hands)*1.5
+    lowest = lowestpoint(root,  bodypart, hands)* sensitivity
     bodydef = []
     for i in hands:
         for j in bodypart[i]:
                 avg = avg_distance(root, i, j)
-                if(lowest>avg):
+                if(lowest>=avg):
                    bodydef.append([avg, i, j])
     return bodydef
 
-def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
+def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"], sensitivity=1.5):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -232,11 +232,11 @@ def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
     bodypart =getbodypart()
     for frame in range(count):
         bodydef = []
-        lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * 1.5
+        lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * sensitivity
         for i in hands:
             for j in bodypart[i]:
                     avg =  distance_per_frame(root, i, frame, j)
-                    if(lowest>avg):
+                    if(lowest>=avg):
                        bodydef.append([avg, i, j])
         framebuff.append(bodydef)
     return framebuff
@@ -276,8 +276,9 @@ def  lowestpoint_per_frame(filename, bodypart, frame ,  hands=["HandRight", "Wri
                 if(lowest>avg):
                     lowest=avg
     return lowest
-print(closest_body_part("MOTHER+_1611.xml"))
+print(closest_body_part("MOTHER+_1611.xml",sensitivity =1))
 
+print(closest_body_part_per_frame("MOTHER+_1611.xml",sensitivity =1))
 
 
 
