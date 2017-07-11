@@ -391,7 +391,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                 foreach (string j in bodypart)
                 {
                     var avg = avg_distance(input, i, j);
-                    Console.WriteLine(input.Count);
+                   // Console.WriteLine(input.Count);
 
 
                     if (lowest >= avg)
@@ -412,7 +412,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                 foreach (string j in bodypart)
                 {
                     var avg = avg_distance(input, i, j);
-                    Console.WriteLine(avg);
+                   // Console.WriteLine(avg);
                     if (lowest > avg)
                         lowest = avg;
 
