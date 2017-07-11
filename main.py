@@ -131,6 +131,7 @@ def create_database(directory):
             first_loc_wrist_right[name] = ranges.avg_distance_n_frames(file, "WristRight", 5, "first")
             first_loc_wrist_left[name] = ranges.avg_distance_n_frames(file, "WristLeft", 5, "first")
             max_arm_range_right[name], max_arm_range_left[name] = ranges.max_arm_distance(file)
+            #closest
             if (len(time_dict) % 100) == 0:  # neato percentage tracking so that we can feel happy
                 print(str(int(len(time_dict) / 30)) + "% done")
 
