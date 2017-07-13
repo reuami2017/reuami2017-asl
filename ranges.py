@@ -192,6 +192,7 @@ def max_arm_distance(filename):
                 max_range_left = new_range_left
     return max_range_left, max_range_right
 
+
 def getbodypart():
     bodypart ={}
     bodypartneedtoscan=['SpineBase', 'SpineMid', 'Neck', 'Head', 'ShoulderLeft', 'ShoulderRight', 'HipLeft',  'SpineShoulder','HipRight' ]
@@ -201,25 +202,25 @@ def getbodypart():
     bodypart["WristRight"]=bodypart["HandRight"]
     bodypart["WristLeft"] = bodypart["HandLeft"]
     return bodypart
-def closest_body_part(filename,  hands=["HandRight", "WristRight"]):
+def closest_body_part(filename, hands=["HandRight", "WristRight"], sensitivity = 1.5):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
     :param filename: the name of the file
     :return: a string of the closest body part
     """
-    root =ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     bodypart = getbodypart()
-    lowest = lowestpoint(root,  bodypart, hands)*1.5
+    lowest = lowestpoint(root,  bodypart, hands)* sensitivity
     bodydef = []
     for i in hands:
         for j in bodypart[i]:
                 avg = avg_distance(root, i, j)
-                if(lowest>avg):
+                if lowest >= avg:
                    bodydef.append([avg, i, j])
     return bodydef
 
-def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
+def closest_body_part_per_frame(filename, hands=["HandRight", "WristRight"], sensitivity=1.5):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -229,19 +230,20 @@ def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"]):
     root=ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
     count = len(root[0])
     framebuff = []
-    bodypart =getbodypart()
+    bodypart = getbodypart()
     for frame in range(count):
         bodydef = []
-        lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * 1.5
+        lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * sensitivity
         for i in hands:
             for j in bodypart[i]:
                     avg =  distance_per_frame(root, i, frame, j)
-                    if(lowest>avg):
+                    if lowest >= avg:
                        bodydef.append([avg, i, j])
         framebuff.append(bodydef)
     return framebuff
 
-def  lowestpoint(filename, bodypart,   hands=["HandRight", "WristRight"]):
+
+def lowestpoint(filename, bodypart, hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -257,12 +259,12 @@ def  lowestpoint(filename, bodypart,   hands=["HandRight", "WristRight"]):
     for i in hands:
         for j in bodypart[i]:
                 avg = avg_distance(root, i, j)
-                if(lowest>avg):
-                    lowest=avg
+                if lowest > avg:
+                    lowest = avg
     return lowest
 
 
-def  lowestpoint_per_frame(filename, bodypart, frame ,  hands=["HandRight", "WristRight"]):
+def  lowestpoint_per_frame(filename, bodypart, frame,  hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced
@@ -273,11 +275,12 @@ def  lowestpoint_per_frame(filename, bodypart, frame ,  hands=["HandRight", "Wri
     for i in hands:
         for j in bodypart[i]:
                 avg = distance_per_frame(filename, i, frame, j)
-                if(lowest>avg):
-                    lowest=avg
+                if lowest > avg:
+                    lowest = avg
     return lowest
-print(closest_body_part_per_frame("MOTHER+FATHER_3213.xml"))
+print(closest_body_part("MOTHER+_1611.xml",sensitivity =1))
 
+print(closest_body_part_per_frame("MOTHER+_1611.xml",sensitivity =1))
 
 
 
