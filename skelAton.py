@@ -22,9 +22,9 @@ def make_lines(filename):
                 body_part = joint.get('name')
                 if body_part not in d:
                     d[body_part] = [[], [], []]
-                d[body_part][0].append(float(joint.get("x")))
-                d[body_part][1].append(float(joint.get("y")))
-                d[body_part][2].append(float(joint.get("z")))
+                d[body_part][0].append(-float(joint.get("z")))
+                d[body_part][1].append(-float(joint.get("x")))
+                d[body_part][2].append(-float(joint.get("y")))
 
     return d
 
@@ -58,13 +58,13 @@ def bodypart_sphere(body, body2, frame, width_line):  # x
 
 def makebody(frame):
     ax.clear()
-    ax.set_xlim3d([0,x])
+    ax.set_xlim3d([0,-700])
    # ax.set_xlabel('X')
 
-    ax.set_ylim3d([0, y])
+    ax.set_ylim3d([0,-x])
    # ax.set_ylabel('Y')
 
-    ax.set_zlim3d([0, 700])
+    ax.set_zlim3d([0, -y])
    # ax.set_zlabel('Z')
    # ax.view_init(-80, 270)
     ## head
@@ -120,16 +120,16 @@ if (currentdata):
 
 ax = p3.Axes3D(fig)
 #ax.view_init(270,270)
-ax.axis("off")  # comment this line and a later line to put back in the axis
-ax.set_xlim3d([0.0, x])
+#ax.axis("off")  # comment this line and a later line to put back in the axis
+#ax.set_xlim3d([0.0, x])
 # ax.set_xlabel('X')
 
-ax.set_ylim3d([0.0, y])
+#ax.set_ylim3d([0.0, y])
 #ax.set_ylabel('Y')
 
-ax.set_zlim3d([0, 700])
+#ax.set_zlim3d([0, 700])
 #ax.set_zlabel('Z')
-ax.view_init(-100,270)
+ax.view_init(180, 0)
 
 def updatefig(i):
     makebody(i)
