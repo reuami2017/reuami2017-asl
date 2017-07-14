@@ -334,6 +334,7 @@ namespace Microsoft.Samples.Kinect.ColorBasics
 
                             // convert the joint points to depth (display) space
                             Dictionary<JointType, Point> jointPoints = new Dictionary<JointType, Point>();
+                            var signs = new Signs();
                             var frame = new Frame2();
                             List<Joint1> Joint = new List<Joint1>();
 
@@ -363,7 +364,13 @@ namespace Microsoft.Samples.Kinect.ColorBasics
                             }
 
                             frame.Joint = closestTobody(Joint);
-                            if (currentrecord) signs.Sign.Frame.Add(frame);
+
+                            signs.Sign.Frame.Add(frame);
+                            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(Signs));
+                            using (FileStream fs = new FileStream(@".\" +"python"+ ".xml", FileMode.Create))
+                            {
+                                writer.Serialize(fs, signs);
+                            }
 
 
                             this.DrawBody(joints, jointPoints, dc, drawPen);
