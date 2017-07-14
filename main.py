@@ -15,6 +15,7 @@ import pickle  # this is being used, python just can't see it``
 import urllib
 from mutagen.mp3 import MP3
 import pandas as pd
+import xml
 
 
 """
@@ -54,7 +55,7 @@ def make_word_database():
     sound_len_dict = {}
     print("Making word database")
     sound_files = os.listdir("sound")
-    for file in os.listdir("XML_ASL_Files"):
+    for file in os.listdir("edited\XML_ASL_Files"):
         temp = get_word(file)
         # try:
         #     music.get_file(temp)  # store all of the different names of files. Should only be ran once
@@ -120,6 +121,10 @@ def create_database(directory):
     arm_dict = {}
     first_loc_wrist_right = {}
     first_loc_wrist_left = {}
+    closest_body_part_to_right0 = {}
+    closest_body_part_to_right1 = {}
+    closest_body_part_to_left0 = {}
+    closest_body_part_to_left1 = {}
 
     print("Creating arm length, time, and ranges databases")
     for file in os.listdir(directory):
@@ -131,14 +136,139 @@ def create_database(directory):
             first_loc_wrist_right[name] = ranges.avg_distance_n_frames(file, "WristRight", 5, "first")
             first_loc_wrist_left[name] = ranges.avg_distance_n_frames(file, "WristLeft", 5, "first")
             max_arm_range_right[name], max_arm_range_left[name] = ranges.max_arm_distance(file)
-            #closest
+            # old version of the closest body part, new version coming up!
+            # closest_body_part_to_right[name] = ranges.closest_body_part(file, ["HandRight", "WristRight"])[0][2]
+            # closest_body_part_to_left[name] = ranges.closest_body_part(file, ["HandLeft", "WristLeft"])[0][2]
+            closestright = ranges.closest_body_part(file, ["HandRight", "WristRight"])
+            closestleft = ranges.closest_body_part(file, ["HandLeft", "WristLeft"])
+            closest_body_part_to_right0[name] = closestright[0]  # should be a array?
+            closest_body_part_to_right1[name] = closestright[1]
+            closest_body_part_to_left0[name] = closestleft[0]
+            closest_body_part_to_left1[name] = closestleft[1]
+
             if (len(time_dict) % 100) == 0:  # neato percentage tracking so that we can feel happy
                 print(str(int(len(time_dict) / 30)) + "% done")
 
         except ET.ParseError: # some file appears to be broken and I'm not sure which one, so just catch with this.
             continue
 
-    return time_dict, arm_dict, [max_arm_range_right, max_arm_range_left], first_loc_wrist_left, first_loc_wrist_right
+    return time_dict, arm_dict, [max_arm_range_right, max_arm_range_left], \
+           first_loc_wrist_left, first_loc_wrist_right, closest_body_part_to_right0, closest_body_part_to_right1,\
+           closest_body_part_to_left0, closest_body_part_to_left1
+
+
+def get_list_of_signs_right(df, body_part):
+    """
+    gets a list of all the body parts
+    :param df: the dataframe
+    :param body_part: the body part to look at
+    :return:
+    """
+    return df[df['closest_body_right_hand0'] == body_part]
+
+
+# TODO figure out how to narrow down with both body parts simultaneously, right now this does one.
+# some issues are that the changes will only apply to one hand at a time, so it might be needed to do some weird
+# check of both at once. Perhaps go online for some inspiration.
+def narrow_list(candidates, body_part, position='right'):
+    """
+    narrows down the list of candidates
+    :param candidates: the list of signs that matched the first time
+    :param position: right or left
+    :param body_part: the current body position of the right hand
+    :return: the list of signs who are in candidates and match the body part right
+    """
+    if type(candidates) is not pd.DataFrame:
+        return pd.DataFrame()  # should only be done for the first round
+    bd = "closest_body_right_hand1"
+    if position == "left":
+        bd = "closest_body_left_hand1"  # change iff is left
+    # print(candidates)
+    # print(bd)
+    # print(body_part)
+    return candidates[candidates[bd] == body_part]
+
+
+def get_list_of_signs_left(db, body_part):
+    """
+    gets a list of all the body parts on left
+    :param db: the dataframe
+    :param body_part: the interesting body part
+    :return:
+    """
+    return db[db['closest_body_left_hand0'] == body_part]
+
+
+def get_closest(filename):
+    """
+    gets the closest body part
+    :param filename: the file (python.xml in this context)
+    :return: the string of the smallest body part
+    """
+    while True:
+        try:
+            root = ET.parse(filename).getroot()
+            break
+        except xml.etree.ElementTree.ParseError:
+            pass  # if there is a parse error, just try again until there is not a parse error
+    frame = root[0][0]  # get the first frame or whatever
+    low = 99999999
+    current_closest = None
+    for i in range(len(frame)):
+        curr = float(frame[i].get("distance"))
+        if curr < low:
+            low = curr
+            current_closest = frame[i].get("to")  # get the current.
+    # print(current_closest)
+    return current_closest
+
+
+def predict(db):
+    old_closest = None  # initial, should never match again
+    old_list_right = []
+    old_list_left = []
+    while True:
+        current_closest = get_closest("python.xml")
+
+        # TODO Can we get the current closest for the right and left hand y any chance?
+        if current_closest == old_closest:
+            continue  # don't do any printing unless something changed
+        # else they differ! Neato!
+        right_list2 = narrow_list(old_list_right, current_closest, "right")
+        left_list2 = narrow_list(old_list_left, current_closest, "left")
+        right_list1 = get_list_of_signs_right(db, current_closest)
+        old_list_right = right_list1
+        left_list1 = get_list_of_signs_left(db, current_closest)
+        old_list_left = left_list1
+
+        # Output all of the predictions live! Neato!
+
+        rlist = right_list1.index.tolist()
+        if rlist:
+            print("Right list!")
+            print(rlist)
+        else:
+            print("There is no predictions for this right hand position")
+        llist = left_list1.index.tolist()
+        if llist:
+            print("Left list!")
+            print(llist)
+        else:
+            print("There is no predictions for this left hand position")
+        rlist1 = right_list2.index.tolist()
+        if rlist1:
+            print("Right list. predict 1!")
+            print(rlist1)
+        else:
+            print("There is no predictions for this right hand position and predict 1")
+        llist1 = left_list2.index.tolist()
+        if llist1:
+            print("Left list. predict 1!")
+            print(llist1)
+        else:
+            print("There are no predictions for this left hand position and predict 1")
+
+        old_closest = current_closest
 
 
 """
@@ -149,21 +279,30 @@ check = input("Should the database be loaded from the database.pkl file? (Y/N)  
 if check in ["Y", "y"]:
     df = pd.read_pickle("database.pkl")
 else:
+    #Make databases
     word_types, sentiment, sound = make_word_database()
-    time, arm, ranges, first_wrist_left, first_wrist_right = create_database("XML_ASL_Files")
-    df = pd.DataFrame([word_types, sentiment, time, arm, ranges[0], ranges[1], sound,
-                       first_wrist_left, first_wrist_right],
+    time, arm, arm_ranges, first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,\
+        closest_body_left_hand0, closest_body_left_hand1 = create_database("edited\XML_ASL_Files")
+    #make dataframe
+    df = pd.DataFrame([word_types, sentiment, time, arm, arm_ranges[0], arm_ranges[1], sound,
+                       first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,
+                       closest_body_left_hand0, closest_body_left_hand1],
                       index=["type", "sentiment", "seconds", "arm", "right", "left", "sound_len",
-                             "first_wrist_left", "first_wrist_right"]).transpose()
+                             "first_wrist_left", "first_wrist_right",
+                             "closest_body_right_hand0", "closest_body_right_hand1",
+                             "closest_body_left_hand0", "closest_body_left_hand1"]).transpose()
     df.to_pickle("database.pkl")
 
 
+# turn each variable listed to numeric
 df[['seconds', 'sentiment', 'arm', 'right', 'left',
     "sound_len", "first_wrist_left", "first_wrist_right"]] = df[['seconds', 'sentiment', 'arm', 'right', 'left',
                                                                  "sound_len", "first_wrist_left",
                                                                  "first_wrist_right"]].apply(pd.to_numeric)
 
-#TODO split the dataset into a section with "words on google" so that the linguistic properties can be kinda analysed
+predict(df)
+
+google_words = df[df.sound_len != -1.00000]  # the google words data set, words that don't exist have len -1
 one_sec = df[(1 > df['seconds']) & (df['seconds'] >= 0)]
 two_sec = df[(2 > df['seconds']) & (df['seconds'] >= 1)]
 three_sec = df[(3 > df['seconds']) & (df['seconds'] >= 2)]

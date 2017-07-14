@@ -63,3 +63,14 @@
 
 ##Monday
 * Add features of each sign into the database
+
+##7/13/2017
+* ~~split into a google dataset~~
+* Make a function that takes in
+
+
+##7/14/2017
+
+*Add functionality to predict with both hands simulataneously
+  * ignore the left (or right) hand if its not moving (because in the database, it would not impact anything if it was moving
+  )
