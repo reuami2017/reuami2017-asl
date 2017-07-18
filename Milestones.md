@@ -74,3 +74,8 @@
 *Add functionality to predict with both hands simulataneously
   * ignore the left (or right) hand if its not moving (because in the database, it would not impact anything if it was moving
   )
+
+##7/17/2017
+* Rerecord the database
+  * Do it in good lighting
+*Improve the UI for the predictors

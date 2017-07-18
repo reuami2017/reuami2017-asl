@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<signs xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sign>
+    <frame>
+      <joint from="HandRight" to="SpineBase" distance="82.420742468689" />
+      <joint from="HandRight" to="HipRight" distance="76.0565232860433" />
+      <joint from="WristRight" to="SpineBase" distance="65.459241689376" />
+      <joint from="WristRight" to="HipLeft" distance="85.4814008282616" />
+      <joint from="WristRight" to="HipRight" distance="60.1416508397425" />
+    </frame>
+  </sign>
+</signs>
