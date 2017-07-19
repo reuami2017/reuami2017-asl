@@ -10,17 +10,20 @@ except ImportError:
 import math
 import numpy as np
 
+
 def avg_hand_distance_right(filename):
-    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root = ET.parse("new_db" + "/" + filename).getroot()
     return (avg_distance(root, "WristRight") +
             avg_distance(root, "HandRight") +
             avg_distance(root, "HandTipRight") +
             avg_distance(root, "ThumbRight")) / 4
+
+
 def  getallbodypart(filename):
     """
     """
     name = []
-    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root = ET.parse("new_db" + "/" + filename).getroot()
     for joint in root[0][0]:
         name.append(joint.get('name'))
     return name
@@ -35,7 +38,7 @@ def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
     :return: the avg distance float
     """
     if isinstance(filename, str):
-        root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+        root = ET.parse("new_db" + "/" + filename).getroot()
     else:
         root = filename
     total = 0.0
@@ -70,7 +73,7 @@ def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
 
 def distance_per_frame(filename, body_part_from, frame, body_part_to="SpineMid"):
     if isinstance(filename, str):
-        root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+        root = ET.parse("new_db" + "/" + filename).getroot()
     else:
         root = filename
     bp_x = -1
@@ -100,7 +103,7 @@ def avg_distance_n_frames(filename, body_part, n, first_last, origin="SpineMid")
         :param first_last: [first or last] n frames
         :return: the avg distance float
     """
-    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root = ET.parse("new_db" + "/" + filename).getroot()
     total = 0.0
     frame_count = 0
     n_count = 0.0
@@ -166,7 +169,7 @@ def max_arm_distance(filename):
     :param filename: the file
     :return: a tuple of the left, then the right max arm distance
     """
-    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root = ET.parse("new_db" + "/" + filename).getroot()
     max_range_right = 0
     max_range_left = 0
     for sign in root:
@@ -220,7 +223,7 @@ def closest_body_part(filename,  hands=["HandRight", "WristRight"], sensitivity=
     :param sensitivity: the sensitivity (radius multiplier) of the closeness
     :return: a string of the closest body part
     """
-    root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root = ET.parse("new_db" + "/" + filename).getroot()
     bodypart = getbodypart()
     lowest = lowestpoint(root,  bodypart, hands) * sensitivity
     bodydef = []
@@ -252,7 +255,7 @@ def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"], se
     :param sensitivity: the sensitivity
     :return: a string of the closest body part
     """
-    root=ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+    root=ET.parse("new_db" + "/" + filename).getroot()
     count = len(root[0])
     framebuff = []
     bodypart = getbodypart()
@@ -276,7 +279,7 @@ def lowestpoint(filename, bodypart, hands=["HandRight", "WristRight"]):
     :return: a string of the closest body part
     """
     if isinstance(filename, str):
-        root = ET.parse("edited/XML_ASL_Files" + "/" + filename).getroot()
+        root = ET.parse("new_db" + "/" + filename).getroot()
     else:
         root = filename
     lowest =9999999999
