@@ -220,8 +220,8 @@ def predict(db):
         right_list2 = narrow_list(old_list_right, current_closest, "right")
         left_list2 = narrow_list(old_list_left, current_closest, "left")
         right_list1 = get_list_of_signs_right(db, current_closest)
-        old_list_right = right_list1
         left_list1 = get_list_of_signs_left(db, current_closest)
+        old_list_right = right_list1
         old_list_left = left_list1
 
         # Output all of the predictions live! Neato!
@@ -253,55 +253,78 @@ def predict(db):
 
         old_closest = current_closest
 
-
-"""
-Run the program here
-"""
-
-check = input("Should the database be loaded from the database.pkl file? (Y/N)   ")
-if check in ["Y", "y"]:
-    df = pd.read_pickle("newdb.pkl")
-else:
-    #Make databases
-    word_types, sentiment = make_word_database()
-    time, arm, arm_ranges, first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,\
-        closest_body_left_hand0, closest_body_left_hand1 = create_database("new_db")
-    #make dataframe
-    df = pd.DataFrame([word_types, sentiment, time, arm, arm_ranges[0], arm_ranges[1],
-                       first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,
-                       closest_body_left_hand0, closest_body_left_hand1],
-                      index=["type", "sentiment", "seconds", "arm", "right", "left",
-                             "first_wrist_left", "first_wrist_right",
-                             "closest_body_right_hand0", "closest_body_right_hand1",
-                             "closest_body_left_hand0", "closest_body_left_hand1"]).transpose()
-    df.to_pickle("newdb.pkl")
+demo_old_list_right = []
+demo_old_list_left = []
 
 
-# turn each variable listed to numeric
-df[['seconds', 'sentiment', 'arm', 'right', 'left',
-    "first_wrist_left", "first_wrist_right"]] = df[['seconds', 'sentiment', 'arm', 'right', 'left',
-                                                                "first_wrist_left",
-                                                                 "first_wrist_right"]].apply(pd.to_numeric)
 
-predict(df)
 
-one_sec = df[(1 > df['seconds']) & (df['seconds'] >= 0)]
-two_sec = df[(2 > df['seconds']) & (df['seconds'] >= 1)]
-three_sec = df[(3 > df['seconds']) & (df['seconds'] >= 2)]
-four_sec = df[df['seconds'] >= 3]
-nouns = df[(df['type'] == "NN") | (df['type'] == "NNS") | (df['type'] == "NNP") | (df['type'] == "NNPS")]  # all nouns start with NN
-verbs = df[(df['type'] == "VB") | (df['type'] == "VBD") | (df['type'] == "VBG") | (df['type'] == "VBN") | (df['type'] == "VBP") | (df['type'] == "VBZ") ]  # all verbs start with VB
-adjectives = df[(df['type'] == "JJ") | (df['type'] == "JJR") | (df['type'] == "JJS")]  # adjectives
-adverbs = df[(df['type'] == "RB") | (df['type'] == "RBS") | (df['type'] == "RBR")]  # adverbs obviously
-print("One sec: \n" + str(one_sec.describe()))
-print("One sec nouns: \n" + str(nouns[(1 > nouns['seconds']) & (nouns['seconds'] >= 0)].describe()))
 
-print("Two sec: \n" + str(two_sec.describe()))
-print("Three sec: \n" + str(three_sec.describe()))
-print("Four sec: \n" + str(four_sec.describe()))
-print("Overall: \n" + str(df.describe()))
-print("Type: \n" + str(df['type'].describe()))
-print('Nouns: \n' + str(nouns.describe()))
-print("Verbs: \n" + str(verbs.describe()))
-print('Adjectives: \n' + str(adjectives.describe()))
-print('Adverbs: \n' + str(adverbs.describe()))
+def demo_predict(db):
+    global demo_old_list_right
+    global demo_old_list_left
+    current_closest = get_closest("python.xml")
+    right_list2 = narrow_list(demo_old_list_right, current_closest, "right")
+    left_list2 = narrow_list(demo_old_list_left, current_closest, "left")
+    right_list1 = get_list_of_signs_right(db, current_closest)
+    left_list1 = get_list_of_signs_left(db, current_closest)
+    demo_old_list_right = right_list1
+    demo_old_list_left = left_list1
+    # Output all of the predictions live! Neato!
+    return [
+        right_list1.index.tolist(),
+        left_list1.index.tolist(),
+        right_list2.index.tolist(),
+        left_list2.index.tolist()]
+
+def main():
+    check = input("Should the database be loaded from the database.pkl file? (Y/N)   ")
+    if check in ["Y", "y"]:
+        df = pd.read_pickle("newdb.pkl")
+    else:
+        #Make databases
+        word_types, sentiment = make_word_database()
+        time, arm, arm_ranges, first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,\
+            closest_body_left_hand0, closest_body_left_hand1 = create_database("new_db")
+        #make dataframe
+        df = pd.DataFrame([word_types, sentiment, time, arm, arm_ranges[0], arm_ranges[1],
+                           first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,
+                           closest_body_left_hand0, closest_body_left_hand1],
+                          index=["type", "sentiment", "seconds", "arm", "right", "left",
+                                 "first_wrist_left", "first_wrist_right",
+                                 "closest_body_right_hand0", "closest_body_right_hand1",
+                                 "closest_body_left_hand0", "closest_body_left_hand1"]).transpose()
+        df.to_pickle("newdb.pkl")
+
+
+    # turn each variable listed to numeric
+    df[['seconds', 'sentiment', 'arm', 'right', 'left',
+        "first_wrist_left", "first_wrist_right"]] = df[['seconds', 'sentiment', 'arm', 'right', 'left',
+                                                                    "first_wrist_left",
+                                                                     "first_wrist_right"]].apply(pd.to_numeric)
+
+    predict(df)
+
+    one_sec = df[(1 > df['seconds']) & (df['seconds'] >= 0)]
+    two_sec = df[(2 > df['seconds']) & (df['seconds'] >= 1)]
+    three_sec = df[(3 > df['seconds']) & (df['seconds'] >= 2)]
+    four_sec = df[df['seconds'] >= 3]
+    nouns = df[(df['type'] == "NN") | (df['type'] == "NNS") | (df['type'] == "NNP") | (df['type'] == "NNPS")]  # all nouns start with NN
+    verbs = df[(df['type'] == "VB") | (df['type'] == "VBD") | (df['type'] == "VBG") | (df['type'] == "VBN") | (df['type'] == "VBP") | (df['type'] == "VBZ") ]  # all verbs start with VB
+    adjectives = df[(df['type'] == "JJ") | (df['type'] == "JJR") | (df['type'] == "JJS")]  # adjectives
+    adverbs = df[(df['type'] == "RB") | (df['type'] == "RBS") | (df['type'] == "RBR")]  # adverbs obviously
+    print("One sec: \n" + str(one_sec.describe()))
+    print("One sec nouns: \n" + str(nouns[(1 > nouns['seconds']) & (nouns['seconds'] >= 0)].describe()))
+
+    print("Two sec: \n" + str(two_sec.describe()))
+    print("Three sec: \n" + str(three_sec.describe()))
+    print("Four sec: \n" + str(four_sec.describe()))
+    print("Overall: \n" + str(df.describe()))
+    print("Type: \n" + str(df['type'].describe()))
+    print('Nouns: \n' + str(nouns.describe()))
+    print("Verbs: \n" + str(verbs.describe()))
+    print('Adjectives: \n' + str(adjectives.describe()))
+    print('Adverbs: \n' + str(adverbs.describe()))
+
+if __name__ == "__main__":
+    main()
