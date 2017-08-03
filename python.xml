@@ -2,7 +2,10 @@
 <signs xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <sign>
     <frame>
-      <joint from="HandRight" to="HandLeft" distance="17.4965262021747" />
+      <joint from="HandRight" to="HandLeft" distance="82.9935630165337" />
+      <joint from="HandRight" to="WristLeft" distance="80.6992506292028" />
+      <joint from="WristRight" to="HandLeft" distance="72.6945651203768" />
+      <joint from="WristRight" to="WristLeft" distance="64.3434403421415" />
     </frame>
   </sign>
 </signs>

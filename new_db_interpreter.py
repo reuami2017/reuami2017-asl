@@ -122,12 +122,25 @@ def create_database(directory):
             first_loc_wrist_right[name] = new_ranges.avg_distance_n_frames(file, "WristRight", 5, "first")
             first_loc_wrist_left[name] = new_ranges.avg_distance_n_frames(file, "WristLeft", 5, "first")
             max_arm_range_right[name], max_arm_range_left[name] = new_ranges.max_arm_distance(file)
-            closestright = new_ranges.closest_body_part(file, ["HandRight", "WristRight"], sensitivity=3)
-            closestleft = new_ranges.closest_body_part(file, ["HandLeft", "WristLeft"], sensitivity=3)
-            closest_body_part_to_right0[name] = closestright[0]  # should be a array?
-            closest_body_part_to_right1[name] = closestright[1]
-            closest_body_part_to_left0[name] = closestleft[0]
-            closest_body_part_to_left1[name] = closestleft[1]
+            # for hand right and wrist right combined.
+            # closestright = new_ranges.closest_body_part(file, ["HandRight", "WristRight"], sensitivity=3)
+            # closestleft = new_ranges.closest_body_part(file, ["HandLeft", "WristLeft"], sensitivity=3)
+            # closestright = new_ranges.closest_body_part(file, ["WristRight"], sensitivity=3)
+            # closestleft = new_ranges.closest_body_part(file, ["WristLeft"], sensitivity=3)
+            closestright = new_ranges.closest_body_part_per_frame(file, ["HandRight", "WristRight"])
+            closestleft = new_ranges.closest_body_part_per_frame(file, ["HandLeft", "WristLeft"])
+            closest_body_part_to_right0[name] = closestright[0][0]  # should be a array?
+            closest_body_part_to_right1[name] = closestright[1][0]
+            count = 2
+            while closest_body_part_to_right1[name] == closest_body_part_to_right0[name] and count < len(closestright):
+                closest_body_part_to_right1[name] = closestright[count][0]
+                count += 1
+            count = 2
+            closest_body_part_to_left0[name] = closestleft[0][1]
+            closest_body_part_to_left1[name] = closestleft[1][1]
+            while closest_body_part_to_left1[name] == closest_body_part_to_left0[name] and count < len(closestleft):
+                closest_body_part_to_left1[name] = closestleft[count][1]
+                count += 1
 
             if (len(time_dict) % 100) == 0:  # neato percentage tracking so that we can feel happy
                 print(str(int(len(time_dict) / 30)) + "% done")
@@ -151,6 +164,7 @@ def get_list_of_signs_right(df, body_part):
 
 
 # TODO figure out how to narrow down with both body parts simultaneously, right now this does one.
+# it's just a join on the 2 outputs, but I'm too lazy to do it right now
 # some issues are that the changes will only apply to one hand at a time, so it might be needed to do some weird
 # check of both at once. Perhaps go online for some inspiration.
 def narrow_list(candidates, body_part, position='right'):
@@ -257,13 +271,11 @@ demo_old_list_right = []
 demo_old_list_left = []
 
 
-
-
-
 def demo_predict(db):
     global demo_old_list_right
     global demo_old_list_left
     current_closest = get_closest("python.xml")
+    print(current_closest)
     right_list2 = narrow_list(demo_old_list_right, current_closest, "right")
     left_list2 = narrow_list(demo_old_list_left, current_closest, "left")
     right_list1 = get_list_of_signs_right(db, current_closest)

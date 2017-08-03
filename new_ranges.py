@@ -59,7 +59,7 @@ def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
                         bp_y = float(joint.get("y"))
                         bp_z = float(joint.get("z"))
                     if (bp_x != -1 and spine_x != -1):
-                        break
+                        break  # get out of the for loop as soon as we get both points
                 total += math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
     except ValueError:
         # print("negative infinity point")
@@ -67,6 +67,59 @@ def avg_distance(filename, body_part_from,  body_part_to="SpineMid"):
     if total == 0.0:
         # print("no object found")
         return total
+
+    return total/count
+
+
+def avg_distance_multiple(filename, body_parts,  body_part_to="SpineMid"):
+    """
+    avg distance
+    :param filename: filename
+    :param body_parts: ARRAY of body parts to use
+    :param body_part_to: the body part to go to
+    :return: the avg distance float
+    """
+    if isinstance(filename, str):
+        root = ET.parse("new_db" + "/" + filename).getroot()
+    else:
+        root = filename
+    total = 0.0
+    count = 0.0
+    spine = []
+    bpx = []
+    bpy = []
+    bpz = []
+    try:
+        for sign in root:
+            for frame in sign:
+                count += 1.0
+                bp_x = -1
+                spine_x = -1
+                for joint in frame:
+                    if joint.get('name') == body_part_to:
+                        spine_x = float(joint.get("x"))
+                        spine_y = float(joint.get("y"))
+                        spine_z = float(joint.get("z"))
+                        spine.append([spine_x,spine_y,spine_z])
+                    if joint.get('name') in body_parts:
+                        bp_x = float(joint.get("x"))
+                        bp_y = float(joint.get("y"))
+                        bp_z = float(joint.get("z"))
+                        bpx.append(bp_x)
+                        bpy.append(bp_y)
+                        bpz.append(bp_z)
+                    if (bp_x != -1 and spine_x != -1):
+                        break   # get out of the for loop as soon as we get both points
+                # total += math.sqrt(((bp_x - spine_x) ** 2) + ((bp_y - spine_y) ** 2) + ((bp_z - spine_z) ** 2))
+    except ValueError:
+        # print("negative infinity point")
+        return total
+    if total == 0.0:
+        # print("no object found")
+        return total
+    # calculate the average bp
+    for coord in spine:
+        total += math.sqrt(((np.mean(bpx) - coord[0]) ** 2) + ((np.mean(bpy) - coord[1]) ** 2) + ((np.mean(bpz) - coord[2]) ** 2))
 
     return total/count
 
@@ -214,6 +267,38 @@ def getbodypart():
     bodypart["WristLeft"] = bodypart["HandLeft"]
     return bodypart
 
+# DEPRECATED
+# def closest_body_part(filename,  hands=["HandRight", "WristRight"], sensitivity=1.5, num_parts=2):
+#     """
+#     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
+#     It might be a good idea to combine this with the above function so that runtime is reduced
+#     :param filename: the name of the file
+#     :param sensitivity: the sensitivity (radius multiplier) of the closeness
+#     :return: a string of the closest body part
+#     """
+#     root = ET.parse("new_db" + "/" + filename).getroot()
+#     bodypart = getbodypart()
+#     lowest = lowestpoint(root,  bodypart, hands) * sensitivity
+#     bodydef = []
+#     # for i in hands:
+#     #     for j in bodypart[i]:
+#     #             avg = avg_distance(root, i, j)
+#     #             if lowest >= avg:
+#     #                bodydef.append([avg, i, j])
+#     for i in hands:
+#         for j in bodypart[i]:
+#             avg = avg_distance(root, i, j)
+#             if lowest >= avg:
+#                 if j not in bodydef:
+#                     bodydef.append(j)
+#                 if len(bodydef) >= num_parts:
+#                     break
+#         if len(bodydef) >= num_parts:
+#             break
+#     while len(bodydef) < 2:  # ensure that the database can be created properly, otherwise a index error will occur
+#         bodydef.append(np.nan)
+#     return bodydef
+
 
 def closest_body_part(filename,  hands=["HandRight", "WristRight"], sensitivity=1.5, num_parts=2):
     """
@@ -225,26 +310,54 @@ def closest_body_part(filename,  hands=["HandRight", "WristRight"], sensitivity=
     """
     root = ET.parse("new_db" + "/" + filename).getroot()
     bodypart = getbodypart()
-    lowest = lowestpoint(root,  bodypart, hands) * sensitivity
     bodydef = []
     # for i in hands:
     #     for j in bodypart[i]:
     #             avg = avg_distance(root, i, j)
     #             if lowest >= avg:
     #                bodydef.append([avg, i, j])
+    all_dist = {}
     for i in hands:
         for j in bodypart[i]:
-            avg = avg_distance(root, i, j)
-            if lowest >= avg:
-                if j not in bodydef:
-                    bodydef.append(j)
-                if len(bodydef) >= num_parts:
-                    break
-        if len(bodydef) >= num_parts:
-            break
+            all_dist[j] = avg_distance(root, i, j)
+    if len(all_dist) > 2:
+        new_min = min(all_dist, key=all_dist.get)
+        bodydef.append(new_min)
+        all_dist.pop(new_min)
+        new_min = min(all_dist, key=all_dist.get)
+        bodydef.append(new_min)
+        all_dist.pop(new_min)
+    elif len(all_dist) > 1:
+        new_min = min(all_dist, key=all_dist.get)
+        bodydef.append(new_min)
+        all_dist.pop(new_min)
     while len(bodydef) < 2:  # ensure that the database can be created properly, otherwise a index error will occur
         bodydef.append(np.nan)
     return bodydef
+
+
+# def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"], sensitivity=1.5):
+#     """
+#     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
+#     It might be a good idea to combine this with the above function so that runtime is reduced
+#     :param filename: the name of the file
+#     :param sensitivity: the sensitivity
+#     :return: a string of the closest body part
+#     """
+#     root=ET.parse("new_db" + "/" + filename).getroot()
+#     count = len(root[0])
+#     framebuff = []
+#     bodypart = getbodypart()
+#     for frame in range(count):
+#         bodydef = []
+#         lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * sensitivity
+#         for i in hands:
+#             for j in bodypart[i]:
+#                     avg = distance_per_frame(root, i, frame, j)
+#                     if lowest > avg :
+#                         bodydef.append([avg, i, j])
+#         framebuff.append(bodydef)
+#     return framebuff
 
 
 def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"], sensitivity=1.5):
@@ -260,13 +373,32 @@ def closest_body_part_per_frame(filename,  hands=["HandRight", "WristRight"], se
     framebuff = []
     bodypart = getbodypart()
     for frame in range(count):
+        # bodydef = []
+        # lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * sensitivity
+        # for i in hands:
+        #     for j in bodypart[i]:
+        #             avg = distance_per_frame(root, i, frame, j)
+        #             if lowest > avg :
+        #                 bodydef.append([avg, i, j])
+        # framebuff.append(bodydef)
         bodydef = []
-        lowest = lowestpoint_per_frame(root, bodypart, frame,  hands) * sensitivity
+        all_dist = {}
         for i in hands:
             for j in bodypart[i]:
-                    avg = distance_per_frame(root, i, frame, j)
-                    if lowest > avg :
-                        bodydef.append([avg, i, j])
+                all_dist[j] = distance_per_frame(root, i, frame, j)
+        if len(all_dist) > 2:
+            new_min = min(all_dist, key=all_dist.get)
+            bodydef.append(new_min)
+            all_dist.pop(new_min)
+            new_min = min(all_dist, key=all_dist.get)
+            bodydef.append(new_min)
+            all_dist.pop(new_min)
+        elif len(all_dist) > 1:
+            new_min = min(all_dist, key=all_dist.get)
+            bodydef.append(new_min)
+            all_dist.pop(new_min)
+        while len(bodydef) < 2:  # ensure that the database can be created properly, otherwise a index error will occur
+            bodydef.append(np.nan)
         framebuff.append(bodydef)
     return framebuff
 

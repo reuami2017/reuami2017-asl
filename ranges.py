@@ -289,7 +289,7 @@ def lowestpoint(filename, bodypart, hands=["HandRight", "WristRight"]):
     return lowest
 
 
-def  lowestpoint_per_frame(filename, bodypart, frame,  hands=["HandRight", "WristRight"]):
+def lowestpoint_per_frame(filename, bodypart, frame,  hands=["HandRight", "WristRight"]):
     """
     returns the closest body part (SpineMid, etc) by going through each and calculating the average.
     It might be a good idea to combine this with the above function so that runtime is reduced

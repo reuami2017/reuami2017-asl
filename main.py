@@ -192,7 +192,7 @@ def narrow_list(candidates, body_part, position='right'):
 def get_list_of_signs_left(db, body_part):
     """
     gets a list of all the body parts on left
-    :param db: the dataframe
+    :param db: the data frame
     :param body_part: the interesting body part
     :return:
     """
@@ -279,11 +279,11 @@ check = input("Should the database be loaded from the database.pkl file? (Y/N)  
 if check in ["Y", "y"]:
     df = pd.read_pickle("database.pkl")
 else:
-    #Make databases
+    # Make databases
     word_types, sentiment, sound = make_word_database()
     time, arm, arm_ranges, first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,\
         closest_body_left_hand0, closest_body_left_hand1 = create_database("edited\XML_ASL_Files")
-    #make dataframe
+    # Make data frame
     df = pd.DataFrame([word_types, sentiment, time, arm, arm_ranges[0], arm_ranges[1], sound,
                        first_wrist_left, first_wrist_right, closest_body_right_hand0, closest_body_right_hand1,
                        closest_body_left_hand0, closest_body_left_hand1],
@@ -313,7 +313,6 @@ adjectives = df[(df['type'] == "JJ") | (df['type'] == "JJR") | (df['type'] == "J
 adverbs = df[(df['type'] == "RB") | (df['type'] == "RBS") | (df['type'] == "RBR")]  # adverbs obviously
 print("One sec: \n" + str(one_sec.describe()))
 print("One sec nouns: \n" + str(nouns[(1 > nouns['seconds']) & (nouns['seconds'] >= 0)].describe()))
-
 print("Two sec: \n" + str(two_sec.describe()))
 print("Three sec: \n" + str(three_sec.describe()))
 print("Four sec: \n" + str(four_sec.describe()))

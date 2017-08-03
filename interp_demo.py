@@ -11,16 +11,21 @@ import new_db_interpreter as interp
 class Application(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
+        master.minsize(width=800, height=700)
+        master.maxsize(width=800, height=700)
         self.pack()
         # self.create_widgets()
         signs = interp.demo_predict(db)
+        tk.Label(self, text="Right").grid(row=1,column=1)
+        tk.Label(self, text="Left").grid(row=1, column=2)
+        tk.Label(self, text="Right1").grid(row=1, column=3)
+        tk.Label(self, text="Left1").grid(row=1, column=4)
         for i in range(4):
             # index needs to start at 1 and go to 4
-            j = 1
+            j = 2
             for sign in signs[i]:
                 self.make_button(sign, j, i+1)
                 j += 1
-
 
     def make_button(self, text, row, column):
         self.new = tk.Button(self)
@@ -39,22 +44,29 @@ class Application(tk.Frame):
     def gotourl(self, url):
         webbrowser.open_new(url)
 
-db = interp.pd.read_pickle("newdb.pkl")
-
 
 def update():
+    """
+    updates the frame
+    :return: none
+    """
     signs = interp.demo_predict(db)
-    app.grid_forget()  # destroy the grid
-    # for i in range(4):
-    #     # index needs to start at 1 and go to 4
-    #     j = 1
-    #     for sign in signs[i]:
-    #         app.make_button(sign, j, i+1)
-    #         j += 1
-    # root.after(2000, update)
+    # app.grid_forget()  # destroy the grid
+    for label in app.grid_slaves():
+        if int(label.grid_info()["row"]) > 1: # dont remove the first row that contains the names
+            label.grid_forget()
+    for i in range(4):
+        # index needs to start at 1 and go to 4, hence the i+1 later
+        j = 2
+        for sign in signs[i]:
+            app.make_button(sign, j, i+1)
+            j += 1
+    root.after(2000, update)
     print(signs)
 
-root = tk.Tk()
-root.after(2000, update)
-app = Application(master=root)
-app.mainloop()
+if __name__ == "__main__":
+    db = interp.pd.read_pickle("newdb.pkl")
+    root = tk.Tk()
+    root.after(2000, update)
+    app = Application(master=root)
+    app.mainloop()
